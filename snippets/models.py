@@ -8,6 +8,10 @@ COMMON_SIZES = (
 	('XL', 'XLarge'),
 )
 
+class UserProfile(models.Model):
+	user = models.OneToOneField(User, related_name='profile')
+	address = models.TextField(max_length=200, blank=True)
+
 class Gender(models.Model):
 	type = models.CharField(max_length=5)
 
@@ -45,7 +49,7 @@ class Category(models.Model):
 	objects = CategoryManager()
 
 	def __str__(self):
-		return self.name
+		return self.name + '(' + self.gender.type + ')'
 
 class ProductManager(models.Manager):
 
@@ -77,7 +81,7 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-	channel = models.ForeignKey(Channel, related_name='products', blank=True)
+	channel = models.ManyToManyField(Channel, related_name='products', blank=True)
 	category = models.ForeignKey(Category, related_name='products')
 	pub_date = models.DateTimeField('date published')
 	name = models.CharField(max_length=30)

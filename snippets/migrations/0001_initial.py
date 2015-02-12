@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Cart',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('shipping', models.IntegerField(default=2500)),
                 ('total_price', models.IntegerField(default=0)),
                 ('address', models.TextField(max_length=100)),
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CartItem',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('size', models.CharField(max_length=10, null=True)),
                 ('color', models.CharField(max_length=10, null=True)),
                 ('quantity', models.IntegerField(null=True)),
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('name', models.CharField(max_length=20)),
             ],
             options={
@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Channel',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('jacket', models.ImageField(default='', upload_to='upload/channel/jacket')),
                 ('designer', models.ImageField(default='', upload_to='upload/channel/designer')),
                 ('pub_date', models.DateTimeField(verbose_name='date published')),
@@ -64,7 +64,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Gender',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('type', models.CharField(max_length=5)),
             ],
             options={
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Like',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('whether_like', models.BooleanField(default=False)),
             ],
             options={
@@ -84,14 +84,25 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Product',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('pub_date', models.DateTimeField(verbose_name='date published')),
                 ('name', models.CharField(max_length=30)),
                 ('description', models.TextField(max_length=100)),
                 ('price', models.IntegerField(default=0)),
                 ('image', models.ImageField(upload_to='upload')),
                 ('category', models.ForeignKey(to='snippets.Category', related_name='products')),
-                ('channel', models.ForeignKey(to='snippets.Channel', blank=True, related_name='products')),
+                ('channel', models.ManyToManyField(to='snippets.Channel', related_name='products')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='UserProfile',
+            fields=[
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
+                ('address', models.TextField(max_length=200)),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL, related_name='profile')),
             ],
             options={
             },
