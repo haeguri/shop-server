@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from snippets.models import Gender, Product, Category, Designer, Tag, Like, Cart, CartItem, Channel, Cody, CodyItem, \
-	CodyLike, ChannelFollow, DesignerFollow
+from snippets.models import Gender, Product, Category, Brand, Tag, Like, Cart, CartItem, Channel, Cody, CodyItem, \
+	CodyLike, ChannelFollow, BrandFollow
 from django.contrib.auth.models import User
 from rest_framework import pagination
 
@@ -24,26 +24,26 @@ class TagSerializer(serializers.ModelSerializer):
 		model = Tag
 		fields = ('id', 'category', 'name')
 
-class DesignerSerializer(serializers.ModelSerializer):
+class BrandSerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = Designer
-		fields = ('id', 'name', 'intro', 'gender', 'products_of_designer', 'image', 'image', 'web', 'address')
+		model = Brand
+		fields = ('id', 'name', 'intro', 'gender', 'products_of_brand', 'image', 'background', 'web', 'address')
 		depth = 1
 
-class DesignerFollowSerializer(serializers.ModelSerializer):
+class BrandFollowSerializer(serializers.ModelSerializer):
 
-	designer = DesignerSerializer(serializers.ModelSerializer)
+	brand = BrandSerializer(serializers.ModelSerializer)
 
 	class Meta:
-		model = DesignerFollow
-		fields = ('id', 'designer', 'user', 'whether_follow')
+		model = BrandFollow
+		fields = ('id', 'brand', 'user', 'whether_follow')
 
 class ProductSerializer(serializers.ModelSerializer):
 
 	likes_of_product = serializers.SerializerMethodField()
 	tag = TagSerializer(many=False)
-	designer = DesignerSerializer(many=False)
+	brand = BrandSerializer(many=False)
 
 	def get_likes_of_product(self, product):
 		query_set = Like.objects.filter(whether_like=True, product=product)
@@ -53,7 +53,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Product
-		fields = ('id', 'tag', 'designer', 'name', 'pub_date', 'description', 'price', 'image', 'likes_of_product')
+		fields = ('id', 'tag', 'brand', 'name', 'pub_date', 'description', 'price', 'image', 'likes_of_product')
 
 class PaginatedProductSerializer(pagination.PaginationSerializer):
 
@@ -126,7 +126,7 @@ class UserSerializer(serializers.ModelSerializer):
 	cart = CartReadSerializer(many=False)
 	likes_of_user = serializers.SerializerMethodField()
 	channel_follows_of_user = serializers.SerializerMethodField()
-	designer_follows_of_user = serializers.SerializerMethodField()
+	brand_follows_of_user = serializers.SerializerMethodField()
 	cody_likes_of_user = serializers.SerializerMethodField()
 
 	"""
@@ -149,9 +149,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 		return serializer.data
 
-	def get_designer_follows_of_user(self, user):
-		query_set = Designer.objects.filter(designer_follows_of_designer__user=user, designer_follows_of_designer__whether_follow=True)
-		serializer =  DesignerSerializer(instance=query_set, many=True)
+	def get_brand_follows_of_user(self, user):
+		query_set = Brand.objects.filter(brand_follows_of_brand__user=user, brand_follows_of_brand__whether_follow=True)
+		serializer =  BrandSerializer(instance=query_set, many=True)
 
 		return serializer.data
 
@@ -163,7 +163,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = User
-		fields = ('id', 'username','email', 'cart', 'likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'designer_follows_of_user')
+		fields = ('id', 'username','email', 'cart', 'likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'brand_follows_of_user')
 
 
 

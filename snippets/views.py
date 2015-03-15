@@ -2,9 +2,9 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from snippets.models import Gender, Product, Like, Category, Cart, CartItem, Channel, ChannelFollow, \
-	Cody, CodyItem, CodyLike, Tag, Designer, DesignerFollow
+	Cody, CodyItem, CodyLike, Tag, Brand, BrandFollow
 from snippets.serializers import ProductSerializer, UserSerializer, CategorySerializer, TagSerializer, \
-	CartReadSerializer, CartWriteSerializer, ItemWriteSerializer, ItemReadSerializer, DesignerSerializer, \
+	CartReadSerializer, CartWriteSerializer, ItemWriteSerializer, ItemReadSerializer, BrandSerializer, \
 	ChannelSerializer, CodySerializer, CodyItemSerializer, PaginatedProductSerializer, GenderSerializer
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
@@ -32,11 +32,11 @@ def category_list(request, gender_id):
 @api_view(['GET'])
 def tag_list(request, gender_id):
 	filter = request.QUERY_PARAMS.get('filter')
-	brand = request.QUERY_PARAMS.get('brand')
+	brand_id = request.QUERY_PARAMS.get('brand_id')
 
 	if request.method == 'GET':
 		if filter == 'brand':
-			tags = Tag.objects.get_tags_of_designer(brand)
+			tags = Tag.objects.get_tags_of_brand(brand_id)
 			serializer = TagSerializer(tags, many=True)
 			return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -49,7 +49,10 @@ def tag_list(request, gender_id):
 def product_list(request):
 
 	tag_id = request.QUERY_PARAMS.get('tag_id')
-	queryset = Product.objects.filter(tag=tag_id).order_by('-pub_date')
+
+	if tag_id is not None:
+		queryset = Product.objects.filter(tag=tag_id).order_by('-pub_date')
+
 	paginator = Paginator(queryset, 6)
 
 	page = request.QUERY_PARAMS.get('page')
@@ -65,20 +68,11 @@ def product_list(request):
 
 @api_view(['GET'])
 def product_detail(request, product_id):
-	follow = request.QUERY_PARAMS.get('designer')
+	follow = request.QUERY_PARAMS.get('brand')
 
 	if request.method == 'GET':
 		product = Product.objects.get(id=product_id)
 		serializer = ProductSerializer(product)
-
-		return Response(serializer.data)
-
-@api_view(['GET', 'POST'])
-def category_cody_list(request, category_id):
-
-	if request.method == 'GET':
-		codies = Cody.objects.get_codies_of_category(category_id)
-		serializer = CodySerializer(codies, many=True)
 
 		return Response(serializer.data)
 
@@ -135,23 +129,29 @@ def cody_detail(request, channel_id, cody_id):
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'POST'])
-def designer_list(request):
+def brand_list(request):
 	user_id = request.QUERY_PARAMS.get('user_id')
 	gender_id = request.QUERY_PARAMS.get('gender_id')
 
 	if request.method == 'GET':
-		designers = Designer.objects.get_without_follow(user_id, gender_id)
-		serializer = DesignerSerializer(designers, many=True)
+		brands = Brand.objects.get_without_follow(user_id, gender_id)
+		serializer = BrandSerializer(brands, many=True)
 
 		return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
-def designer_detail(request, designer_id):
+def brand_detail(request, brand_id):
 	user_id = request.QUERY_PARAMS.get('user_id')
 
+	if request.method == 'GET':
+		brand = Brand.objects.get(id=brand_id)
+		serializer = BrandSerializer(brand, many=False)
+
+		return Response(serializer.data, status.HTTP_200_OK)
+
 	if request.method == 'POST':
-		follows = DesignerFollow.objects.get_or_create(user_id, designer_id)
-		serializer = DesignerSerializer(follows, many=True)
+		follows = BrandFollow.objects.get_or_create(user_id, brand_id)
+		serializer = BrandSerializer(follows, many=True)
 
 		return Response(serializer.data, status.HTTP_201_CREATED)
 

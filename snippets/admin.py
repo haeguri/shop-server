@@ -1,5 +1,5 @@
 from django.contrib import admin
-from snippets.models import Gender, Category, Tag, Product, Designer \
+from snippets.models import Gender, Category, Tag, Product, Brand \
     , Channel, CodyCategory, Cody, CodyItem
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,7 +20,9 @@ class TagAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ('name','tag', 'designer', 'pub_date', 'price', 'image')
+    list_display = ['name','tag', 'brand', 'price', 'pub_date']
+
+    list_editable = ['tag', 'brand', 'price']
 
     list_filter = ['tag']
 
@@ -58,7 +60,7 @@ admin.site.register(Gender)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Designer)
+admin.site.register(Brand)
 admin.site.register(Channel)
 admin.site.register(CodyCategory, CodyCategoryAdmin)
 admin.site.register(Cody, CodyAdmin)

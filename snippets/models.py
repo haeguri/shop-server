@@ -31,9 +31,9 @@ class TagManager(models.Manager):
 	def get_tags(self, gender_id):
 		return Tag.objects.filter(gender=gender_id)
 
-	def get_tags_of_designer(self, designer_id):
-		tags_of_designer = Designer.objects.get(id=designer_id).products_of_designer.values_list('tag',flat=True)
-		return Tag.objects.filter(id__in=tags_of_designer)
+	def get_tags_of_brand(self, brand_id):
+		tags_of_brand = Brand.objects.get(id=brand_id).products_of_brand.values_list('tag',flat=True)
+		return Tag.objects.filter(id__in=tags_of_brand)
 
 class Tag(models.Model):
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
@@ -53,53 +53,53 @@ class CodyCategory(models.Model):
 	def __str__(self):
 		return self.name + '(' + self.gender.type + ')'
 
-class DesignerManager(models.Manager):
+class BrandManager(models.Manager):
 
 	def get_without_follow(self, user_id, gender_id):
-		follow_designers = DesignerFollow.objects.filter(user=user_id, whether_follow=True)
+		follow_brands = BrandFollow.objects.filter(user=user_id, whether_follow=True)
 
-		return Designer.objects.exclude(designer_follows_of_designer__in=follow_designers).filter(gender=gender_id)
+		return Brand.objects.exclude(brand_follows_of_brand__in=follow_brands).filter(gender=gender_id)
 
-class Designer(models.Model):
+class Brand(models.Model):
 	user = models.OneToOneField(User)
-	gender = models.ForeignKey(Gender, max_length=5, related_name='designers_of_gender', blank=True, null=True)
+	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
 	name = models.CharField(max_length=20)
 	intro = models.TextField(max_length=200, blank=True)
-	image = models.ImageField(upload_to='upload/designer', default='')
-	background = models.ImageField(upload_to='upload/designer/background', default='')
+	image = models.ImageField(upload_to='upload/brand', default='')
+	background = models.ImageField(upload_to='upload/brand/background', default='', blank=True)
 	web = models.CharField(max_length=50, blank=True)
 	address = models.CharField(max_length=200, blank=True)
 
-	objects = DesignerManager()
+	objects = BrandManager()
 
 	def __str__(self):
 		return self.name + '(' + self.gender.type + ')'
 
-class DesignerFollowManager(models.Manager):
+class BrandFollowManager(models.Manager):
 
-	def get_or_create(self, user_id, designer_id):
+	def get_or_create(self, user_id, brand_id):
 		user = User.objects.get(id=user_id)
-		designer = Designer.objects.get(id=designer_id)
+		brand = Brand.objects.get(id=brand_id)
 
 		try:
-			follow = DesignerFollow.objects.get(user=user, designer=designer)
+			follow = BrandFollow.objects.get(user=user, brand=brand)
 		except:
-			follow = DesignerFollow.objects.create(user=user, designer=designer)
+			follow = BrandFollow.objects.create(user=user, brand=brand)
 
 		follow.whether_follow = not follow.whether_follow
 		follow.save()
 
-		return Designer.objects.filter(designer_follows_of_designer__user=user_id, designer_follows_of_designer__whether_follow=True)
+		return Brand.objects.filter(brand_follows_of_brand__user=user_id, brand_follows_of_brand__whether_follow=True)
 
-class DesignerFollow(models.Model):
-	user = models.ForeignKey(User, related_name="designer_follows_of_user")
-	designer = models.ForeignKey(Designer, related_name="designer_follows_of_designer")
+class BrandFollow(models.Model):
+	user = models.ForeignKey(User, related_name="brand_follows_of_user")
+	brand = models.ForeignKey(Brand, related_name="brand_follows_of_brand")
 	whether_follow = models.BooleanField(default=False)
 
-	objects = DesignerFollowManager()
+	objects = BrandFollowManager()
 
 class Product(models.Model):
-	designer = models.ForeignKey(Designer, related_name='products_of_designer', blank=True, null=True)
+	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
 	tag = models.ForeignKey(Tag, related_name='products_of_tag', blank=True, null=True)
 	pub_date = models.DateTimeField('date published', default=datetime.now)
 	name = models.CharField(max_length=30)
