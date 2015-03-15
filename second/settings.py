@@ -23,9 +23,6 @@ SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -154,7 +151,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles'
 
-DEBUG = False
+DEBUG = True
 
 try:
     from .local_settings import *
