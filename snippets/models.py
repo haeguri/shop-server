@@ -15,11 +15,7 @@ class Gender(models.Model):
 class CategoryManager(models.Manager):
 
 	def get_category_list(self, gender_id):
-		try:
-			return Category.objects.filter(gender = gender_id)
-		except:
-			print("no one's category")
-			return []
+		return Category.objects.filter(gender = gender_id)
 
 class Category(models.Model):
 	gender = models.ForeignKey(Gender, related_name='categories_of_gender', blank=True, null=True)
@@ -33,11 +29,11 @@ class Category(models.Model):
 class TagManager(models.Manager):
 
 	def get_tags(self, gender_id):
-		try:
-			return Tag.objects.filter(gender=gender_id)
-		except:
-			print("exception in TagManager")
-			return []
+		return Tag.objects.filter(gender=gender_id)
+
+	def get_tags_of_designer(self, designer_id):
+		tags_of_designer = Designer.objects.get(id=designer_id).products_of_designer.values_list('tag',flat=True)
+		return Tag.objects.filter(id__in=tags_of_designer)
 
 class Tag(models.Model):
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
@@ -60,11 +56,9 @@ class CodyCategory(models.Model):
 class DesignerManager(models.Manager):
 
 	def get_without_follow(self, user_id, gender_id):
-		follow_designers_id = DesignerFollow.objects.filter(user=user_id, whether_follow=True).values_list('id', flat=True)
+		follow_designers = DesignerFollow.objects.filter(user=user_id, whether_follow=True)
 
-		filtered_designer = Designer.objects.exclude(id__in=follow_designers_id).filter(gender=gender_id)
-
-		return filtered_designer
+		return Designer.objects.exclude(designer_follows_of_designer__in=follow_designers).filter(gender=gender_id)
 
 class Designer(models.Model):
 	user = models.OneToOneField(User)
@@ -158,19 +152,15 @@ class CodyManager(models.Manager):
 	def get_without_follow(self, user_id):
 
 		try:
-			follow_channels_id = ChannelFollow.objects.filter(user=user_id, whether_follow=True).values_list('id', flat=True)
+			follow_channels = ChannelFollow.objects.filter(user=user_id, whether_follow=True).values_list('channel', flat=True)
 
-			return Cody.objects.exclude(channel_id__in=follow_channels_id)
+			return Cody.objects.exclude(channel__in=follow_channels)
 		# no one channel of following
 		except:
 			return Cody.objects.all()
 
 	def get_codies_of_category(self, category_id):
-
-		try:
-			return Cody.objects.filter(cody_category=category_id)
-		except:
-			return []
+		return Cody.objects.filter(cody_category=category_id)
 
 class Cody(models.Model):
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
@@ -192,14 +182,14 @@ class CodyLikeManager(models.Manager):
 			user = User.objects.get(id=user_id)
 
 			try:
-				follow = CodyLike.objects.get(user=user, cody=cody)
+				follow = CodyLike.objects.get(user=user_id, cody=cody_id)
 			except:
-				follow = CodyLike.objects.create(user=user, cody=cody)
+				follow = CodyLike.objects.create(user=user_id, cody=cody_id)
 
 			follow.whether_like = not follow.whether_like
 			follow.save()
 
-			return Cody.objects.filter(cody_likes_of_cody__user=user, cody_likes_of_cody__whether_like=True)
+			return Cody.objects.filter(cody_likes_of_cody__user=user_id, cody_likes_of_cody__whether_like=True)
 
 class CodyLike(models.Model):
 	cody = models.ForeignKey(Cody, related_name='cody_likes_of_cody')
@@ -225,10 +215,7 @@ class LikeManager(models.Manager):
 			return Like.objects.create(user=user, product=product)
 
 	def like_count(self, product):
-		try:
-			return Like.objects.filter(product = product, whether_like = True).count()
-		except:
-			return 0
+		return Like.objects.filter(product = product, whether_like = True).count()
 
 class Like(models.Model):
 	whether_like = models.BooleanField(default=False)

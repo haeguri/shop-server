@@ -32,13 +32,18 @@ def category_list(request, gender_id):
 @api_view(['GET'])
 def tag_list(request, gender_id):
 	filter = request.QUERY_PARAMS.get('filter')
+	brand = request.QUERY_PARAMS.get('brand')
 
 	if request.method == 'GET':
+		if filter == 'brand':
+			tags = Tag.objects.get_tags_of_designer(brand)
+			serializer = TagSerializer(tags, many=True)
+			return Response(serializer.data, status=status.HTTP_200_OK)
 
-		tags = Tag.objects.get_tags(gender_id)
-		serializer = TagSerializer(tags, many=True)
-
-		return Response(serializer.data, status=status.HTTP_200_OK)
+		else:
+			tags = Tag.objects.get_tags(gender_id)
+			serializer = TagSerializer(tags, many=True)
+			return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
 def product_list(request):
