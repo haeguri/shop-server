@@ -1,11 +1,11 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from snippets.models import Product, Like, Category, Cart, CartItem, Channel, ChannelFollow, \
+from snippets.models import Gender, Product, Like, Category, Cart, CartItem, Channel, ChannelFollow, \
 	Cody, CodyItem, CodyLike, Tag, Designer, DesignerFollow
 from snippets.serializers import ProductSerializer, UserSerializer, CategorySerializer, TagSerializer, \
 	CartReadSerializer, CartWriteSerializer, ItemWriteSerializer, ItemReadSerializer, DesignerSerializer, \
-	ChannelSerializer, CodySerializer, CodyItemSerializer, PaginatedProductSerializer
+	ChannelSerializer, CodySerializer, CodyItemSerializer, PaginatedProductSerializer, GenderSerializer
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -13,6 +13,13 @@ from django.core.paginator import Paginator
 
 import json
 
+@api_view(['GET'])
+def gender_list(request):
+	if request.method == 'GET':
+		genders = Gender.objects.all().order_by('-type')
+		serializer = GenderSerializer(genders, many=True)
+
+		return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
 def category_list(request, gender_id):
@@ -24,8 +31,11 @@ def category_list(request, gender_id):
 
 @api_view(['GET'])
 def tag_list(request, gender_id):
+	filter = request.QUERY_PARAMS.get('filter')
+
 	if request.method == 'GET':
-		tags = Tag.objects.get_tag_list(gender_id)
+
+		tags = Tag.objects.get_tags(gender_id)
 		serializer = TagSerializer(tags, many=True)
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
@@ -59,10 +69,10 @@ def product_detail(request, product_id):
 		return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
-def channel_cody_list(request):
+def category_cody_list(request, category_id):
 
 	if request.method == 'GET':
-		codies = Cody.objects.all()
+		codies = Cody.objects.get_codies_of_category(category_id)
 		serializer = CodySerializer(codies, many=True)
 
 		return Response(serializer.data)
@@ -85,6 +95,14 @@ def channel_detail(request, channel_id):
 
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+@api_view(['GET', 'POST'])
+def category_cody_list(request, category_id):
+
+	if request.method == 'GET':
+		codies = Cody.objects.get_codies_of_category(category_id).order_by('-pub_date')
+		serializer = CodySerializer(codies, many=True);
+
+		return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
 def cody_list(request, channel_id):
@@ -117,21 +135,20 @@ def designer_list(request):
 	gender_id = request.QUERY_PARAMS.get('gender_id')
 
 	if request.method == 'GET':
+		designers = Designer.objects.get_without_follow(user_id, gender_id)
+		serializer = DesignerSerializer(designers, many=True)
 
-			designers = Designer.objects.get_without_follow(user_id, gender_id)
-			serializer = DesignerSerializer(designers, many=True)
-
-			return Response(serializer.data)
+		return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
 def designer_detail(request, designer_id):
 	user_id = request.QUERY_PARAMS.get('user_id')
 
 	if request.method == 'POST':
-			follows = DesignerFollow.objects.get_or_create(user_id, designer_id)
-			serializer = DesignerSerializer(follows, many=True)
+		follows = DesignerFollow.objects.get_or_create(user_id, designer_id)
+		serializer = DesignerSerializer(follows, many=True)
 
-			return Response(serializer.data, status.HTTP_201_CREATED)
+		return Response(serializer.data, status.HTTP_201_CREATED)
 
 
 @api_view(['GET', 'POST', 'DELETE'])

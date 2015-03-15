@@ -1,6 +1,6 @@
 from django.contrib import admin
 from snippets.models import Gender, Category, Tag, Product, Designer \
-    , Channel, Cody, CodyItem
+    , Channel, CodyCategory, Cody, CodyItem
 
 class CategoryAdmin(admin.ModelAdmin):
 
@@ -18,12 +18,19 @@ class TagAdmin(admin.ModelAdmin):
 
     search_fields = ['name']
 
-
 class ProductAdmin(admin.ModelAdmin):
 
     list_display = ('name','tag', 'designer', 'pub_date', 'price', 'image')
 
     list_filter = ['tag']
+
+    search_fields = ['name']
+
+class CodyCategoryAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'gender')
+
+    list_filter = ['gender']
 
     search_fields = ['name']
 
@@ -33,7 +40,12 @@ class CodyInline(admin.StackedInline):
     extra = 3
 
 class CodyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'cody_category', 'desc', 'pub_date')
+
+    list_filter = ['cody_category']
+
     fieldsets = [
+        (None,         {'fields':['cody_category']}),
         (None,         {'fields':['channel']}),
         (None,         {'fields':['title']}),
         (None,        {'fields':['desc']}),
@@ -48,4 +60,5 @@ admin.site.register(Tag, TagAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Designer)
 admin.site.register(Channel)
+admin.site.register(CodyCategory, CodyCategoryAdmin)
 admin.site.register(Cody, CodyAdmin)

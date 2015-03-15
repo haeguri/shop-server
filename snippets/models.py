@@ -16,11 +16,10 @@ class CategoryManager(models.Manager):
 
 	def get_category_list(self, gender_id):
 		try:
-			category_list = Category.objects.filter(gender = gender_id)
-			return category_list
+			return Category.objects.filter(gender = gender_id)
 		except:
 			print("no one's category")
-			return category_list
+			return []
 
 class Category(models.Model):
 	gender = models.ForeignKey(Gender, related_name='categories_of_gender', blank=True, null=True)
@@ -32,12 +31,12 @@ class Category(models.Model):
 		return self.gender.type + ' / ' + self.type
 
 class TagManager(models.Manager):
-	def get_tag_list(self, gender_id):
+
+	def get_tags(self, gender_id):
 		try:
-			tag_list = Tag.objects.filter(gender=gender_id)
-			return tag_list
+			return Tag.objects.filter(gender=gender_id)
 		except:
-			print("exception in CategoryManager get_men_category")
+			print("exception in TagManager")
 			return []
 
 class Tag(models.Model):
@@ -50,19 +49,20 @@ class Tag(models.Model):
 	def __str__(self):
 		return self.name + '(' + self.gender.type + ')'
 
+class CodyCategory(models.Model):
+	gender = models.ForeignKey(Gender, related_name='cody_categories_of_gender', blank=True, null=True)
+	name = models.CharField(max_length=20, default='')
+	image = models.ImageField(upload_to='upload/cody/category', default='')
+
+	def __str__(self):
+		return self.name + '(' + self.gender.type + ')'
+
 class DesignerManager(models.Manager):
 
 	def get_without_follow(self, user_id, gender_id):
+		follow_designers_id = DesignerFollow.objects.filter(user=user_id, whether_follow=True).values_list('id', flat=True)
 
-		follows_designer_id = []
-
-
-		follows = DesignerFollow.objects.filter(user=user_id, whether_follow=True)
-
-		for follow in follows:
-				follows_designer_id.append(follow.designer.id)
-
-		filtered_designer = Designer.objects.exclude(id__in=follows_designer_id).filter(gender=gender_id)
+		filtered_designer = Designer.objects.exclude(id__in=follow_designers_id).filter(gender=gender_id)
 
 		return filtered_designer
 
@@ -72,6 +72,7 @@ class Designer(models.Model):
 	name = models.CharField(max_length=20)
 	intro = models.TextField(max_length=200, blank=True)
 	image = models.ImageField(upload_to='upload/designer', default='')
+	background = models.ImageField(upload_to='upload/designer/background', default='')
 	web = models.CharField(max_length=50, blank=True)
 	address = models.CharField(max_length=200, blank=True)
 
@@ -94,9 +95,7 @@ class DesignerFollowManager(models.Manager):
 		follow.whether_follow = not follow.whether_follow
 		follow.save()
 
-		follows_of_user = Designer.objects.filter(designer_follows_of_designer__user=user_id, designer_follows_of_designer__whether_follow=True)
-
-		return follows_of_user
+		return Designer.objects.filter(designer_follows_of_designer__user=user_id, designer_follows_of_designer__whether_follow=True)
 
 class DesignerFollow(models.Model):
 	user = models.ForeignKey(User, related_name="designer_follows_of_user")
@@ -104,42 +103,6 @@ class DesignerFollow(models.Model):
 	whether_follow = models.BooleanField(default=False)
 
 	objects = DesignerFollowManager()
-
-
-class ProductManager(models.Manager):
-
-	def init_like(self, user_id):
-		try:
-			user_like_list = Like.objects.filter(user_id=user_id, whether_like=True)
-			like_id_list = []
-
-			for item in user_like_list:
-				like_id_list.append(item.product.id)
-
-			return like_id_list
-		except:
-			print("except init_like!!")
-			return []
-
-	def get_like_product(self, user_id):
-		try:
-			user_like_list = Like.objects.filter(user_id=user_id)
-			user_product_list = []
-
-			for like in user_like_list:
-				user_product_list.append(like.id)
-
-			return Product.objects.filter(id__in=user_product_list)
-
-		except:
-			return []
-
-	"""
-	def get_without_follow(self, user_id):
-
-		follows = Product.objects.filter(products_of_designer__designer_follows_of_designer = user_id, products_of_designer__designer_whether_follow = False).order_by('-created')
-		return follows
-	"""
 
 class Product(models.Model):
 	designer = models.ForeignKey(Designer, related_name='products_of_designer', blank=True, null=True)
@@ -150,39 +113,12 @@ class Product(models.Model):
 	price = models.IntegerField(default=0)
 	image = models.ImageField(upload_to='upload')
 
-	objects = ProductManager()
-
 	def __str__(self):
-		return self.name
+		return self.name + '(' + self.tag.gender.type + ')'
 
 class AdminChannel(models.Model):
 	name = models.CharField(max_length=30)
 	image = models.ImageField(upload_to='channel')
-
-class ChannelManager(models.Manager):
-
-	def get_without_follow(self, user_id):
-
-		follows_channel_id = []
-
-		try:
-			follows = ChannelFollow.objects.filter(user=user_id, whether_follow=True)
-
-			for follow in follows:
-				follows_channel_id.append(follow.channel.id)
-
-			filtered_channel = Channel.objects.exclude(id__in=follows_channel_id)
-		# no one channel of following
-		except:
-			filtered_channel = Channel.objects.all()
-
-		return filtered_channel
-
-	def get_channel_of_cody(self, cody_id):
-
-		channel = Channel.objects.get(codies_of_channel__id=cody_id)
-
-		return channel
 
 class Channel(models.Model):
 	name = models.CharField(max_length=30)
@@ -191,8 +127,6 @@ class Channel(models.Model):
 	web = models.CharField(max_length=50)
 	address = models.CharField(max_length=50)
 	created = models.DateTimeField('date created', default=datetime.now)
-
-	objects = ChannelManager()
 
 	def __str__(self):
 		return self.name
@@ -211,9 +145,7 @@ class ChannelFollowManager(models.Manager):
 		follow.whether_follow = not follow.whether_follow
 		follow.save()
 
-		follows_of_user = Channel.objects.filter(channel_follows_of_channel__user=user_id, channel_follows_of_channel__whether_follow=True)
-
-		return follows_of_user
+		return Channel.objects.filter(channel_follows_of_channel__user=user_id, channel_follows_of_channel__whether_follow=True)
 
 class ChannelFollow(models.Model):
 	channel = models.ForeignKey(Channel, related_name="channel_follows_of_channel")
@@ -225,24 +157,24 @@ class ChannelFollow(models.Model):
 class CodyManager(models.Manager):
 	def get_without_follow(self, user_id):
 
-		follows_channel_id = []
-
 		try:
-			follows = ChannelFollow.objects.filter(user=user_id, whether_follow=True)
+			follow_channels_id = ChannelFollow.objects.filter(user=user_id, whether_follow=True).values_list('id', flat=True)
 
-			for follow in follows:
-				follows_channel_id.append(follow.channel.id)
-
-			filtered_cody = Cody.objects.exclude(channel_id__in=follows_channel_id)
+			return Cody.objects.exclude(channel_id__in=follow_channels_id)
 		# no one channel of following
 		except:
-			filtered_cody = Cody.objects.all()
+			return Cody.objects.all()
 
-		return filtered_cody
+	def get_codies_of_category(self, category_id):
 
+		try:
+			return Cody.objects.filter(cody_category=category_id)
+		except:
+			return []
 
 class Cody(models.Model):
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
+	cody_category = models.ForeignKey(CodyCategory, related_name="codies_of_cody_category", blank=True, null=True)
 	title = models.CharField(max_length=30)
 	desc = models.TextField(max_length=200)
 	image = models.ImageField(upload_to='channel/channel_cody')
@@ -259,21 +191,15 @@ class CodyLikeManager(models.Manager):
 			cody = Cody.objects.get(id=cody_id)
 			user = User.objects.get(id=user_id)
 
-			print("cody", cody_id)
-			print("user", user_id)
-
 			try:
 				follow = CodyLike.objects.get(user=user, cody=cody)
 			except:
-				print("cody like create")
 				follow = CodyLike.objects.create(user=user, cody=cody)
 
 			follow.whether_like = not follow.whether_like
 			follow.save()
 
-			follows_of_user = Cody.objects.filter(cody_likes_of_cody__user=user, cody_likes_of_cody__whether_like=True)
-
-			return follows_of_user
+			return Cody.objects.filter(cody_likes_of_cody__user=user, cody_likes_of_cody__whether_like=True)
 
 class CodyLike(models.Model):
 	cody = models.ForeignKey(Cody, related_name='cody_likes_of_cody')
@@ -288,14 +214,13 @@ class CodyItem(models.Model):
 	tip = models.CharField(max_length=50)
 
 	def __str__(self):
-		return self.product.name
+		return self.product.name + '(' + self.product.tag.gender.type + ')'
 
 class LikeManager(models.Manager):
 
 	def get_or_create(self, user, product):
 		try:
 			return Like.objects.get(user=user, product=product)
-
 		except:
 			return Like.objects.create(user=user, product=product)
 
@@ -317,12 +242,10 @@ class CartManager(models.Manager):
 
 	def get_or_create(self, user_id):
 		try:
-			cart = Cart.objects.get(user__id = user_id)
-			return cart
+			return Cart.objects.get(user__id = user_id)
 		except:
 			user = User.objects.get(id=user_id)
-			cart = Cart.objects.create(user=user)
-			return cart
+			return Cart.objects.create(user=user)
 
 class Cart(models.Model):
 	user = models.OneToOneField(User)

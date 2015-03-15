@@ -1,8 +1,15 @@
 from rest_framework import serializers
-from snippets.models import Product, Category, Designer, Tag, Like, Cart, CartItem, Channel, Cody, CodyItem, \
+from snippets.models import Gender, Product, Category, Designer, Tag, Like, Cart, CartItem, Channel, Cody, CodyItem, \
 	CodyLike, ChannelFollow, DesignerFollow
 from django.contrib.auth.models import User
 from rest_framework import pagination
+
+class GenderSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Gender
+		fields = ('id', 'type', 'cody_categories_of_gender')
+		depth  = 1
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -21,7 +28,8 @@ class DesignerSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Designer
-		fields = ('id', 'name', 'intro', 'image', 'image', 'web', 'address')
+		fields = ('id', 'name', 'intro', 'gender', 'products_of_designer', 'image', 'image', 'web', 'address')
+		depth = 1
 
 class DesignerFollowSerializer(serializers.ModelSerializer):
 
