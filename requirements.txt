@@ -1,3 +1,4 @@
+defusedxml==0.4.1
 dj-database-url==0.3.0
 Django==1.7
 django-allauth==0.19.0
@@ -15,4 +16,3 @@ requests-oauthlib==0.4.2
 six==1.9.0
 waitress==0.8.9
 whitenoise==1.0.6
-psycopg2==2.5.4
