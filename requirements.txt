@@ -16,3 +16,4 @@ requests-oauthlib==0.4.2
 six==1.9.0
 waitress==0.8.9
 whitenoise==1.0.6
+psycopg2==2.5.4
