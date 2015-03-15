@@ -1,4 +1,5 @@
 myvenv
 __pycache__
 staticfiels
+db.sqlite3
 local_settings.py
