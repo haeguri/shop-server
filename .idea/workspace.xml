@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3147">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.71428573" vertical-offset="1740" max-vertical-offset="3147">
+              <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -92,10 +92,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snippets/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53333336" vertical-offset="3110" max-vertical-offset="4470">
+            <state vertical-scroll-proportion="-14.814815" vertical-offset="3110" max-vertical-offset="4470">
               <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -248,7 +248,7 @@
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middle&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;admin.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/admin.py&#10;urls.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/urls.py&#10;modelserializer&#9;null&#9;null&#10;ListSerial&#9;null&#9;null&#10;views.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/contrib/auth/views.py&#10;settings.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/conf/global_settings.py&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;models.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;Token&#9;null&#9;null&#10;tokenserial&#9;null&#9;null&#10;sett&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;mail&#9;null&#9;null&#10;app_settin&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/app_settings.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;sessionmi&#9;null&#9;null&#10;TokenAu&#9;null&#9;null&#10;sqlit3&#9;null&#9;null&#10;admi.[&#9;null&#9;null&#10;owner&#9;null&#9;null&#10;settings.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;urls.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/urls.py" />
+    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middle&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;admin.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/admin.py&#10;urls.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/urls.py&#10;modelserializer&#9;null&#9;null&#10;ListSerial&#9;null&#9;null&#10;views.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/contrib/auth/views.py&#10;settings.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/conf/global_settings.py&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;models.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;Token&#9;null&#9;null&#10;tokenserial&#9;null&#9;null&#10;sett&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;mail&#9;null&#9;null&#10;app_settin&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/app_settings.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;sessionmi&#9;null&#9;null&#10;TokenAu&#9;null&#9;null&#10;sqlit3&#9;null&#9;null&#10;admi.[&#9;null&#9;null&#10;owner&#9;null&#9;null&#10;settings.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;urls.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/urls.py" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -819,21 +819,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3147">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/snippets/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53333336" vertical-offset="3110" max-vertical-offset="4470">
+        <state vertical-scroll-proportion="-14.814815" vertical-offset="3110" max-vertical-offset="4470">
           <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71428573" vertical-offset="1740" max-vertical-offset="3147">
+          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
