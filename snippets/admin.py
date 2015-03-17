@@ -30,7 +30,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 class CodyCategoryAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'gender')
+    list_display = ['name', 'gender']
 
     list_filter = ['gender']
 
@@ -42,7 +42,7 @@ class CodyInline(admin.StackedInline):
     extra = 3
 
 class CodyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'cody_category', 'desc', 'pub_date')
+    list_display = ['title', 'cody_category', 'desc', 'pub_date']
 
     list_filter = ['cody_category']
 
@@ -55,6 +55,13 @@ class CodyAdmin(admin.ModelAdmin):
         (None,         {'fields':['pub_date']}),
     ]
     inlines = [CodyInline]
+
+class CodyCategoryAdmin(admin.ModelAdmin):
+    list_display = ['gender', 'name']
+
+    list_filter = ['gender']
+
+    list_editable = ['name']
 
 admin.site.register(Gender)
 admin.site.register(Category, CategoryAdmin)

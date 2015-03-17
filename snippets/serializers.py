@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from snippets.models import Gender, Product, Category, Brand, Tag, Like, Cart, CartItem, Channel, Cody, CodyItem, \
-	CodyLike, ChannelFollow, BrandFollow
+	CodyLike, ChannelFollow, BrandFollow, CodyCategory
 from django.contrib.auth.models import User
 from rest_framework import pagination
 
@@ -16,7 +16,12 @@ class CategorySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Category
 		fields = ('id', 'gender', 'type', 'tags_of_category')
-		depth = 1
+
+class CodyCategorySerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = CodyCategory
+		fields = ('id', 'name')
 
 class TagSerializer(serializers.ModelSerializer):
 
@@ -84,10 +89,11 @@ class CodyItemSerializer(serializers.ModelSerializer):
 
 class CodySerializer(serializers.ModelSerializer):
 	cody_items_of_cody = CodyItemSerializer(many=True)
+	cody_category = CodyCategorySerializer(many=False)
 
 	class Meta:
 		model = Cody
-		fields = ('id', 'channel', 'title', 'desc', 'image', 'pub_date', 'cody_items_of_cody')
+		fields = ('id', 'channel', 'title', 'cody_category', 'desc', 'image', 'pub_date', 'cody_items_of_cody')
 
 class CodyLikeSerializer(serializers.ModelSerializer):
 
