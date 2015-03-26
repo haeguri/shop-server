@@ -22,7 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     list_display = ['name','tag', 'brand', 'price', 'pub_date']
 
-    list_editable = ['tag', 'brand', 'price']
+    list_editable = ['name', 'tag', 'brand', 'price']
 
     list_filter = ['tag']
 
@@ -42,14 +42,16 @@ class CodyInline(admin.StackedInline):
     extra = 3
 
 class CodyAdmin(admin.ModelAdmin):
-    list_display = ['title', 'cody_category', 'desc', 'pub_date']
+    list_display = ['title', 'cody_category', 'channel', 'desc', 'pub_date']
+
+    list_editable = ['cody_category', 'channel']
 
     list_filter = ['cody_category']
 
     fieldsets = [
+        (None,         {'fields':['title']}),
         (None,         {'fields':['cody_category']}),
         (None,         {'fields':['channel']}),
-        (None,         {'fields':['title']}),
         (None,        {'fields':['desc']}),
         (None,         {'fields':['image']}),
         (None,         {'fields':['pub_date']}),

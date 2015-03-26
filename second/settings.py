@@ -87,7 +87,7 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.tokenserializer.TokenSerializer',
+    'TOKEN_SERIALIZER': 'second.mytokenserializer.MyTokenSerializer',
 }
 
 ROOT_URLCONF = 'second.urls'
@@ -107,15 +107,17 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'KR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
-USE_I18N = True
+#USE_I18N = True
+
+USE_TZ = True
 
 USE_L10N = True
 
-USE_TZ = True
+MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR + '/media/'
 
