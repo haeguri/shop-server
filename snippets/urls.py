@@ -5,11 +5,15 @@ from snippets import views
 
 urlpatterns = patterns('',
     url(r'^genders$', views.gender_list),
+    url(r'^genders/(?P<gender_id>[0-9]+)/tags$', views.tag_list),
     url(r'^genders/(?P<gender_id>[0-9]+)/tags/(?P<tag_id>[0-9]+)/products$', views.product_list),
     url(r'^genders/(?P<gender_id>[0-9]+)/tags/(?P<tag_id>[0-9]+)/products/(?P<product_id>[0-9]+)$', views.product_detail),
 
+    url(r'^product_sorts$', views.product_sort_list),
+
     url(r'^genders/(?P<gender_id>[0-9]+)/brands?$', views.brand_list),
     url(r'^genders/(?P<gender_id>[0-9]+)/brands/(?P<brand_id>[0-9]+)$', views.brand_detail),
+
     # channel_detail = cody_list
     url(r'^channels/(?P<channel_id>[0-9]+)$', views.channel_detail),
     # cody list of cody category.
@@ -17,7 +21,10 @@ urlpatterns = patterns('',
     url(r'^cody-categories/(?P<category_id>[0-9]+)/codies$', views.category_cody_list),
     url(r'^channels/(?P<channel_id>[0-9]+)/codies/(?P<cody_id>[0-9]+)$', views.cody_detail),
 
-    url(r'^users/(?P<user_id>[0-9]+)/cart$', views.cart_list),
+    url(r'^users/(?P<user_id>[0-9]+)/cart$', views.cart_detail),
+
+    url(r'^users/(?P<user_id>[0-9]+)/cart/items$', views.cart_item_list),
+    url(r'^users/(?P<user_id>[0-9]+)/cart/items/(?P<cart_item_id>[0-9]+)$', views.cart_item_detail),
 
     url(r'^users/(?P<user_id>[0-9]+)$', views.user_detail),
 

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from snippets.models import Gender, Product, Category, Brand, Tag, ProductLike, Cart, CartItem, Channel, Cody, CodyItem, \
-	CodyLike, ChannelFollow, BrandFollow, CodyCategory
+	CodyLike, ChannelFollow, BrandFollow, CodyCategory, ProductSort, ProductImage, BrandInterview
 from django.contrib.auth.models import User
 from rest_framework import pagination
 
@@ -16,13 +16,6 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 			existing = set(self.fields.keys())
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
-
-class GenderSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = Gender
-		fields = ('id', 'type', 'cody_categories_of_gender', 'tags_of_gender')
-		depth  = 1
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -40,12 +33,58 @@ class TagSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Tag
-		fields = ('id', 'gender', 'name')
+		fields = ('id', 'gender', 'type')
+
+class GenderSerializer(DynamicFieldsModelSerializer):
+
+	class Meta:
+		model = Gender
+		fields = ('id', 'type', 'cody_categories_of_gender', 'tags_of_gender')
+		depth = 1
+
+class ProductImageSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = ProductImage
+		fields = ('id', 'image', 'description')
+
+class ProductSerializer(DynamicFieldsModelSerializer):
+	tag = TagSerializer(many=False)
+	images = ProductImageSerializer(many=True)
+
+	def to_representation(self, instance):
+		ret = super(ProductSerializer, self).to_representation(instance)
+		print("self", self.context)
+		user_id = self.context['request'].user.id
+		is_like = ProductLike.objects.is_like(user_id, instance.id)
+		ret['like'] = is_like
+
+		return ret
+
+	class Meta:
+		model = Product
+		field = ('id', 'tag', 'brand', 'name', 'pub_date', 'description', 'price', 'images', 'product_likes_of_product')
+		depth = 1
+
+class PaginatedProductSerializer(pagination.PaginationSerializer):
+
+	class Meta:
+		object_serializer_class = ProductSerializer
+
+
+class BrandInterviewSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = BrandInterview
+		fields = ('id', 'image')
 
 class BrandSerializer(DynamicFieldsModelSerializer):
+	products_of_brand = ProductSerializer(many=True)
+	interviews = BrandInterviewSerializer(many=True)
 
 	def to_representation(self, instance):
 		ret = super(BrandSerializer, self).to_representation(instance)
+
 		user_id = self.context['request'].user.id
 		is_follow = BrandFollow.objects.is_follow(user_id, instance.id)
 		ret['like'] = is_follow
@@ -53,28 +92,7 @@ class BrandSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Brand
-		fields = ('id', 'name', 'intro', 'gender', 'products_of_brand', 'image', 'background', 'web', 'address', 'brand_follows_of_brand')
-		depth = 1
-
-class ProductSerializer(DynamicFieldsModelSerializer):
-	tag = TagSerializer(many=False)
-	brand = BrandSerializer(many=False)
-
-	def to_representation(self, instance):
-		ret = super(ProductSerializer, self).to_representation(instance)
-		user_id = self.context['request'].user.id
-		is_like = ProductLike.objects.is_like(user_id, instance.id)
-		ret['like'] = is_like
-		return ret
-
-	class Meta:
-		model = Product
-		field = ('id', 'tag', 'brand', 'name', 'pub_date', 'description', 'price', 'image', 'product_likes_of_product')
-
-class PaginatedProductSerializer(pagination.PaginationSerializer):
-
-	class Meta:
-		object_serializer_class = ProductSerializer
+		fields = ('id', 'name', 'intro', 'gender', 'products_of_brand', 'image', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
 
 class CodyItemSerializer(serializers.ModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'tag', 'image'))
@@ -93,7 +111,6 @@ class CodySerializer(DynamicFieldsModelSerializer):
 		is_like = CodyLike.objects.is_like(user_id, instance.id)
 		ret['like'] = is_like
 		return ret
-
 
 	class Meta:
 		model = Cody
@@ -115,7 +132,7 @@ class ChannelSerializer(DynamicFieldsModelSerializer):
 
 
 class ItemReadSerializer(serializers.ModelSerializer):
-	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'image'))
+	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
 
 	class Meta:
 		model = CartItem
@@ -142,7 +159,7 @@ class CartWriteSerializer(serializers.ModelSerializer):
 		fields = ('id', 'user', 'cart_items_of_cart', 'total_price', 'shipping', 'address')
 
 class ProductLikeSerializer(DynamicFieldsModelSerializer):
-	product = ProductSerializer(many=False, fields=('id', 'tag', 'name', 'price', 'image'))
+	product = ProductSerializer(many=False, fields=('id', 'tag', 'name', 'price', 'images'))
 
 	class Meta:
 		model = ProductLike
@@ -181,3 +198,9 @@ class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
 		fields = ('id', 'username','email', 'cart', 'product_likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'brand_follows_of_user')
+
+class ProductSortSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = ProductSort
+		fields = ('id', 'type')

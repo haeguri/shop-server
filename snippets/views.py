@@ -1,20 +1,21 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from snippets.models import Gender, Product, ProductLike, Category, Cart, CartItem, Channel, ChannelFollow, \
-	Cody, CodyItem, CodyLike, Tag, Brand, BrandFollow
-from snippets.serializers import ProductSerializer, UserSerializer, CategorySerializer, TagSerializer, \
-	CartReadSerializer, CartWriteSerializer, ProductLikeSerializer,ItemWriteSerializer, ItemReadSerializer, BrandSerializer, \
-	ChannelSerializer, CodySerializer, CodyLikeSerializer, CodyItemSerializer, PaginatedProductSerializer, GenderSerializer, \
-	BrandFollowSerializer, ChannelFollowSerializer
+from snippets.models import Gender, Product, ProductLike, Cart, CartItem, Channel, ChannelFollow, \
+	Cody, CodyLike, Tag, Brand, BrandFollow, ProductSort
+from snippets.serializers import ProductSerializer, UserSerializer, TagSerializer, CartReadSerializer, \
+	ItemWriteSerializer, ItemReadSerializer, BrandSerializer, ChannelSerializer, CodySerializer, \
+	PaginatedProductSerializer, GenderSerializer, ProductSortSerializer
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
 @api_view(['GET'])
 def gender_list(request):
+
 	if request.method == 'GET':
 		genders = Gender.objects.all().order_by('-type')
-		serializer = GenderSerializer(genders, many=True, context={'request':request})
+		serializer = GenderSerializer(genders, many=True, context={'request':request},
+									  					  fields=('id', 'type', 'tags_of_gender'))
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -37,19 +38,22 @@ def tag_list(request, gender_id):
 @api_view(['GET'])
 def product_list(request, gender_id, tag_id):
 
-	if tag_id is not None:
-		queryset = Product.objects.filter(tag=tag_id).order_by('-pub_date')
-
-	paginator = Paginator(queryset, 6)
-
 	page = request.QUERY_PARAMS.get('page')
+	filter = request.QUERY_PARAMS.get('filter')
 
-	try:
+	if page is not None:
+
+		queryset = Product.objects.filter(tag=tag_id).order_by('-pub_date')
+		paginator = Paginator(queryset, 6)
+
 		products = paginator.page(page)
-	except:
-		print("pagination error")
 
-	serializer = PaginatedProductSerializer(products, context={'request':request})
+		serializer = PaginatedProductSerializer(products, context={'request':request})
+
+	elif filter == 'brand':
+		products = Product.objects.filter(brand=request.QUERY_PARAMS.get('brand_id'))[:4]
+		serializer = ProductSerializer(products, many=True, context={'request':request})
+
 
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -60,7 +64,7 @@ def product_detail(request, gender_id, tag_id, product_id):
 		product = Product.objects.get(id=product_id)
 		serializer = ProductSerializer(product, many=False, context={'request':request})
 
-		return Response(serializer.data)
+	return Response(serializer.data)
 
 @api_view(['GET'])
 def brand_list(request, gender_id):
@@ -72,7 +76,7 @@ def brand_list(request, gender_id):
 		return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
-def brand_detail(request, brand_id):
+def brand_detail(request, gender_id, brand_id):
 
 	if request.method == 'GET':
 		brand = Brand.objects.get(id=brand_id)
@@ -81,12 +85,32 @@ def brand_detail(request, brand_id):
 		return Response(serializer.data, status.HTTP_200_OK)
 
 @api_view(['GET'])
+def brand_products(request, brand_id):
+
+	product_id = request.QUERY_PARAMS.get('product_id')
+
+	if request.method == 'GET' and product_id is not None:
+		rel_products = Product.objects.filter(brand=brand_id).exclude(id=product_id)
+		serializer = ProductSerializer(rel_products, many=True)
+
+	return Response(serializer.data, status.HTTP_200_OK)
+
+@api_view(['GET'])
 def cody_list(request):
 
 	if request.method == 'GET':
-		cody_list = Cody.objects.all()
+
+		if request.QUERY_PARAMS.get('reco') == 'shuffle':
+			import random
+			cody_list = list(Cody.objects.all())
+			random.shuffle(cody_list)
+			cody_list = cody_list[0:4]
+		else:
+			cody_list = Cody.objects.all()
+
 		serializer = CodySerializer(cody_list, many=True, context={'request':request},
 														  fields=('id', 'channel', 'title', 'image', 'pub_date'))
+
 
 		return Response(serializer.data, status.HTTP_200_OK)
 
@@ -201,7 +225,7 @@ def channel_follow(request, user_id, channel_id):
 		return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST', 'DELETE'])
-def cart_list(request):
+def cart_detail(request):
 
 	if request.method == 'GET':
 
@@ -210,25 +234,22 @@ def cart_list(request):
 		except:
 			return Response(status=status.HTTP_404_NOT_FOUND)
 
-		if request.method == 'GET':
-			serializer = CartReadSerializer(cart, many=False, context={'request':request})
+@api_view(['GET', 'POST', 'DELETE'])
+def cart_item_list(request, user_id):
+	if request.method == 'POST':
+		serializer = ItemWriteSerializer(data=request.data)
 
-			return Response(serializer.data)
+		if serializer.is_valid():
+			item = serializer.save()
 
-	elif request.method == 'POST':
+			serializer = ItemReadSerializer(item, many=False, context={'request':request})
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-		if request.method == 'POST':
-			serializer = ItemWriteSerializer(data=request.data)
+		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-			if serializer.is_valid():
-				item = serializer.save()
-
-				serializer = ItemReadSerializer(item, many=False, context={'request':request})
-				return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-	elif request.method == 'DELETE':
+@api_view(['DELETE'])
+def cart_item_detail(request, user_id, cart_item_id):
+	if request.method == 'DELETE':
 		try:
 			items = CartItem.objects.filter(id__in=request.data['del_list'])
 			cart = Cart.objects.get_or_create(request.QUERY_PARAMS.get('user_id'))
@@ -240,3 +261,10 @@ def cart_list(request):
 		serializer = ItemReadSerializer(items, many=True, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def product_sort_list(request):
+
+	sort_list = ProductSort.objects.all()
+	serializer = ProductSortSerializer(sort_list, many=True)
+	return Response(serializer.data, status.HTTP_200_OK)

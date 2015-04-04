@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 from django.conf import settings
+import snippets.models
 import datetime
 
 
@@ -16,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AdminChannel',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('name', models.CharField(max_length=30)),
                 ('image', models.ImageField(upload_to='channel')),
             ],
@@ -27,13 +28,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Brand',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('name', models.CharField(max_length=20)),
-                ('intro', models.TextField(blank=True, max_length=200)),
-                ('image', models.ImageField(default='', upload_to='upload/brand')),
-                ('background', models.ImageField(default='', blank=True, upload_to='upload/brand/background')),
-                ('web', models.CharField(blank=True, max_length=50)),
-                ('address', models.CharField(blank=True, max_length=200)),
+                ('intro', models.TextField(max_length=200, blank=True)),
+                ('image', models.ImageField(upload_to='upload/brand', default='')),
+                ('background', models.ImageField(upload_to='upload/brand/background', default='', blank=True)),
+                ('web', models.CharField(max_length=50, blank=True)),
+                ('address', models.CharField(max_length=200, blank=True)),
             ],
             options={
             },
@@ -42,10 +43,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BrandFollow',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('whether_follow', models.BooleanField(default=False)),
-                ('brand', models.ForeignKey(related_name='brand_follows_of_brand', to='snippets.Brand')),
-                ('user', models.ForeignKey(related_name='brand_follows_of_user', to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('brand', models.ForeignKey(unique=True, to='snippets.Brand', related_name='brand_follows_of_brand')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='brand_follows_of_user')),
             ],
             options={
             },
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Cart',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('shipping', models.IntegerField(default=2500)),
                 ('total_price', models.IntegerField(default=0)),
                 ('address', models.TextField(max_length=100)),
@@ -67,11 +67,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CartItem',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('size', models.CharField(null=True, max_length=10)),
-                ('color', models.CharField(null=True, max_length=10)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('size', models.CharField(max_length=10, null=True)),
+                ('color', models.CharField(max_length=10, null=True)),
                 ('quantity', models.IntegerField(null=True)),
-                ('cart', models.ForeignKey(related_name='cart_items_of_cart', to='snippets.Cart')),
+                ('cart', models.ForeignKey(to='snippets.Cart', related_name='cart_items_of_cart')),
             ],
             options={
             },
@@ -80,8 +80,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('type', models.CharField(default='', max_length=10)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('type', models.CharField(max_length=10, default='')),
             ],
             options={
             },
@@ -90,10 +90,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Channel',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('name', models.CharField(max_length=30)),
                 ('intro', models.TextField(max_length=200)),
                 ('image', models.ImageField(upload_to='channel')),
+                ('background', models.ImageField(upload_to='channel/background', null=True, blank=True)),
                 ('web', models.CharField(max_length=50)),
                 ('address', models.CharField(max_length=50)),
                 ('created', models.DateTimeField(verbose_name='date created', default=datetime.datetime.now)),
@@ -105,10 +106,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ChannelFollow',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('whether_follow', models.BooleanField(default=False)),
-                ('channel', models.ForeignKey(related_name='channel_follows_of_channel', to='snippets.Channel')),
-                ('user', models.ForeignKey(related_name='channel_follows_of_user', to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('channel', models.ForeignKey(unique=True, to='snippets.Channel', related_name='channel_follows_of_channel')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='channel_follows_of_user')),
             ],
             options={
             },
@@ -117,12 +117,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Cody',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('title', models.CharField(max_length=30)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('title', models.CharField(max_length=20)),
                 ('desc', models.TextField(max_length=200)),
                 ('image', models.ImageField(upload_to='channel/channel_cody')),
-                ('pub_date', models.DateTimeField(verbose_name='date published', default=datetime.datetime.now)),
-                ('channel', models.ForeignKey(related_name='codies_of_channel', to='snippets.Channel')),
+                ('pub_date', models.DateTimeField(verbose_name='date published', default=datetime.datetime(2015, 3, 30, 20, 1, 59, 214722))),
+                ('channel', models.ForeignKey(to='snippets.Channel', related_name='codies_of_channel')),
             ],
             options={
             },
@@ -131,9 +131,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CodyCategory',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('name', models.CharField(default='', max_length=20)),
-                ('image', models.ImageField(default='', upload_to='upload/cody/category')),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('name', models.CharField(max_length=20, default='')),
             ],
             options={
             },
@@ -142,9 +141,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CodyItem',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('tip', models.CharField(max_length=50)),
-                ('cody', models.ForeignKey(related_name='cody_items_of_cody', to='snippets.Cody')),
+                ('cody', models.ForeignKey(to='snippets.Cody', related_name='cody_items_of_cody')),
             ],
             options={
             },
@@ -153,10 +152,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CodyLike',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('whether_like', models.BooleanField(default=False)),
-                ('cody', models.ForeignKey(related_name='cody_likes_of_cody', to='snippets.Cody')),
-                ('user', models.ForeignKey(related_name='cody_likes_of_user', to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('cody', models.ForeignKey(unique=True, to='snippets.Cody', related_name='cody_likes_of_cody')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='cody_likes_of_user')),
             ],
             options={
             },
@@ -165,18 +163,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Gender',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
                 ('type', models.CharField(max_length=8)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Like',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('whether_like', models.BooleanField(default=False)),
             ],
             options={
             },
@@ -185,13 +173,45 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Product',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('pub_date', models.DateTimeField(verbose_name='date published', default=datetime.datetime.now)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('pub_date', models.DateTimeField(verbose_name='date published', default=datetime.datetime(2015, 3, 30, 20, 1, 59, 211597))),
                 ('name', models.CharField(max_length=30)),
                 ('description', models.TextField(max_length=100)),
                 ('price', models.IntegerField(default=0)),
                 ('image', models.ImageField(upload_to='upload')),
-                ('brand', models.ForeignKey(to='snippets.Brand', null=True, related_name='products_of_brand', blank=True)),
+                ('brand', models.ForeignKey(blank=True, to='snippets.Brand', null=True, related_name='products_of_brand')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ProductImage',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('image', models.ImageField(upload_to=snippets.models.ProductImage.get_upload_path)),
+                ('product', models.ForeignKey(to='snippets.Product', related_name='images')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ProductLike',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('product', models.ForeignKey(to='snippets.Product', related_name='product_likes_of_product')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='product_likes_of_user')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ProductSort',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('type', models.CharField(max_length=10)),
             ],
             options={
             },
@@ -200,10 +220,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tag',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('name', models.CharField(default='', max_length=20)),
-                ('category', models.ForeignKey(to='snippets.Category', null=True, related_name='tags_of_category', blank=True)),
-                ('gender', models.ForeignKey(to='snippets.Gender', null=True, related_name='tags_of_gender', blank=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('type', models.CharField(max_length=20, default='')),
+                ('category', models.ForeignKey(blank=True, to='snippets.Category', null=True, related_name='tags_of_category')),
+                ('gender', models.ForeignKey(blank=True, to='snippets.Gender', null=True, related_name='tags_of_gender')),
             ],
             options={
             },
@@ -212,8 +232,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserProfile',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
-                ('address', models.TextField(blank=True, max_length=200)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('address', models.TextField(max_length=200, blank=True)),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -223,55 +243,43 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='tag',
-            field=models.ForeignKey(to='snippets.Tag', null=True, related_name='products_of_tag', blank=True),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='like',
-            name='product',
-            field=models.ForeignKey(related_name='likes_of_product', to='snippets.Product'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='like',
-            name='user',
-            field=models.ForeignKey(related_name='likes_of_user', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(blank=True, to='snippets.Tag', null=True, related_name='products_of_tag'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='codyitem',
             name='product',
-            field=models.ForeignKey(related_name='cody_items_of_product', to='snippets.Product'),
+            field=models.ForeignKey(to='snippets.Product', related_name='cody_items_of_product'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='codycategory',
             name='gender',
-            field=models.ForeignKey(to='snippets.Gender', null=True, related_name='cody_categories_of_gender', blank=True),
+            field=models.ForeignKey(blank=True, to='snippets.Gender', null=True, related_name='cody_categories_of_gender'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='cody',
             name='cody_category',
-            field=models.ForeignKey(to='snippets.CodyCategory', null=True, related_name='codies_of_cody_category', blank=True),
+            field=models.ForeignKey(blank=True, to='snippets.CodyCategory', null=True, related_name='codies_of_cody_category'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='category',
             name='gender',
-            field=models.ForeignKey(to='snippets.Gender', null=True, related_name='categories_of_gender', blank=True),
+            field=models.ForeignKey(blank=True, to='snippets.Gender', null=True, related_name='categories_of_gender'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='cartitem',
             name='product',
-            field=models.ForeignKey(related_name='cart_items_of_product', to='snippets.Product'),
+            field=models.ForeignKey(to='snippets.Product', related_name='cart_items_of_product'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='brand',
             name='gender',
-            field=models.ForeignKey(to='snippets.Gender', null=True, related_name='brands_of_gender', blank=True, max_length=5),
+            field=models.ForeignKey(blank=True, to='snippets.Gender', max_length=5, null=True, related_name='brands_of_gender'),
             preserve_default=True,
         ),
         migrations.AddField(

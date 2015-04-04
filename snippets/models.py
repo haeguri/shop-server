@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
+import os
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
@@ -35,12 +37,22 @@ class TagManager(models.Manager):
 class Tag(models.Model):
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
 	category = models.ForeignKey(Category, related_name='tags_of_category', blank=True, null=True)
-	name = models.CharField(max_length=20, default='')
+	type = models.CharField(max_length=20, default='')
+	slug = models.IntegerField(unique=True, null=True)
 
 	objects = TagManager()
 
 	def __str__(self):
-		return self.name + '(' + self.gender.type + ')'
+		return self.type + '(' + self.gender.type + ')'
+
+	class Meta:
+		ordering = ('slug',)
+
+class ProductSort(models.Model):
+	type = models.CharField(max_length=10)
+
+	def __str__(self):
+		return self.type
 
 class CodyCategory(models.Model):
 	gender = models.ForeignKey(Gender, related_name='cody_categories_of_gender', blank=True, null=True)
@@ -74,6 +86,16 @@ class Brand(models.Model):
 	def __str__(self):
 		return self.name + '(' + self.gender.type + ')'
 
+class BrandInterview(models.Model):
+	brand = models.ForeignKey(Brand, related_name='interviews')
+
+	def get_upload_path(instance, filename):
+		path = os.path.join("upload/brand/%s/interviews/" % instance.brand.name, filename)
+		print("path is ", path.replace(" ", "_"))
+		return path
+
+	image = models.ImageField(upload_to=get_upload_path)
+
 class BrandFollowManager(models.Manager):
 
 	def is_follow(self, user_id, brand_id):
@@ -91,15 +113,28 @@ class BrandFollow(models.Model):
 
 class Product(models.Model):
 	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
-	tag = models.ForeignKey(Tag, related_name='products_of_tag', blank=True, null=True)
-	pub_date = models.DateTimeField('date published', default=datetime.now())
-	name = models.CharField(max_length=30)
-	description = models.TextField(max_length=100)
+	tag = models.ForeignKey(Tag, related_name='products_of_tag', null=True)
+	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
+	name = models.CharField(max_length=15, unique=True)
+	description = models.TextField(max_length=1000)
 	price = models.IntegerField(default=0)
-	image = models.ImageField(upload_to='upload')
 
 	def __str__(self):
+		"""
 		return self.name + '(' + self.tag.gender.type + ')'
+		"""
+		return self.name
+
+class ProductImage(models.Model):
+	product = models.ForeignKey(Product, related_name='images')
+	description = models.TextField(max_length=1000, null=True)
+
+	def get_upload_path(instance, filename):
+		path = os.path.join("product/%s/" % instance.product.name, filename)
+		print("path is ", path.replace(" ", "_"))
+		return path
+
+	image = models.ImageField(upload_to=get_upload_path)
 
 class AdminChannel(models.Model):
 	name = models.CharField(max_length=30)
@@ -149,10 +184,10 @@ class CodyManager(models.Manager):
 class Cody(models.Model):
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
 	cody_category = models.ForeignKey(CodyCategory, related_name="codies_of_cody_category", blank=True, null=True)
-	title = models.CharField(max_length=15)
+	title = models.CharField(max_length=20)
 	desc = models.TextField(max_length=200)
 	image = models.ImageField(upload_to='channel/channel_cody')
-	pub_date = models.DateTimeField('date published', default=datetime.now())
+	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 
 	objects = CodyManager()
 
@@ -221,3 +256,24 @@ class CartItem(models.Model):
 	size = models.CharField(null=True, max_length=10)
 	color = models.CharField(null=True, max_length=10)
 	quantity = models.IntegerField(null=True)
+
+
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
+import shutil
+
+@receiver(pre_delete, sender=Product)
+def product_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	from second.settings import BASE_DIR
+	shutil.rmtree(os.path.join('%s/media/product/' % BASE_DIR, instance.name))
+
+@receiver(pre_delete, sender=ProductImage)
+def product_image_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
+
+@receiver(pre_delete, sender=BrandInterview)
+def brand_interview_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
