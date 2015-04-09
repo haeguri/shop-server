@@ -120,9 +120,6 @@ class Product(models.Model):
 	price = models.IntegerField(default=0)
 
 	def __str__(self):
-		"""
-		return self.name + '(' + self.tag.gender.type + ')'
-		"""
 		return self.name
 
 class ProductImage(models.Model):

@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     url(r'^genders/(?P<gender_id>[0-9]+)/brands?$', views.brand_list),
     url(r'^genders/(?P<gender_id>[0-9]+)/brands/(?P<brand_id>[0-9]+)$', views.brand_detail),
 
+
+    #url(r'^channels', views.channel_list),
+
     # channel_detail = cody_list
     url(r'^channels/(?P<channel_id>[0-9]+)$', views.channel_detail),
     # cody list of cody category.

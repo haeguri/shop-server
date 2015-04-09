@@ -95,6 +95,14 @@ def brand_products(request, brand_id):
 
 	return Response(serializer.data, status.HTTP_200_OK)
 
+"""
+@api_view(['GET'])
+def channel_list(request):
+
+	if request.method == 'GET':
+		channel_list = Channe
+"""
+
 @api_view(['GET'])
 def cody_list(request):
 
