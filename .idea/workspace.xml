@@ -24,66 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/models.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/snippets/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exceptions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/exceptions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3068" max-vertical-offset="5397">
-              <caret line="223" column="24" selection-start-line="223" selection-start-column="24" selection-end-line="223" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.65637064" vertical-offset="135" max-vertical-offset="4902">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.259259" vertical-offset="395" max-vertical-offset="3720">
-              <caret line="43" column="27" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app_settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/account/app_settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="4287">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5405405" vertical-offset="1035" max-vertical-offset="3237">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -118,9 +66,9 @@
         <option value="$PROJECT_DIR$/snippets/serializers.py" />
         <option value="$PROJECT_DIR$/snippets/views.py" />
         <option value="$PROJECT_DIR$/snippets/urls.py" />
-        <option value="$PROJECT_DIR$/snippets/models.py" />
         <option value="$PROJECT_DIR$/snippets/admin.py" />
         <option value="$PROJECT_DIR$/second/settings.py" />
+        <option value="$PROJECT_DIR$/snippets/models.py" />
       </list>
     </option>
   </component>
@@ -322,7 +270,7 @@
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setting.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;modelspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;tokenserial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;login&#9;null&#9;null&#10;TokenAuth&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;User&#9;null&#9;null&#10;to_repre&#9;null&#9;null&#10;ModelSerializer&#9;null&#9;null&#10;local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middle&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;admin.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/admin.py&#10;urls.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/urls.py&#10;modelserializer&#9;null&#9;null&#10;ListSerial&#9;null&#9;null&#10;views.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/contrib/auth/views.py&#10;settings.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/conf/global_settings.py&#10;models.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;Token&#9;null&#9;null&#10;sett&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;mail&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setting.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;modelspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;tokenserial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;login&#9;null&#9;null&#10;TokenAuth&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;User&#9;null&#9;null&#10;to_repre&#9;null&#9;null&#10;ModelSerializer&#9;null&#9;null&#10;local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;middle&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;admin.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/admin.py&#10;urls.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/urls.py&#10;modelserializer&#9;null&#9;null&#10;ListSerial&#9;null&#9;null&#10;views.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/contrib/auth/views.py&#10;settings.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/django/conf/global_settings.py&#10;models.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_framework/authtoken/models.py&#10;Token&#9;null&#9;null&#10;sett&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/settings.py&#10;mail&#9;null&#9;null" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -401,23 +349,6 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="second" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -433,6 +364,23 @@
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="" />
       <option name="docutils_open_in_browser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="second" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="docs" factoryName="Sphinx task">
@@ -536,14 +484,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23958333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23958333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -821,9 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26126125" vertical-offset="22" max-vertical-offset="1332">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -831,19 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58815956" vertical-offset="1088" max-vertical-offset="4917">
           <caret line="103" column="3" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46332046" vertical-offset="0" max-vertical-offset="4887">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,39 +801,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="3839">
           <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/models.py">
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.65637064" vertical-offset="105" max-vertical-offset="3237">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/account/app_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="4287">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.23166023" vertical-offset="525" max-vertical-offset="4287">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.259259" vertical-offset="395" max-vertical-offset="3720">
+        <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="3747">
           <caret line="43" column="27" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="27" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -919,11 +840,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5405405" vertical-offset="1035" max-vertical-offset="3237">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65637064" vertical-offset="135" max-vertical-offset="4902">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

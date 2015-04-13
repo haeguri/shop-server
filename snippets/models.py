@@ -21,7 +21,7 @@ class CategoryManager(models.Manager):
 
 class Category(models.Model):
 	gender = models.ForeignKey(Gender, related_name='categories_of_gender', blank=True, null=True)
-	type = models.CharField(max_length=10, default='')
+	type = models.CharField(max_length=10, default='', help_text="Large categorization than the below 'tag' model")
 
 	objects = CategoryManager()
 
@@ -37,8 +37,9 @@ class TagManager(models.Manager):
 class Tag(models.Model):
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
 	category = models.ForeignKey(Category, related_name='tags_of_category', blank=True, null=True)
-	type = models.CharField(max_length=20, default='')
-	slug = models.IntegerField(unique=True, null=True)
+	type = models.CharField(max_length=20, default='', help_text="Smaller categorization than the above 'category' model")
+	slug = models.IntegerField(unique=True, null=True, help_text="Displayed depends on the order of priority"
+																 ", like Outer->Jeans->Bags")
 
 	objects = TagManager()
 
@@ -75,7 +76,7 @@ class Brand(models.Model):
 	user = models.OneToOneField(User)
 	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
 	name = models.CharField(max_length=20)
-	intro = models.TextField(max_length=200, blank=True)
+	intro = models.TextField(max_length=200, blank=True, help_text="Means to 'Introduce'")
 	image = models.ImageField(upload_to='upload/brand', default='')
 	background = models.ImageField(upload_to='upload/brand/background', default='', blank=True)
 	web = models.CharField(max_length=50, blank=True)
