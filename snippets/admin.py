@@ -1,14 +1,6 @@
 from django.contrib import admin
-from snippets.models import Gender, Category, Tag, Product, Brand \
+from snippets.models import Gender, Tag, Product, Brand \
     , Channel, CodyCategory, Cody, CodyItem, ProductSort, ProductImage, BrandInterview
-
-class CategoryAdmin(admin.ModelAdmin):
-
-    list_display = ('type', 'gender')
-
-    list_filter = ['gender']
-
-    search_fields = ['type']
 
 class TagAdmin(admin.ModelAdmin):
 
@@ -58,7 +50,7 @@ class CodyInline(admin.StackedInline):
     extra = 3
 
 class CodyAdmin(admin.ModelAdmin):
-    list_display = ['title', 'cody_category', 'channel', 'desc', 'pub_date']
+    list_display = ['title', 'cody_category', 'channel', 'description', 'which_day', 'pub_date']
 
     list_editable = ['cody_category', 'channel']
 
@@ -66,12 +58,14 @@ class CodyAdmin(admin.ModelAdmin):
 
     fieldsets = [
         (None,         {'fields':['title']}),
+        (None,         {'fields':['which_day']}),
         (None,         {'fields':['cody_category']}),
         (None,         {'fields':['channel']}),
-        (None,        {'fields':['desc']}),
+        (None,        {'fields':['description']}),
         (None,         {'fields':['image']}),
         (None,         {'fields':['pub_date']}),
     ]
+
     inlines = [CodyInline]
 
 class CodyCategoryAdmin(admin.ModelAdmin):
@@ -92,20 +86,7 @@ class BrandAdmin(admin.ModelAdmin):
     list_editable = ['name']
     inlines = [BrandInline]
 
-    """
-    user = models.OneToOneField(User)
-	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
-	name = models.CharField(max_length=20)
-	intro = models.TextField(max_length=200, blank=True)
-	image = models.ImageField(upload_to='upload/brand', default='')
-	background = models.ImageField(upload_to='upload/brand/background', default='', blank=True)
-	web = models.CharField(max_length=50, blank=True)
-	address = models
-
-    """
-
 admin.site.register(Gender)
-admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(ProductSort, ProductSortAdmin)
 admin.site.register(Product, ProductAdmin)

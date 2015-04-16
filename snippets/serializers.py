@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from snippets.models import Gender, Product, Category, Brand, Tag, ProductLike, Cart, CartItem, Channel, Cody, CodyItem, \
+from snippets.models import Gender, Product, Brand, Tag, ProductLike, Cart, CartItem, Channel, Cody, CodyItem, \
 	CodyLike, ChannelFollow, BrandFollow, CodyCategory, ProductSort, ProductImage, BrandInterview
 from django.contrib.auth.models import User
 from rest_framework import pagination
@@ -16,12 +16,6 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 			existing = set(self.fields.keys())
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
-
-class CategorySerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = Category
-		fields = ('id', 'gender', 'type', 'tags_of_category')
 
 class CodyCategorySerializer(serializers.ModelSerializer):
 
@@ -54,7 +48,6 @@ class ProductSerializer(DynamicFieldsModelSerializer):
 
 	def to_representation(self, instance):
 		ret = super(ProductSerializer, self).to_representation(instance)
-		print("self", self.context)
 		user_id = self.context['request'].user.id
 		is_like = ProductLike.objects.is_like(user_id, instance.id)
 		ret['like'] = is_like
@@ -84,15 +77,15 @@ class BrandSerializer(DynamicFieldsModelSerializer):
 
 	def to_representation(self, instance):
 		ret = super(BrandSerializer, self).to_representation(instance)
-
 		user_id = self.context['request'].user.id
 		is_follow = BrandFollow.objects.is_follow(user_id, instance.id)
-		ret['like'] = is_follow
+		ret['follow'] = is_follow
+
 		return ret
 
 	class Meta:
 		model = Brand
-		fields = ('id', 'name', 'intro', 'gender', 'products_of_brand', 'image', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
+		fields = ('id', 'name', 'introduce', 'gender', 'products_of_brand', 'image', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
 
 class CodyItemSerializer(serializers.ModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'tag', 'image'))
@@ -110,11 +103,12 @@ class CodySerializer(DynamicFieldsModelSerializer):
 		user_id = self.context['request'].user.id
 		is_like = CodyLike.objects.is_like(user_id, instance.id)
 		ret['like'] = is_like
+
 		return ret
 
 	class Meta:
 		model = Cody
-		fields = ('id', 'channel', 'title', 'cody_category', 'desc', 'image', 'pub_date', 'cody_items_of_cody', 'cody_likes_of_cody')
+		fields = ('id', 'channel', 'title', 'cody_category', 'description', 'image', 'pub_date', 'cody_items_of_cody', 'cody_likes_of_cody')
 
 class ChannelSerializer(DynamicFieldsModelSerializer):
 	codies_of_channel = CodySerializer(many=True, fields=('id', 'channel', 'title', 'image', 'pub_date', 'cody_likes_of_cody'))
@@ -124,11 +118,12 @@ class ChannelSerializer(DynamicFieldsModelSerializer):
 		user_id = self.context['request'].user.id
 		is_follow = ChannelFollow.objects.is_follow(user_id, instance.id)
 		ret['follow'] = is_follow
+
 		return ret
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'name', 'intro', 'web', 'address', 'image', 'background', 'created', 'channel_follows_of_channel','codies_of_channel')
+		fields = ('id', 'name', 'introduce', 'web', 'address', 'image', 'background', 'created', 'channel_follows_of_channel','codies_of_channel')
 
 
 class ItemReadSerializer(serializers.ModelSerializer):

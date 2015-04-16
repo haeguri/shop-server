@@ -4,6 +4,7 @@ from datetime import datetime
 from django.utils import timezone
 import os
 
+
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
 	address = models.TextField(max_length=200, blank=True)
@@ -14,20 +15,6 @@ class Gender(models.Model):
 	def __str__(self):
 		return self.type
 
-class CategoryManager(models.Manager):
-
-	def get_category_list(self, gender_id):
-		return Category.objects.filter(gender = gender_id)
-
-class Category(models.Model):
-	gender = models.ForeignKey(Gender, related_name='categories_of_gender', blank=True, null=True)
-	type = models.CharField(max_length=10, default='', help_text="Large categorization than the below 'tag' model")
-
-	objects = CategoryManager()
-
-	def __str__(self):
-		return self.gender.type + ' / ' + self.type
-
 class TagManager(models.Manager):
 
 	def get_tags_of_brand(self, brand_id):
@@ -35,9 +22,16 @@ class TagManager(models.Manager):
 		return Tag.objects.filter(id__in=tags_of_brand)
 
 class Tag(models.Model):
+
+	CATEGORY_OF_TAG_CHOICES = (
+		('TOP', 'Top'),
+		('BOT', 'Bottom'),
+		('ACC', 'Accessory'),
+	)
+
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
-	category = models.ForeignKey(Category, related_name='tags_of_category', blank=True, null=True)
-	type = models.CharField(max_length=20, default='', help_text="Smaller categorization than the above 'category' model")
+	category = models.CharField(max_length=3, choices=CATEGORY_OF_TAG_CHOICES, default='', help_text="Category is concept bigger than the Tag")
+	type = models.CharField(max_length=20, default='')
 	slug = models.IntegerField(unique=True, null=True, help_text="Displayed depends on the order of priority"
 																 ", like Outer->Jeans->Bags")
 
@@ -76,10 +70,10 @@ class Brand(models.Model):
 	user = models.OneToOneField(User)
 	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
 	name = models.CharField(max_length=20)
-	intro = models.TextField(max_length=200, blank=True, help_text="Means to 'Introduce'")
+	introduce = models.TextField(max_length=200, blank=True)
 	image = models.ImageField(upload_to='upload/brand', default='')
-	background = models.ImageField(upload_to='upload/brand/background', default='', blank=True)
-	web = models.CharField(max_length=50, blank=True)
+	background = models.ImageField(upload_to='upload/brand/background', default='')
+	web = models.URLField(blank=True)
 	address = models.CharField(max_length=200, blank=True)
 
 	objects = BrandManager()
@@ -117,7 +111,7 @@ class Product(models.Model):
 	tag = models.ForeignKey(Tag, related_name='products_of_tag', null=True)
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 	name = models.CharField(max_length=15, unique=True)
-	description = models.TextField(max_length=1000)
+	description = models.TextField(max_length=100, default='')
 	price = models.IntegerField(default=0)
 
 	def __str__(self):
@@ -125,7 +119,7 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
 	product = models.ForeignKey(Product, related_name='images')
-	description = models.TextField(max_length=1000, null=True)
+	description = models.TextField(max_length=1000, default='', blank=True)
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("product/%s/" % instance.product.name, filename)
@@ -134,16 +128,12 @@ class ProductImage(models.Model):
 
 	image = models.ImageField(upload_to=get_upload_path)
 
-class AdminChannel(models.Model):
-	name = models.CharField(max_length=30)
-	image = models.ImageField(upload_to='channel')
-
 class Channel(models.Model):
 	name = models.CharField(max_length=30)
-	intro = models.TextField(max_length=200)
+	introduce = models.TextField(max_length=200)
 	image = models.ImageField(upload_to='channel')
-	background = models.ImageField(upload_to='channel/background', blank=True, null=True)
-	web = models.CharField(max_length=50)
+	background = models.ImageField(upload_to='channel/background', default='')
+	web = models.URLField()
 	address = models.CharField(max_length=50)
 	created = models.DateTimeField('date created', default=datetime.now)
 
@@ -180,11 +170,22 @@ class CodyManager(models.Manager):
 		return Cody.objects.filter(cody_category=category_id)
 
 class Cody(models.Model):
+
+	DAY_OF_WHICHDAY_CHOICES = (
+		('MO', 'Monday'),
+		('TU', 'Tuesday'),
+		('WE', 'Wednesday'),
+		('TH', 'Thursday'),
+		('FR', 'Friday'),
+		('SA', 'Saturday'),
+	)
+
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
 	cody_category = models.ForeignKey(CodyCategory, related_name="codies_of_cody_category", blank=True, null=True)
 	title = models.CharField(max_length=20)
-	desc = models.TextField(max_length=200)
-	image = models.ImageField(upload_to='channel/channel_cody')
+	description = models.TextField(max_length=200, default='')
+	image = models.ImageField(upload_to='channel/channel_cody', default='')
+	which_day = models.CharField(max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='MO')
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 
 	objects = CodyManager()
@@ -249,10 +250,11 @@ class Cart(models.Model):
 	objects = CartManager()
 
 class CartItem(models.Model):
+
 	product = models.ForeignKey(Product, related_name='cart_items_of_product')
 	cart = models.ForeignKey(Cart, related_name='cart_items_of_cart')
-	size = models.CharField(null=True, max_length=10)
-	color = models.CharField(null=True, max_length=10)
+	size = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
+	color = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
 	quantity = models.IntegerField(null=True)
 
 
@@ -273,5 +275,23 @@ def product_image_delete(sender, instance, **kwargs):
 
 @receiver(pre_delete, sender=BrandInterview)
 def brand_interview_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
+
+
+@receiver(pre_delete, sender=Brand)
+def brand_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
+	instance.background.delete()
+
+@receiver(pre_delete, sender=Channel)
+def channel_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
+	instance.background.delete()
+
+@receiver(pre_delete, sender=Cody)
+def cody_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()

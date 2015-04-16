@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from snippets.models import Gender, Product, ProductLike, Cart, CartItem, Channel, ChannelFollow, \
 	Cody, CodyLike, Tag, Brand, BrandFollow, ProductSort
-from snippets.serializers import ProductSerializer, UserSerializer, TagSerializer, CartReadSerializer, \
+from snippets.serializers import ProductSerializer, UserSerializer, TagSerializer, \
 	ItemWriteSerializer, ItemReadSerializer, BrandSerializer, ChannelSerializer, CodySerializer, \
 	PaginatedProductSerializer, GenderSerializer, ProductSortSerializer
 from django.contrib.auth.models import User
@@ -94,14 +94,6 @@ def brand_products(request, brand_id):
 		serializer = ProductSerializer(rel_products, many=True)
 
 	return Response(serializer.data, status.HTTP_200_OK)
-
-"""
-@api_view(['GET'])
-def channel_list(request):
-
-	if request.method == 'GET':
-		channel_list = Channe
-"""
 
 @api_view(['GET'])
 def cody_list(request):

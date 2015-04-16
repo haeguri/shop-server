@@ -88,7 +88,7 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.mytokenserializer.MyTokenSerializer',
+    'TOKEN_SERIALIZER': 'second.custom_serializer.MyTokenSerializer',
 }
 
 ROOT_URLCONF = 'second.urls'
@@ -100,10 +100,15 @@ WSGI_APPLICATION = 'second.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'haegyun',
+        'PASSWORD': '918647', # This must will be securely
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -147,9 +152,3 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
 
 DEBUG = True
-
-try:
-    from .local_settings import *
-
-except ImportError:
-    pass
