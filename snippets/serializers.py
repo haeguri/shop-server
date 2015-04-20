@@ -13,6 +13,7 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
 		if fields:
 			allowed = set(fields)
+			print ("fields", fields)
 			existing = set(self.fields.keys())
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
@@ -123,7 +124,7 @@ class ChannelSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'name', 'introduce', 'web', 'address', 'image', 'background', 'created', 'channel_follows_of_channel','codies_of_channel')
+		fields = ('id', 'name', 'introduce', 'web', 'image', 'background', 'created', 'channel_follows_of_channel','codies_of_channel')
 
 
 class ItemReadSerializer(serializers.ModelSerializer):
@@ -169,33 +170,33 @@ class BrandFollowSerializer(DynamicFieldsModelSerializer):
 		fields = ('id', 'brand', 'user')
 
 class ChannelFollowSerializer(DynamicFieldsModelSerializer):
-	channel = ChannelSerializer(many=False, fields = ('id', 'name', 'image', 'channel_follows_of_channel'))
+	channel = ChannelSerializer(many=False, fields = ('id', 'name', 'image', 'channel_follows_of_channel',))
 
 	class Meta:
 		model = ChannelFollow
-		fields = ('id', 'channel', 'user')
+		fields = ('id', 'channel', 'user',)
 
 class CodyLikeSerializer(DynamicFieldsModelSerializer):
-	cody = CodySerializer(many=False, fields=('id', 'channel', 'title', 'image', 'pub_date'))
+	cody = CodySerializer(many=False, fields=('id', 'channel', 'title', 'image', 'pub_date',))
 
 	class Meta:
 		model = CodyLike
-		fields = ('id', 'cody', 'user')
+		fields = ('id', 'cody', 'user',)
 
 class UserSerializer(serializers.ModelSerializer):
 
 	cart = CartReadSerializer(many=False)
 	product_likes_of_user = ProductLikeSerializer(many=True, fields=('id', 'product',))
-	channel_follows_of_user = ChannelFollowSerializer(many=True, fields=('id', 'channel'))
-	brand_follows_of_user = BrandFollowSerializer(many=True, fields=('id', 'brand'))
-	cody_likes_of_user = CodyLikeSerializer(many=True, fields=('id', 'cody'))
+	channel_follows_of_user = ChannelFollowSerializer(many=True, fields=('id', 'channel',))
+	brand_follows_of_user = BrandFollowSerializer(many=True, fields=('id', 'brand',))
+	cody_likes_of_user = CodyLikeSerializer(many=True, fields=('id', 'cody',))
 
 	class Meta:
 		model = User
-		fields = ('id', 'username','email', 'cart', 'product_likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'brand_follows_of_user')
+		fields = ('id', 'username','email', 'cart', 'product_likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'brand_follows_of_user',)
 
 class ProductSortSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = ProductSort
-		fields = ('id', 'type')
+		fields = ('id', 'type',)

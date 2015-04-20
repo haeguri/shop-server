@@ -30,10 +30,11 @@ class Tag(models.Model):
 	)
 
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
-	category = models.CharField(max_length=3, choices=CATEGORY_OF_TAG_CHOICES, default='', help_text="Category is concept bigger than the Tag")
+	category = models.CharField(max_length=3, choices=CATEGORY_OF_TAG_CHOICES, default='',
+								help_text="Category is concept bigger than the Tag")
 	type = models.CharField(max_length=20, default='')
-	slug = models.IntegerField(unique=True, null=True, help_text="Displayed depends on the order of priority"
-																 ", like Outer->Jeans->Bags")
+	slug = models.SlugField(unique=True,
+							help_text="Displayed tags depends on the order of priority.. like Outer->Jeans->Bags")
 
 	objects = TagManager()
 
@@ -99,7 +100,6 @@ class BrandFollowManager(models.Manager):
 		except:
 			return False
 
-
 class BrandFollow(models.Model):
 	user = models.ForeignKey(User, related_name="brand_follows_of_user")
 	brand = models.ForeignKey(Brand, related_name="brand_follows_of_brand", unique=True)
@@ -110,7 +110,7 @@ class Product(models.Model):
 	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
 	tag = models.ForeignKey(Tag, related_name='products_of_tag', null=True)
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
-	name = models.CharField(max_length=15, unique=True)
+	name = models.CharField(unique=True, max_length=15)
 	description = models.TextField(max_length=100, default='')
 	price = models.IntegerField(default=0)
 
@@ -129,12 +129,11 @@ class ProductImage(models.Model):
 	image = models.ImageField(upload_to=get_upload_path)
 
 class Channel(models.Model):
-	name = models.CharField(max_length=30)
+	name = models.CharField(unique=True, max_length=30)
 	introduce = models.TextField(max_length=200)
 	image = models.ImageField(upload_to='channel')
 	background = models.ImageField(upload_to='channel/background', default='')
 	web = models.URLField()
-	address = models.CharField(max_length=50)
 	created = models.DateTimeField('date created', default=datetime.now)
 
 	def __str__(self):
@@ -182,7 +181,7 @@ class Cody(models.Model):
 
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
 	cody_category = models.ForeignKey(CodyCategory, related_name="codies_of_cody_category", blank=True, null=True)
-	title = models.CharField(max_length=20)
+	title = models.CharField(unique=True, max_length=20)
 	description = models.TextField(max_length=200, default='')
 	image = models.ImageField(upload_to='channel/channel_cody', default='')
 	which_day = models.CharField(max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='MO')
@@ -249,6 +248,7 @@ class Cart(models.Model):
 
 	objects = CartManager()
 
+# Will be prevent to duplicated.
 class CartItem(models.Model):
 
 	product = models.ForeignKey(Product, related_name='cart_items_of_product')
@@ -256,7 +256,6 @@ class CartItem(models.Model):
 	size = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
 	color = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
 	quantity = models.IntegerField(null=True)
-
 
 from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
