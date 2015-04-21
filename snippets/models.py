@@ -41,39 +41,11 @@ class Gender(models.Model):
 	def __str__(self):
 		return self.type
 
-class TagManager(models.Manager):
-
-	def get_tags_of_brand(self, brand_id):
-		tags_of_brand = Brand.objects.get(id=brand_id).products_of_brand.values_list('tag',flat=True)
-		return Tag.objects.filter(id__in=tags_of_brand)
-
-class Tag(models.Model):
-
-	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
-	type = models.CharField(max_length=20, default='')
-	slug = models.SlugField(unique=True,
-							help_text="Displayed tags depends on the order of priority.. like Outer->Jeans->Bags")
-
-	objects = TagManager()
-
-	def __str__(self):
-		return self.type + '(' + self.gender.type + ')'
-
-	class Meta:
-		ordering = ('slug',)
-
 class ProductSort(models.Model):
 	type = models.CharField(max_length=10)
 
 	def __str__(self):
 		return self.type
-
-class CodyCategory(models.Model):
-	gender = models.ForeignKey(Gender, related_name='cody_categories_of_gender', blank=True, null=True)
-	name = models.CharField(max_length=20, default='')
-
-	def __str__(self):
-		return self.name + '(' + self.gender.type + ')'
 
 class BrandManager(models.Manager):
 
@@ -126,7 +98,6 @@ class BrandFollow(models.Model):
 
 class Product(models.Model):
 	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
-	tag = models.ForeignKey(Tag, related_name='products_of_tag', null=True)
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 	name = models.CharField(unique=True, max_length=15)
 	description = models.TextField(max_length=100, default='')
@@ -171,21 +142,18 @@ class ChannelFollow(models.Model):
 
 	objects = ChannelFollowManager()
 
-class CodyManager(models.Manager):
+class IssueManager(models.Manager):
 	def get_without_follow(self, user_id):
 
 		try:
 			follow_channels = ChannelFollow.objects.filter(user=user_id).values_list('channel', flat=True)
 
-			return Cody.objects.exclude(channel__in=follow_channels)
+			return Issue.objects.exclude(channel__in=follow_channels)
 		# no one channel with following
 		except:
-			return Cody.objects.all()
+			return Issue.objects.all()
 
-	def get_codies_of_category(self, category_id):
-		return Cody.objects.filter(cody_category=category_id)
-
-class Cody(models.Model):
+class Issue(models.Model):
 
 	DAY_OF_WHICHDAY_CHOICES = (
 		('MO', 'Monday'),
@@ -197,40 +165,36 @@ class Cody(models.Model):
 	)
 
 	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
-	cody_category = models.ForeignKey(CodyCategory, related_name="codies_of_cody_category", blank=True, null=True)
 	title = models.CharField(unique=True, max_length=20)
 	description = models.TextField(max_length=200, default='')
-	image = models.ImageField(upload_to='channel/channel_cody', default='')
+	image = models.ImageField(upload_to='channel/channel_issue', default='')
 	which_day = models.CharField(max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='MO')
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 
-	objects = CodyManager()
+	objects = IssueManager()
 
 	def __str__(self):
 		return self.title
 
-class CodyLikeManager(models.Manager):
+class IssueLikeManager(models.Manager):
 
-	def is_like(self, user_id, cody_id):
+	def is_like(self, user_id, issue_id):
 		try:
-			return CodyLike.objects.get(user=user_id, cody=cody_id) is not None
+			return IssueLike.objects.get(user=user_id, issue=issue_id) is not None
 		except:
 			return False
 
 
-class CodyLike(models.Model):
-	cody = models.ForeignKey(Cody, related_name='cody_likes_of_cody', unique=True)
-	user = models.ForeignKey(User, related_name='cody_likes_of_user')
+class IssueLike(models.Model):
+	issue = models.ForeignKey(Issue, related_name='issue_likes_of_issue', unique=True)
+	user = models.ForeignKey(User, related_name='issue_likes_of_user')
 
-	objects = CodyLikeManager()
+	objects = IssueLikeManager()
 
-class CodyItem(models.Model):
-	cody = models.ForeignKey(Cody, related_name='cody_items_of_cody')
-	product = models.ForeignKey(Product, related_name='cody_items_of_product')
+class IssueItem(models.Model):
+	issue = models.ForeignKey(Issue, related_name='issue_items_of_issue')
+	product = models.ForeignKey(Product, related_name='issue_items_of_product')
 	tip = models.CharField(max_length=50)
-
-	def __str__(self):
-		return self.product.name + '(' + self.product.tag.gender.type + ')'
 
 class ProductLikeManager(models.Manager):
 
@@ -247,32 +211,6 @@ class ProductLike(models.Model):
 
 	objects = ProductLikeManager()
 
-
-class CartManager(models.Manager):
-
-	def get_or_create(self, user_id):
-		try:
-			return Cart.objects.get(user__id = user_id)
-		except:
-			user = User.objects.get(id=user_id)
-			return Cart.objects.create(user=user)
-
-class Cart(models.Model):
-	user = models.OneToOneField(User)
-	shipping = models.IntegerField(default=2500)
-	total_price = models.IntegerField(default=0)
-	address = models.TextField(max_length=100)
-
-	objects = CartManager()
-
-# Will be prevent to duplicated.
-class CartItem(models.Model):
-
-	product = models.ForeignKey(Product, related_name='cart_items_of_product')
-	cart = models.ForeignKey(Cart, related_name='cart_items_of_cart')
-	size = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
-	color = models.CharField(max_length=10, null=True) # will be fixed!!!!!!
-	quantity = models.IntegerField(null=True)
 
 from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
@@ -307,7 +245,7 @@ def channel_delete(sender, instance, **kwargs):
 	instance.image.delete()
 	instance.background.delete()
 
-@receiver(pre_delete, sender=Cody)
-def cody_delete(sender, instance, **kwargs):
+@receiver(pre_delete, sender=Issue)
+def issue_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()

@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'snippets',
+    'cart',
     # 3rd party packages...
     'rest_framework',
     'rest_framework.authtoken',
@@ -88,7 +89,8 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.custom_serializer.MyTokenSerializer',
+    'TOKEN_SERIALIZER': 'second.custom_auth.CustomTokenSerializer',
+    'USER_DETAILS_SERIALIZER':'second.custom_auth.CustomUserDetailsSerializer'
 }
 
 ROOT_URLCONF = 'second.urls'

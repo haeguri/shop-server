@@ -4,35 +4,16 @@ from snippets import views
 
 
 urlpatterns = patterns('',
-    url(r'^genders$', views.gender_list),
-    url(r'^genders/(?P<gender_id>[0-9]+)/tags$', views.tag_list),
-    url(r'^genders/(?P<gender_id>[0-9]+)/tags/(?P<tag_id>[0-9]+)/products$', views.product_list),
-    url(r'^genders/(?P<gender_id>[0-9]+)/tags/(?P<tag_id>[0-9]+)/products/(?P<product_id>[0-9]+)$', views.product_detail),
-
-    url(r'^product_sorts$', views.product_sort_list),
-
-    url(r'^genders/(?P<gender_id>[0-9]+)/brands?$', views.brand_list),
-    url(r'^genders/(?P<gender_id>[0-9]+)/brands/(?P<brand_id>[0-9]+)$', views.brand_detail),
-
-
     #url(r'^channels', views.channel_list),
 
-    # channel_detail = cody_list
     url(r'^channels/(?P<channel_id>[0-9]+)$', views.channel_detail),
-    # cody list of cody category.
-    url(r'^codies$', views.cody_list),
-    url(r'^cody-categories/(?P<category_id>[0-9]+)/codies$', views.category_cody_list),
-    url(r'^channels/(?P<channel_id>[0-9]+)/codies/(?P<cody_id>[0-9]+)$', views.cody_detail),
-
-    url(r'^users/(?P<user_id>[0-9]+)/cart$', views.cart_detail),
-
-    url(r'^users/(?P<user_id>[0-9]+)/cart/items$', views.cart_item_list),
-    url(r'^users/(?P<user_id>[0-9]+)/cart/items/(?P<cart_item_id>[0-9]+)$', views.cart_item_detail),
+    url(r'^issues$', views.issue_list),
+    url(r'^channels/(?P<channel_id>[0-9]+)/issues/(?P<issue_id>[0-9]+)$', views.issue_detail),
 
     url(r'^users/(?P<user_id>[0-9]+)$', views.user_detail),
 
     url(r'^users/(?P<user_id>[0-9]+)/products/(?P<product_id>[0-9]+)/like$', views.product_like),
-    url(r'^users/(?P<user_id>[0-9]+)/codies/(?P<cody_id>[0-9]+)/like$', views.cody_like),
+    url(r'^users/(?P<user_id>[0-9]+)/issues/(?P<issue_id>[0-9]+)/like$', views.issue_like),
     url(r'^users/(?P<user_id>[0-9]+)/channels/(?P<channel_id>[0-9]+)/follow', views.channel_follow),
     url(r'^users/(?P<user_id>[0-9]+)/brands/(?P<brand_id>[0-9]+)/follow$', views.brand_follow),
 )

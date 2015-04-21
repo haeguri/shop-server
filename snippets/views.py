@@ -1,49 +1,27 @@
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from snippets.models import Gender, Product, ProductLike, Cart, CartItem, Channel, ChannelFollow, \
-	Cody, CodyLike, Tag, Brand, BrandFollow, ProductSort
-from snippets.serializers import ProductSerializer, UserSerializer, TagSerializer, \
-	ItemWriteSerializer, ItemReadSerializer, BrandSerializer, ChannelSerializer, CodySerializer, \
-	PaginatedProductSerializer, GenderSerializer, ProductSortSerializer
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from second.custom_auth import CustomUserDetailsSerializer
+
+from snippets.models import Product, ProductLike, Channel, \
+	ChannelFollow, Issue, IssueLike, Brand, BrandFollow, ProductSort
+
+from snippets.serializers import ProductSerializer, BrandSerializer, \
+	ChannelSerializer, IssueSerializer, PaginatedProductSerializer, GenderSerializer, \
+	ProductSortSerializer
+
+"""
 @api_view(['GET'])
-def gender_list(request):
-
-	if request.method == 'GET':
-		genders = Gender.objects.all().order_by('-type')
-		serializer = GenderSerializer(genders, many=True, context={'request':request},
-									  					  fields=('id', 'type', 'tags_of_gender'))
-
-		return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def tag_list(request, gender_id):
-	filter = request.QUERY_PARAMS.get('filter')
-	brand_id = request.QUERY_PARAMS.get('brand_id')
-
-	if request.method == 'GET':
-		if filter == 'brand':
-			tags = Tag.objects.get_tags_of_brand(brand_id)
-			serializer = TagSerializer(tags, many=True, context={'request':request})
-			return Response(serializer.data, status=status.HTTP_200_OK)
-
-		else:
-			tags = Tag.objects.get_tags(gender_id)
-			serializer = TagSerializer(tags, many=True, context={'request':request})
-			return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def product_list(request, gender_id, tag_id):
+def product_list(request):
 
 	page = request.QUERY_PARAMS.get('page')
 	filter = request.QUERY_PARAMS.get('filter')
 
 	if page is not None:
-
-		queryset = Product.objects.filter(tag=tag_id).order_by('-pub_date')
 		paginator = Paginator(queryset, 6)
 
 		products = paginator.page(page)
@@ -54,8 +32,8 @@ def product_list(request, gender_id, tag_id):
 		products = Product.objects.filter(brand=request.QUERY_PARAMS.get('brand_id'))[:4]
 		serializer = ProductSerializer(products, many=True, context={'request':request})
 
-
 	return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 @api_view(['GET'])
 def product_detail(request, gender_id, tag_id, product_id):
@@ -75,6 +53,7 @@ def brand_list(request, gender_id):
 
 		return Response(serializer.data)
 
+
 @api_view(['GET', 'POST'])
 def brand_detail(request, gender_id, brand_id):
 
@@ -83,6 +62,9 @@ def brand_detail(request, gender_id, brand_id):
 		serializer = BrandSerializer(brand, many=False, context={'request':request})
 
 		return Response(serializer.data, status.HTTP_200_OK)
+
+
+"""
 
 @api_view(['GET'])
 def brand_products(request, brand_id):
@@ -96,19 +78,19 @@ def brand_products(request, brand_id):
 	return Response(serializer.data, status.HTTP_200_OK)
 
 @api_view(['GET'])
-def cody_list(request):
+def issue_list(request):
 
 	if request.method == 'GET':
 
 		if request.QUERY_PARAMS.get('reco') == 'shuffle':
 			import random
-			cody_list = list(Cody.objects.all())
-			random.shuffle(cody_list)
-			cody_list = cody_list[0:4]
+			issue_list = list(Issue.objects.all())
+			random.shuffle(issue_list)
+			issue_list = issue_list[0:4]
 		else:
-			cody_list = Cody.objects.all()
+			issue_list = Issue.objects.all()
 
-		serializer = CodySerializer(cody_list, many=True, context={'request':request},
+		serializer = IssueSerializer(issue_list, many=True, context={'request':request},
 														  fields=('id', 'channel', 'title', 'image', 'pub_date'))
 
 
@@ -124,20 +106,11 @@ def channel_detail(request, channel_id):
 		return Response(serializer.data	)
 
 @api_view(['GET', 'POST'])
-def category_cody_list(request, category_id):
+def issue_detail(request, channel_id, issue_id):
 
 	if request.method == 'GET':
-		codies = Cody.objects.get_codies_of_category(category_id).order_by('-pub_date')
-		serializer = CodySerializer(codies, many=True, context={'request':request})
-
-		return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET', 'POST'])
-def cody_detail(request, channel_id, cody_id):
-
-	if request.method == 'GET':
-		cody = Cody.objects.get(id=cody_id)
-		serializer = CodySerializer(cody, many=False, context={'request':request})
+		issue = Issue.objects.get(id=issue_id)
+		serializer = IssueSerializer(Issue, many=False, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -149,7 +122,7 @@ def user_detail(request, user_id):
 		return Response(status=status.HTTP_404_NOT_FOUND)
 
 	if request.method == 'GET':
-		serializer = UserSerializer(user, many=False, context={'request':request})
+		serializer = CustomUserDetailsSerializer(user, many=False, context={'request':request})
 
 		return Response(serializer.data)
 
@@ -172,20 +145,20 @@ def product_like(request, user_id, product_id):
 		return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['POST', 'DELETE'])
-def cody_like(request, user_id, cody_id):
+def issue_like(request, user_id, issue_id):
 	user = User.objects.get(id=user_id)
-	cody = Cody.objects.get(id=cody_id)
+	issue = Issue.objects.get(id=issue_id)
 
 	if request.method == 'POST':
 		try:
-			CodyLike.objects.create(user=user, cody=cody)
+			IssueLike.objects.create(user=user, issue=issue)
 			return Response(status=status.HTTP_201_CREATED)
 		except:
 			return Response(status=status.HTTP_400_BAD_REQUEST)
 
 	elif request.method == 'DELETE':
-		cody_like = CodyLike.objects.get(user=user, cody=cody)
-		cody_like.delete()
+		issue_like = IssueLike.objects.get(user=user, issue=issue)
+		issue_like.delete()
 
 		return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -223,48 +196,3 @@ def channel_follow(request, user_id, channel_id):
 		channel_follow.delete()
 
 		return Response(status=status.HTTP_204_NO_CONTENT)
-
-@api_view(['GET', 'POST', 'DELETE'])
-def cart_detail(request):
-
-	if request.method == 'GET':
-
-		try:
-			cart = Cart.objects.get(user=request.QUERY_PARAMS.get('user_id'))
-		except:
-			return Response(status=status.HTTP_404_NOT_FOUND)
-
-@api_view(['GET', 'POST', 'DELETE'])
-def cart_item_list(request, user_id):
-	if request.method == 'POST':
-		serializer = ItemWriteSerializer(data=request.data)
-
-		if serializer.is_valid():
-			item = serializer.save()
-
-			serializer = ItemReadSerializer(item, many=False, context={'request':request})
-			return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['DELETE'])
-def cart_item_detail(request, user_id, cart_item_id):
-	if request.method == 'DELETE':
-		try:
-			items = CartItem.objects.filter(id__in=request.data['del_list'])
-			cart = Cart.objects.get_or_create(request.QUERY_PARAMS.get('user_id'))
-		except:
-			return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-		items.delete()
-		items = cart.cart_items_of_cart.all()
-		serializer = ItemReadSerializer(items, many=True, context={'request':request})
-
-		return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def product_sort_list(request):
-
-	sort_list = ProductSort.objects.all()
-	serializer = ProductSortSerializer(sort_list, many=True)
-	return Response(serializer.data, status.HTTP_200_OK)

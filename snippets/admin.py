@@ -1,20 +1,10 @@
 from django.contrib import admin
-from snippets.models import Gender, Tag, Product, Brand \
-    , Channel, CodyCategory, Cody, CodyItem, ProductSort, ProductImage, BrandInterview \
+from snippets.models import Gender, Product, Brand \
+    , Channel, Issue, IssueItem, ProductSort, ProductImage, BrandInterview \
     , TestHashTag, TestModel, TestHashTagCategory
 
 from snippets.forms import TestModelForm
 
-
-class TagAdmin(admin.ModelAdmin):
-
-    list_display = ('type', 'gender', 'slug')
-
-    list_filter = ['gender']
-
-    list_editable = ['slug']
-
-    search_fields = ['type']
 
 class ProductImageInline(admin.StackedInline):
     model = ProductImage
@@ -29,17 +19,15 @@ class ProductSortAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ['name','tag', 'brand', 'price', 'pub_date']
+    list_display = ['name', 'brand', 'price', 'pub_date']
 
-    list_editable = ['name', 'tag', 'brand', 'price']
-
-    list_filter = ['tag']
+    list_editable = ['name', 'brand', 'price']
 
     search_fields = ['name']
 
     inlines = [ProductImageInline]
 
-class CodyCategoryAdmin(admin.ModelAdmin):
+class IssueCategoryAdmin(admin.ModelAdmin):
 
     list_display = ['name', 'gender']
 
@@ -48,36 +36,26 @@ class CodyCategoryAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
-class CodyInline(admin.StackedInline):
-    model = CodyItem
+class IssueInline(admin.StackedInline):
+    model = IssueItem
 
     extra = 3
 
-class CodyAdmin(admin.ModelAdmin):
-    list_display = ['title', 'cody_category', 'channel', 'description', 'which_day', 'pub_date']
+class IssueAdmin(admin.ModelAdmin):
+    list_display = ['title', 'channel', 'description', 'which_day', 'pub_date']
 
-    list_editable = ['cody_category', 'channel']
-
-    list_filter = ['cody_category']
+    list_editable = ['channel']
 
     fieldsets = [
         (None,         {'fields':['title']}),
         (None,         {'fields':['which_day']}),
-        (None,         {'fields':['cody_category']}),
         (None,         {'fields':['channel']}),
         (None,        {'fields':['description']}),
         (None,         {'fields':['image']}),
         (None,         {'fields':['pub_date']}),
     ]
 
-    inlines = [CodyInline]
-
-class CodyCategoryAdmin(admin.ModelAdmin):
-    list_display = ['gender', 'name']
-
-    list_filter = ['gender']
-
-    list_editable = ['name']
+    inlines = [IssueInline]
 
 class BrandInline(admin.StackedInline):
     model = BrandInterview
@@ -111,10 +89,8 @@ admin.site.register(TestModel, TestModelAdmin)
 
 
 admin.site.register(Gender)
-admin.site.register(Tag, TagAdmin)
 admin.site.register(ProductSort, ProductSortAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Brand, BrandAdmin)
 admin.site.register(Channel)
-admin.site.register(CodyCategory, CodyCategoryAdmin)
-admin.site.register(Cody, CodyAdmin)
+admin.site.register(Issue, IssueAdmin)
