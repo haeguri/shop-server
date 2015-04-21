@@ -1,15 +1,14 @@
 from django.contrib import admin
-from snippets.models import Gender, Product, Brand \
-    , Channel, Issue, IssueItem, ProductSort, ProductImage, BrandInterview \
-    , TestHashTag, TestModel, TestHashTagCategory
+from snippets.models import Gender, Product, Brand, Channel, Issue, IssueItem, ProductSort, \
+    ProductImage, BrandInterview, HashTag, HashTagCategory
 
-from snippets.forms import TestModelForm
+from snippets.forms import ProductForm
 
 
 class ProductImageInline(admin.StackedInline):
     model = ProductImage
 
-    extra = 3
+    extra = 2
 
 class ProductSortAdmin(admin.ModelAdmin):
 
@@ -23,9 +22,13 @@ class ProductAdmin(admin.ModelAdmin):
 
     list_editable = ['name', 'brand', 'price']
 
+    filter_horizontal = ['hash_tags']
+
     search_fields = ['name']
 
     inlines = [ProductImageInline]
+
+    form = ProductForm
 
 class IssueCategoryAdmin(admin.ModelAdmin):
 
@@ -39,7 +42,7 @@ class IssueCategoryAdmin(admin.ModelAdmin):
 class IssueInline(admin.StackedInline):
     model = IssueItem
 
-    extra = 3
+    extra = 2
 
 class IssueAdmin(admin.ModelAdmin):
     list_display = ['title', 'channel', 'description', 'which_day', 'pub_date']
@@ -60,7 +63,7 @@ class IssueAdmin(admin.ModelAdmin):
 class BrandInline(admin.StackedInline):
     model = BrandInterview
 
-    extra = 3
+    extra = 2
 
 class BrandAdmin(admin.ModelAdmin):
     list_display = ['user', 'gender', 'name']
@@ -68,24 +71,18 @@ class BrandAdmin(admin.ModelAdmin):
     list_editable = ['name']
     inlines = [BrandInline]
 
-class TestHashTagCategoryAdmin(admin.ModelAdmin):
+class HashTagCategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'is_required']
     list_editable = ['is_required']
 
 
-class TestHashTagAdmin(admin.ModelAdmin):
+class HashTagAdmin(admin.ModelAdmin):
     list_display = ['name', 'category']
     list_editable = ['category']
     list_filter = ['category']
 
-class TestModelAdmin(admin.ModelAdmin):
-    filter_horizontal = ['hash_tags']
-    form = TestModelForm
-
-
-admin.site.register(TestHashTagCategory, TestHashTagCategoryAdmin)
-admin.site.register(TestHashTag, TestHashTagAdmin)
-admin.site.register(TestModel, TestModelAdmin)
+admin.site.register(HashTagCategory, HashTagCategoryAdmin)
+admin.site.register(HashTag, HashTagAdmin)
 
 
 admin.site.register(Gender)

@@ -4,16 +4,16 @@ from datetime import datetime
 from django.utils import timezone
 import os
 
-class TestHashTagCategory(models.Model):
+class HashTagCategory(models.Model):
 	name = models.CharField(unique=True, max_length=10, blank=False)
 	is_required = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.name
 
-class TestHashTag(models.Model):
+class HashTag(models.Model):
 	name = models.CharField(unique=True, max_length=10, blank=False)
-	category = models.ForeignKey(TestHashTagCategory, blank=False, default='')
+	category = models.ForeignKey(HashTagCategory, blank=False, default='')
 
 	def __str__(self):
 		if self.category.is_required==True:
@@ -23,17 +23,6 @@ class TestHashTag(models.Model):
 
 	class Meta:
 		ordering = ('category',)
-
-class TestModel(models.Model):
-	name = models.CharField(max_length=10, unique=True, blank=False)
-	hash_tags = models.ManyToManyField(TestHashTag)
-
-	def __str__(self):
-		return self.name
-
-class UserProfile(models.Model):
-	user = models.OneToOneField(User)
-	address = models.TextField(max_length=200, blank=True)
 
 class Gender(models.Model):
 	type = models.CharField(max_length=8)
@@ -97,6 +86,7 @@ class BrandFollow(models.Model):
 	objects = BrandFollowManager()
 
 class Product(models.Model):
+	hash_tags = models.ManyToManyField(HashTag, blank=False)
 	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 	name = models.CharField(unique=True, max_length=15)
