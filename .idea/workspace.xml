@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snippets/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5202">
-              <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.71428573" vertical-offset="0" max-vertical-offset="5457">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snippets/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6177606" vertical-offset="0" max-vertical-offset="1302">
-              <caret line="34" column="87" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="87" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
+              <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/second/custom_serializer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="957">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -58,22 +58,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="3057">
-              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snippets/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2144">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="2547">
+              <caret line="107" column="65" selection-start-line="107" selection-start-column="65" selection-end-line="107" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,10 +73,22 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="3779">
-              <caret line="126" column="50" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3764">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snippets/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1092">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,14 +121,15 @@
         <option value="$PROJECT_DIR$/second/tokenserializer.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/pagination.py" />
         <option value="$PROJECT_DIR$/snippets/urls.py" />
-        <option value="$PROJECT_DIR$/snippets/admin.py" />
         <option value="$PROJECT_DIR$/snippets/views.py" />
         <option value="$PROJECT_DIR$/second/mytokenserializer.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py" />
         <option value="$PROJECT_DIR$/second/custom_serializer.py" />
         <option value="$PROJECT_DIR$/second/settings.py" />
-        <option value="$PROJECT_DIR$/snippets/models.py" />
         <option value="$PROJECT_DIR$/snippets/serializers.py" />
+        <option value="$PROJECT_DIR$/snippets/admin.py" />
+        <option value="$PROJECT_DIR$/snippets/models.py" />
+        <option value="$PROJECT_DIR$/snippets/forms.py" />
       </list>
     </option>
   </component>
@@ -322,7 +327,7 @@
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null&#10;LoginSerializer&#9;null&#9;null&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer..py&#9;null&#9;null&#10;LogEntry&#9;null&#9;null&#10;adminlog&#9;null&#9;null&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setting.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;modelspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;tokenserial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;login&#9;null&#9;null&#10;TokenAuth&#9;null&#9;null&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;User&#9;null&#9;null&#10;to_repre&#9;null&#9;null&#10;ModelSerializer&#9;null&#9;null&#10;local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py" />
+    <property name="SearchEverywhereHistoryKey" value="admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null&#10;LoginSerializer&#9;null&#9;null&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer..py&#9;null&#9;null&#10;LogEntry&#9;null&#9;null&#10;adminlog&#9;null&#9;null&#10;models.p&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;setting.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;modelspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;tokenseri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;tokenserial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;login&#9;null&#9;null&#10;TokenAuth&#9;null&#9;null&#10;token&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/tokenserializer.py&#10;User&#9;null&#9;null&#10;to_repre&#9;null&#9;null&#10;ModelSerializer&#9;null&#9;null&#10;local&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/local_settings.py&#10;admi&#9;null&#9;null&#10;sorl&#9;null&#9;null&#10;class Designer&#9;null&#9;null&#10;forin&#9;null&#9;null&#10;class designer&#9;null&#9;null&#10;url&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;admin.yp&#9;null&#9;null&#10;model.&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;pyca&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;seriali&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;VIEW.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;serial&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/serializers.py&#10;middleware&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/middleware.py&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/snippets/views.py&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/venv/lib/python3.4/site-packages/rest_auth/views.py&#10;tokenser&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py&#10;TokenSeri&#9;FILE&#9;file:///Users/haegyun/Proejct-django/second/second/tokenserializer.py" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -543,9 +548,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23958333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23958333" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23958333" sideWeight="0.50062114" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -582,11 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/media/channel/channel_cody/girs_Qg9pzLM.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media/channel/channel_cody/girs_FZ1YmDp.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -895,20 +895,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="3057">
-          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15444015" vertical-offset="0" max-vertical-offset="1032">
           <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -921,10 +913,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/second/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.115830116" vertical-offset="390" max-vertical-offset="3057">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/second/custom_serializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="957">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3764">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -933,37 +951,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2157">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="2547">
+          <caret line="107" column="65" selection-start-line="107" selection-start-column="65" selection-end-line="107" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+    <entry file="file://$PROJECT_DIR$/snippets/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="3779">
-          <caret line="126" column="50" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1092">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5202">
-          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.71428573" vertical-offset="0" max-vertical-offset="5457">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6177606" vertical-offset="0" max-vertical-offset="1302">
-          <caret line="34" column="87" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>

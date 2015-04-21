@@ -4,6 +4,32 @@ from datetime import datetime
 from django.utils import timezone
 import os
 
+class TestHashTagCategory(models.Model):
+	name = models.CharField(unique=True, max_length=10, blank=False)
+	is_required = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.name
+
+class TestHashTag(models.Model):
+	name = models.CharField(unique=True, max_length=10, blank=False)
+	category = models.ForeignKey(TestHashTagCategory, blank=False, default='')
+
+	def __str__(self):
+		if self.category.is_required==True:
+			return '['+ self.category.name+']' + self.name
+		else:
+			return self.name
+
+	class Meta:
+		ordering = ('category',)
+
+class TestModel(models.Model):
+	name = models.CharField(max_length=10, unique=True, blank=False)
+	hash_tags = models.ManyToManyField(TestHashTag)
+
+	def __str__(self):
+		return self.name
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
@@ -23,15 +49,7 @@ class TagManager(models.Manager):
 
 class Tag(models.Model):
 
-	CATEGORY_OF_TAG_CHOICES = (
-		('TOP', 'Top'),
-		('BOT', 'Bottom'),
-		('ACC', 'Accessory'),
-	)
-
 	gender = models.ForeignKey(Gender, related_name='tags_of_gender', blank=True, null=True)
-	category = models.CharField(max_length=3, choices=CATEGORY_OF_TAG_CHOICES, default='',
-								help_text="Category is concept bigger than the Tag")
 	type = models.CharField(max_length=20, default='')
 	slug = models.SlugField(unique=True,
 							help_text="Displayed tags depends on the order of priority.. like Outer->Jeans->Bags")
@@ -123,7 +141,6 @@ class ProductImage(models.Model):
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("product/%s/" % instance.product.name, filename)
-		print("path is ", path.replace(" ", "_"))
 		return path
 
 	image = models.ImageField(upload_to=get_upload_path)
@@ -161,7 +178,7 @@ class CodyManager(models.Manager):
 			follow_channels = ChannelFollow.objects.filter(user=user_id).values_list('channel', flat=True)
 
 			return Cody.objects.exclude(channel__in=follow_channels)
-		# no one channel of following
+		# no one channel with following
 		except:
 			return Cody.objects.all()
 

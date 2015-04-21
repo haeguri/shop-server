@@ -1,22 +1,23 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from snippets.models import CustomUser
+from django import forms
+from snippets.models import TestModel, TestHashTagCategory
 
-class CustomUserCreationForm(UserCreationForm):
-
-    def __init__(self, *args, **kwargs):
-        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
-        del self.fields['username']
-
+class TestModelForm(forms.ModelForm):
     class Meta:
-        model = CustomUser
-        fields = ("email",)
+        model = TestModel
+        fields = ('name', 'hash_tags',)
 
-class CustomUserChangeForm(UserChangeForm):
 
-    def __init__(self, *args, **kwargs):
-        super(CustomUserChangeForm, self).__init__(*kwargs, **kwargs)
-        del self.fields['username']
+    def clean(self):
+        hash_tags = self.cleaned_data.get('hash_tags')
+        input_categories = set(TestHashTagCategory.objects.filter(testhashtag__id__in=hash_tags).filter(is_required=True))
+        require_categories = set(TestHashTagCategory.objects.filter(is_required=True))
 
-    class Meta:
-        model = CustomUser
-        fields = ("email",)
+        if require_categories.difference(input_categories):
+            difference_categories = list(require_categories.difference(input_categories))
+            require_categories = ''
+            for category in difference_categories:
+                require_categories = require_categories + ' ' + category.name
+
+            raise forms.ValidationError("이런!!! 다음과 같은 필수 해쉬 태그를 입력하지 않았습니다. < %s >" % require_categories)
+        else:
+            return self.cleaned_data

@@ -1,10 +1,14 @@
 from django.contrib import admin
 from snippets.models import Gender, Tag, Product, Brand \
-    , Channel, CodyCategory, Cody, CodyItem, ProductSort, ProductImage, BrandInterview
+    , Channel, CodyCategory, Cody, CodyItem, ProductSort, ProductImage, BrandInterview \
+    , TestHashTag, TestModel, TestHashTagCategory
+
+from snippets.forms import TestModelForm
+
 
 class TagAdmin(admin.ModelAdmin):
 
-    list_display = ('type', 'gender', 'category', 'slug')
+    list_display = ('type', 'gender', 'slug')
 
     list_filter = ['gender']
 
@@ -85,6 +89,26 @@ class BrandAdmin(admin.ModelAdmin):
     list_filter = ['gender']
     list_editable = ['name']
     inlines = [BrandInline]
+
+class TestHashTagCategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'is_required']
+    list_editable = ['is_required']
+
+
+class TestHashTagAdmin(admin.ModelAdmin):
+    list_display = ['name', 'category']
+    list_editable = ['category']
+    list_filter = ['category']
+
+class TestModelAdmin(admin.ModelAdmin):
+    filter_horizontal = ['hash_tags']
+    form = TestModelForm
+
+
+admin.site.register(TestHashTagCategory, TestHashTagCategoryAdmin)
+admin.site.register(TestHashTag, TestHashTagAdmin)
+admin.site.register(TestModel, TestModelAdmin)
+
 
 admin.site.register(Gender)
 admin.site.register(Tag, TagAdmin)

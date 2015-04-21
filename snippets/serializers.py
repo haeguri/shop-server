@@ -13,7 +13,6 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
 		if fields:
 			allowed = set(fields)
-			print ("fields", fields)
 			existing = set(self.fields.keys())
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
