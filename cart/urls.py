@@ -4,10 +4,9 @@ from cart import views
 
 
 urlpatterns = patterns('',
-    #url(r'^channels', views.channel_list),
-
-    url(r'^users/(?P<user_id>[0-9]+)/cart$', views.cart_detail),
-    url(r'^users/(?P<user_id>[0-9]+)/cart/items$', views.cart_item_list),
-    url(r'^users/(?P<user_id>[0-9]+)/cart/items/(?P<cart_item_id>[0-9]+)$', views.cart_item_detail),
+    # http://domain.com/api/cart/로 시작하는 URL을 라우팅
+    url(r'^$', views.cart_detail),
+    url(r'^items$', views.cart_item_list),
+    url(r'^items/(?P<item_id>[0-9]+)$', views.cart_item_detail),
 )
 urlpatterns = format_suffix_patterns(urlpatterns)

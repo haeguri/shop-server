@@ -4,7 +4,7 @@ from snippets.models import Product, HashTagCategory
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'hash_tags',)
+        fields = ('name', 'gender', 'name', 'brand', 'price', 'pub_date', 'hash_tags')
 
 
     def clean(self):

@@ -1,9 +1,21 @@
 from rest_framework import serializers
 from cart.models import CartItem, Cart
 from snippets.serializers import ProductSerializer
+from snippets.models import Product
+
 
 class ItemReadSerializer(serializers.ModelSerializer):
-	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
+	#product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
+
+	product = serializers.SerializerMethodField()
+
+
+	def get_product(self, instance):
+
+		product = Product.objects.get(cart_items_of_product__id=instance.id)
+		serializer = ProductSerializer(product, many=False,  fields=('id', 'name', 'price', 'images'), context=self.context)
+
+		return serializer.data
 
 	class Meta:
 		model = CartItem

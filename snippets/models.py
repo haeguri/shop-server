@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+from snippets.hangul import separate
 import os
 
 class HashTagCategory(models.Model):
@@ -11,9 +12,26 @@ class HashTagCategory(models.Model):
 	def __str__(self):
 		return self.name
 
+class HashTagManager(models.Manager):
+
+	def get_pop_hashtag(self):
+		HashTag.objects.filter()
+		pass
+
 class HashTag(models.Model):
 	name = models.CharField(unique=True, max_length=10, blank=False)
-	category = models.ForeignKey(HashTagCategory, blank=False, default='')
+	#separated_name = models.CharField(max_length=100)
+	category = models.ForeignKey(HashTagCategory, blank=False)
+
+	objects =HashTagManager()
+
+#	def separate_char(self):
+#		separate(self.name)
+
+#	def save(self, *args, **kwargs):
+#		if not self.subject_init:
+#			self.separated_name = self.subject_initials()
+#		super(HashTag, self).save(*args, **kwargs)
 
 	def __str__(self):
 		if self.category.is_required==True:
@@ -50,8 +68,8 @@ class Brand(models.Model):
 	user = models.OneToOneField(User)
 	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
 	name = models.CharField(max_length=20)
-	introduce = models.TextField(max_length=200, blank=True)
-	image = models.ImageField(upload_to='upload/brand', default='')
+	description = models.TextField(max_length=200, blank=True)
+	profile = models.ImageField(upload_to='upload/brand', default='')
 	background = models.ImageField(upload_to='upload/brand/background', default='')
 	web = models.URLField(blank=True)
 	address = models.CharField(max_length=200, blank=True)
@@ -66,10 +84,25 @@ class BrandInterview(models.Model):
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("upload/brand/%s/interviews/" % instance.brand.name, filename)
-		print("path is ", path.replace(" ", "_"))
 		return path
 
 	image = models.ImageField(upload_to=get_upload_path)
+
+class BrandFeed(models.Model):
+	brand = models.ForeignKey(Brand, related_name='feeds')
+	title = models.CharField(max_length=20, blank=False)
+	body = models.TextField(max_length=200, blank=True)
+	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
+
+	def get_upload_path(instance, filename):
+		path = os.path.join("upload/brand/%s/feed/" % instance.brand.name, filename)
+		return path
+
+	image = models.ImageField(upload_to=get_upload_path)
+
+	class Meta:
+		ordering = ('-pub_date',)
+
 
 class BrandFollowManager(models.Manager):
 
@@ -86,7 +119,8 @@ class BrandFollow(models.Model):
 	objects = BrandFollowManager()
 
 class Product(models.Model):
-	hash_tags = models.ManyToManyField(HashTag, blank=False)
+	gender = models.ForeignKey(Gender, blank=False, null=True)
+	hash_tags = models.ManyToManyField(HashTag, related_name='products', blank=False)
 	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
 	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
 	name = models.CharField(unique=True, max_length=15)
@@ -106,13 +140,44 @@ class ProductImage(models.Model):
 
 	image = models.ImageField(upload_to=get_upload_path)
 
+
+class PubDay(models.Model):
+	DAY_OF_WHICHDAY_CHOICES = (
+		('월', '월요일'),
+		('화', '화요일'),
+		('수', '수요일'),
+		('목', '목요일'),
+		('금', '금요일'),
+		('토', '토요일'),
+	)
+
+	day = models.CharField(blank=True, max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='월')
+
+	def __str__(self):
+
+		return self.day
+
+class ChannelManager(models.Manager):
+	def as_json(self, channel):
+		print("channel.background", dir(channel.background.path))
+		return dict(
+			name=channel.name, which_day=channel.which_day, created=channel.created, profile=channel.profile,
+			background=channel.background, channel_follows_of_channel=channel.channel_follows_of_channel
+		)
+
 class Channel(models.Model):
-	name = models.CharField(unique=True, max_length=30)
-	introduce = models.TextField(max_length=200)
-	image = models.ImageField(upload_to='channel')
-	background = models.ImageField(upload_to='channel/background', default='')
-	web = models.URLField()
+
+	name = models.CharField(unique=True, max_length=10)
+	brief = models.CharField(max_length=10, default='', blank=False)
+	pub_days = models.ManyToManyField(PubDay, blank=True)
 	created = models.DateTimeField('date created', default=datetime.now)
+	introduce = models.TextField(max_length=200)
+	profile = models.ImageField(upload_to='channel')
+	background = models.ImageField(upload_to='channel/background', default='')
+	web = models.URLField(blank=True)
+	address = models.CharField(max_length=20, default='', blank=True)
+
+	objects = ChannelManager()
 
 	def __str__(self):
 		return self.name
@@ -145,21 +210,13 @@ class IssueManager(models.Manager):
 
 class Issue(models.Model):
 
-	DAY_OF_WHICHDAY_CHOICES = (
-		('MO', 'Monday'),
-		('TU', 'Tuesday'),
-		('WE', 'Wednesday'),
-		('TH', 'Thursday'),
-		('FR', 'Friday'),
-		('SA', 'Saturday'),
-	)
-
-	channel = models.ForeignKey(Channel, related_name='codies_of_channel')
-	title = models.CharField(unique=True, max_length=20)
+	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
+	hash_tags = models.ManyToManyField(HashTag, related_name='issues')
+	channel = models.ForeignKey(Channel, related_name='issues_of_channel')
+	title = models.CharField(unique=True, max_length=10)
 	description = models.TextField(max_length=200, default='')
 	image = models.ImageField(upload_to='channel/channel_issue', default='')
-	which_day = models.CharField(max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='MO')
-	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
+	view = models.PositiveIntegerField(default=0)
 
 	objects = IssueManager()
 
@@ -239,3 +296,9 @@ def channel_delete(sender, instance, **kwargs):
 def issue_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()
+
+@receiver(pre_delete, sender=BrandFeed)
+def brandfeed_delete(sender, instance, **kwargs):
+	# Pass false so FileField doesn't save the model.
+	instance.image.delete()
+

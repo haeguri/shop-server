@@ -7,12 +7,155 @@ from rest_framework.response import Response
 
 from second.custom_auth import CustomUserDetailsSerializer
 
-from snippets.models import Product, ProductLike, Channel, \
-	ChannelFollow, Issue, IssueLike, Brand, BrandFollow, ProductSort
+from snippets.models import Product, ProductLike, Channel, HashTag,  \
+	ChannelFollow, Issue, IssueLike, Brand, BrandFollow, BrandFeed, PubDay
 
 from snippets.serializers import ProductSerializer, BrandSerializer, \
-	ChannelSerializer, IssueSerializer, PaginatedProductSerializer, GenderSerializer, \
-	ProductSortSerializer
+	ChannelSerializer, IssueSerializer, HashTagSerializer, \
+	PaginationProductSerializer, PaginationIssueSerializer, \
+	PaginationChannelSerializer, BrandFeedSerializer, PaginationBrandFeedSerializer, \
+	PubDaySerializer
+
+@api_view(['GET'])
+def hashtag_list(request):
+
+	hash_tags = HashTag.objects.filter(category__name__in=['상품소분류', '성별']).reverse()[:5]
+
+	serializer = HashTagSerializer(hash_tags, many=True, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def pubday_list(request):
+
+	pub_days = PubDay.objects.all()
+
+	serializer = PubDaySerializer(pub_days, many=True, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def channel_list(request):
+
+	page, day = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('day')
+
+	query_test = request.QUERY_PARAMS.get('query')
+
+	print("query_test", query_test)
+
+	if page and day in ['월', '화', '수', '목', '금', '토']:
+		channels = Channel.objects.filter(pub_days__day=day)
+	else:
+		channels = Channel.objects.all()
+
+
+	paginator = Paginator(channels, 6)
+	channels = paginator.page(page)
+	serializer = PaginationChannelSerializer(channels, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def channel_detail(request, channel_id):
+
+	channel = Channel.objects.get(id=channel_id)
+	serializer = ChannelSerializer(channel, many=False, context={'request':request})
+
+	return Response(serializer.data	)
+
+
+@api_view(['GET'])
+def product_list(request):
+
+	page, tag, brand = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('tag'), request.QUERY_PARAMS.get('brand')
+
+	if tag and page and brand:
+		products = Product.objects.filter(hash_tags__id=tag, brand=brand)
+	elif tag and page:
+		products = Product.objects.filter(hash_tags__id=tag)
+	elif page and brand:
+		products = Product.objects.filter(brand=brand)
+	elif page:
+		products = Product.objects.all()
+
+	paginator = Paginator(products, 6)
+	products = paginator.page(page)
+	serializer = PaginationProductSerializer(products, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def product_detail(request, product_id):
+
+	product = Product.objects.get(id=product_id)
+	serializer = ProductSerializer(product, many=False, context={'request':request})
+
+	return Response(serializer.data, status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def issue_list(request):
+
+	page, channel, tag = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('channel'), request.QUERY_PARAMS.get('tag')
+
+	if channel and tag and page:
+		issues = Issue.objects.filter(hash_tags__id=tag, channel__id=channel)
+	elif tag and page :
+		issues = Issue.objects.filter(hash_tags__id=tag)
+	elif page:
+		issues = Issue.objects.all()
+
+	paginator = Paginator(issues, 6)
+	paged_issues = paginator.page(page)
+	serializer = PaginationIssueSerializer(paged_issues, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def issue_detail(request, issue_id):
+
+	issue = Issue.objects.get(id=issue_id)
+	issue.view += 1
+	issue.save()
+
+	serializer = IssueSerializer(issue, many=False, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def brand_detail(request, brand_id):
+
+	brand = Brand.objects.get(id=brand_id)
+
+	serializer = BrandSerializer(brand, many=False, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def feed_list(request):
+
+	page, brand = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('brand')
+
+	if page and brand:
+		feeds = BrandFeed.objects.filter(brand=brand)
+
+		paginator = Paginator(feeds, 3)
+		paged_feeds = paginator.page(page)
+		serializer = PaginationBrandFeedSerializer(paged_feeds, context={'request':request})
+
+	elif page:
+
+		user = request.user
+		feeds = BrandFeed.objects.filter(brand__brand_follows_of_brand__user=user)
+
+		paginator = Paginator(feeds, 3)
+		paged_feeds = paginator.page(page)
+		serializer = PaginationBrandFeedSerializer(paged_feeds, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 """
 @api_view(['GET'])
@@ -78,43 +221,6 @@ def brand_products(request, brand_id):
 	return Response(serializer.data, status.HTTP_200_OK)
 
 @api_view(['GET'])
-def issue_list(request):
-
-	if request.method == 'GET':
-
-		if request.QUERY_PARAMS.get('reco') == 'shuffle':
-			import random
-			issue_list = list(Issue.objects.all())
-			random.shuffle(issue_list)
-			issue_list = issue_list[0:4]
-		else:
-			issue_list = Issue.objects.all()
-
-		serializer = IssueSerializer(issue_list, many=True, context={'request':request},
-														  fields=('id', 'channel', 'title', 'image', 'pub_date'))
-
-
-		return Response(serializer.data, status.HTTP_200_OK)
-
-@api_view(['GET','POST'])
-def channel_detail(request, channel_id):
-
-	if request.method == 'GET':
-		channel = Channel.objects.get(id=channel_id)
-		serializer = ChannelSerializer(channel, many=False, context={'request':request})
-
-		return Response(serializer.data	)
-
-@api_view(['GET', 'POST'])
-def issue_detail(request, channel_id, issue_id):
-
-	if request.method == 'GET':
-		issue = Issue.objects.get(id=issue_id)
-		serializer = IssueSerializer(Issue, many=False, context={'request':request})
-
-		return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
 def user_detail(request, user_id):
 	try:
 		user = User.objects.get(id=user_id)
@@ -122,9 +228,10 @@ def user_detail(request, user_id):
 		return Response(status=status.HTTP_404_NOT_FOUND)
 
 	if request.method == 'GET':
+		print("request",  request.user)
 		serializer = CustomUserDetailsSerializer(user, many=False, context={'request':request})
 
-		return Response(serializer.data)
+		return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST', 'DELETE'])
 def product_like(request, user_id, product_id):

@@ -2,20 +2,20 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from cart.models import Cart, CartItem
-from cart.serializer import ItemWriteSerializer, ItemReadSerializer
+from cart.serializer import ItemWriteSerializer, ItemReadSerializer, CartReadSerializer
 
 @api_view(['GET', 'POST', 'DELETE'])
 def cart_detail(request):
 
 	if request.method == 'GET':
 
-		try:
-			cart = Cart.objects.get(user=request.QUERY_PARAMS.get('user_id'))
-		except:
-			return Response(status=status.HTTP_404_NOT_FOUND)
+		cart = Cart.objects.get_or_create(request.user.id)
+		serializer = CartReadSerializer(cart, many=False, context={'request':request})
+
+		return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET', 'POST', 'DELETE'])
-def cart_item_list(request, user_id):
+def cart_item_list(request):
 	if request.method == 'POST':
 		serializer = ItemWriteSerializer(data=request.data)
 
@@ -28,16 +28,17 @@ def cart_item_list(request, user_id):
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['DELETE'])
-def cart_item_detail(request, user_id, cart_item_id):
+def cart_item_detail(request, item_id):
 	if request.method == 'DELETE':
 		try:
-			items = CartItem.objects.filter(id__in=request.data['del_list'])
-			cart = Cart.objects.get_or_create(request.QUERY_PARAMS.get('user_id'))
+			#items = CartItem.objects.filter(id__in=request.data['del_list'])
+			item = CartItem.objects.get(id=item_id)
 		except:
 			return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-		items.delete()
-		items = cart.cart_items_of_cart.all()
-		serializer = ItemReadSerializer(items, many=True, context={'request':request})
+		item.delete()
+		cart = Cart.objects.get(user=request.user)
+		serializer = CartReadSerializer(cart, many=False, context={'request':request})
+		#serializer = ItemReadSerializer(items, many=True, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
