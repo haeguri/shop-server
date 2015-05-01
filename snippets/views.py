@@ -16,6 +16,22 @@ from snippets.serializers import ProductSerializer, BrandSerializer, \
 	PaginationChannelSerializer, BrandFeedSerializer, PaginationBrandFeedSerializer, \
 	PubDaySerializer
 
+from cart.serializer import Cart
+
+@api_view(['GET'])
+def search_tag(request):
+
+	keyword = request.QUERY_PARAMS.get('keyword')
+
+	print("keyword", keyword)
+
+	hash_tags = HashTag.objects.filter(name__startswith=keyword)
+
+	serializer = HashTagSerializer(hash_tags, many=True, context={'request':request})
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 @api_view(['GET'])
 def hashtag_list(request):
 
@@ -224,11 +240,11 @@ def brand_products(request, brand_id):
 def user_detail(request, user_id):
 	try:
 		user = User.objects.get(id=user_id)
+		cart = Cart.objects.get_or_create(user.id)
 	except User.DoesNotexist:
 		return Response(status=status.HTTP_404_NOT_FOUND)
 
 	if request.method == 'GET':
-		print("request",  request.user)
 		serializer = CustomUserDetailsSerializer(user, many=False, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
@@ -293,7 +309,9 @@ def channel_follow(request, user_id, channel_id):
 
 	if request.method == 'POST':
 		try:
+			print("before")
 			ChannelFollow.objects.create(user=user, channel=channel)
+			print("after")
 			return Response(status=status.HTTP_201_CREATED)
 		except:
 			return Response(status=status.HTTP_400_BAD_REQUEST)

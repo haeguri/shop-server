@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
-from snippets.hangul import separate
 import os
 
 class HashTagCategory(models.Model):
@@ -114,7 +113,7 @@ class BrandFollowManager(models.Manager):
 
 class BrandFollow(models.Model):
 	user = models.ForeignKey(User, related_name="brand_follows_of_user")
-	brand = models.ForeignKey(Brand, related_name="brand_follows_of_brand", unique=True)
+	brand = models.ForeignKey(Brand, related_name="brand_follows_of_brand")
 
 	objects = BrandFollowManager()
 
@@ -193,7 +192,7 @@ class ChannelFollowManager(models.Manager):
 
 class ChannelFollow(models.Model):
 	user = models.ForeignKey(User, related_name="channel_follows_of_user")
-	channel = models.ForeignKey(Channel, related_name="channel_follows_of_channel", unique=True)
+	channel = models.ForeignKey(Channel, related_name="channel_follows_of_channel")
 
 	objects = ChannelFollowManager()
 
@@ -233,7 +232,7 @@ class IssueLikeManager(models.Manager):
 
 
 class IssueLike(models.Model):
-	issue = models.ForeignKey(Issue, related_name='issue_likes_of_issue', unique=True)
+	issue = models.ForeignKey(Issue, related_name='issue_likes_of_issue')
 	user = models.ForeignKey(User, related_name='issue_likes_of_user')
 
 	objects = IssueLikeManager()

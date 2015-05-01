@@ -1,5 +1,6 @@
 myvenv
 __pycache__
 staticfiels
-*.json
-snippets/migrations/*
+snippets/migrations/
+cart/migrations/
+

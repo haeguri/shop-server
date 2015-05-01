@@ -18,12 +18,7 @@ class CustomUserDetailsSerializer(serializers.ModelSerializer):
 	brand_follows_of_user = BrandFollowSerializer(many=True, fields=('id', 'brand',))
 	issue_likes_of_user = IssueLikeSerializer(many=True, fields=('id', 'issue',))
 	#cart = CartReadSerializer(many=False)
-	cart = serializers.SerializerMethodField()
-
-	def get_cart(self, instance):
-		cart = Cart.objects.get_or_create(self.context['request'].user.id)
-		serializer = CartReadSerializer(instance=cart, many=False, context=self.context['request'].user.id)
-		return serializer.data
+	cart = CartReadSerializer(many=False)
 
 	class Meta:
 		model = User

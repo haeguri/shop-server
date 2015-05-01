@@ -4,6 +4,7 @@ from snippets import views
 
 
 urlpatterns = patterns('',
+    url(r'^search$', views.search_tag),
     url(r'^products$', views.product_list),
     url(r'^products/(?P<product_id>[0-9]+)', views.product_detail),
 
