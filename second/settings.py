@@ -101,13 +101,12 @@ WSGI_APPLICATION = 'second.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-        'USER': 'haegyun',
-        'PASSWORD': '918647', # This must will be securely
+        'USER': 'postgres',
+        'PASSWORD': '82307201', # This must will be securely
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -156,3 +155,10 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
 
 DEBUG = True
+
+try:
+    from second.local_settings import *
+except ImportError:
+    print("local setting file is not exists.")
+    pass
+
