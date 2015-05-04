@@ -23,8 +23,6 @@ def search_tag(request):
 
 	keyword = request.QUERY_PARAMS.get('keyword')
 
-	print("keyword", keyword)
-
 	hash_tags = HashTag.objects.filter(name__startswith=keyword)
 
 	serializer = HashTagSerializer(hash_tags, many=True, context={'request':request})
