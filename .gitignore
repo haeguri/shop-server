@@ -2,4 +2,5 @@ myvenv
 __pycache__
 staticfiles
 second/local_settings.py
-
+*.pyc
+**/*.pyc
