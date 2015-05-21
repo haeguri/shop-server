@@ -4,140 +4,132 @@ from datetime import datetime
 from django.utils import timezone
 import os
 
+
 class HashTagCategory(models.Model):
-	name = models.CharField(unique=True, max_length=10, blank=False)
+	name 		= models.CharField(unique=True, max_length=10, blank=False)
 	is_required = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.name
 
-class HashTagManager(models.Manager):
 
+class HashTagManager(models.Manager):
 	def get_pop_hashtag(self):
 		HashTag.objects.filter()
 		pass
 
+
 class HashTag(models.Model):
-	name = models.CharField(unique=True, max_length=10, blank=False)
-	#separated_name = models.CharField(max_length=100)
-	category = models.ForeignKey(HashTagCategory, blank=False)
+	name 		= models.CharField(unique=True, max_length=10, blank=False)
+	category 	= models.ForeignKey(HashTagCategory, blank=False)
 
-	objects =HashTagManager()
-
-#	def separate_char(self):
-#		separate(self.name)
-
-#	def save(self, *args, **kwargs):
-#		if not self.subject_init:
-#			self.separated_name = self.subject_initials()
-#		super(HashTag, self).save(*args, **kwargs)
+	objects 	= HashTagManager()
 
 	def __str__(self):
-		if self.category.is_required==True:
-			return '['+ self.category.name+']' + self.name
+		if self.category.is_required == True:
+			return '[' + self.category.name + ']' + self.name
 		else:
 			return self.name
 
 	class Meta:
 		ordering = ('category',)
 
+
 class Gender(models.Model):
-	type = models.CharField(max_length=8)
-
-	def __str__(self):
-		return self.type
-
-class ProductSort(models.Model):
-	type = models.CharField(max_length=10)
+	type 		= models.CharField(max_length=8)
 
 	def __str__(self):
 		return self.type
 
 class BrandManager(models.Manager):
-
 	def get_without_follow(self, user_id, gender_id):
 		if user_id is not None:
 			follow_brands = BrandFollow.objects.filter(user=user_id)
 
 			return Brand.objects.exclude(brand_follows_of_brand__in=follow_brands).filter(gender=gender_id)
-		else: # anonymous user
+		else:  # anonymous user
 			return Brand.objects.all()
 
-class Brand(models.Model):
-	user = models.OneToOneField(User)
-	gender = models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
-	name = models.CharField(max_length=20)
-	description = models.TextField(max_length=200, blank=True)
-	profile = models.ImageField(upload_to='upload/brand', default='')
-	background = models.ImageField(upload_to='upload/brand/background', default='')
-	web = models.URLField(blank=True)
-	address = models.CharField(max_length=200, blank=True)
 
-	objects = BrandManager()
+class Brand(models.Model):
+	user 		= models.OneToOneField(User)
+	gender 		= models.ForeignKey(Gender, max_length=5, related_name='brands_of_gender', blank=True, null=True)
+	name 		= models.CharField(max_length=20)
+	description = models.TextField(max_length=200, blank=True)
+	profile 	= models.ImageField(upload_to='upload/brand', default='')
+	background 	= models.ImageField(upload_to='upload/brand/background', default='')
+	web 		= models.URLField(blank=True)
+	address 	= models.CharField(max_length=200, blank=True)
+
+	objects 	= BrandManager()
 
 	def __str__(self):
 		return self.name + '(' + self.gender.type + ')'
 
+
 class BrandInterview(models.Model):
-	brand = models.ForeignKey(Brand, related_name='interviews')
+	brand 		= models.ForeignKey(Brand, related_name='interviews')
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("upload/brand/%s/interviews/" % instance.brand.name, filename)
 		return path
 
-	image = models.ImageField(upload_to=get_upload_path)
+	image 		= models.ImageField(upload_to=get_upload_path)
+
 
 class BrandFeed(models.Model):
-	brand = models.ForeignKey(Brand, related_name='feeds')
-	title = models.CharField(max_length=20, blank=False)
-	body = models.TextField(max_length=200, blank=True)
-	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
+	brand 		= models.ForeignKey(Brand, related_name='feeds')
+	title 		= models.CharField(max_length=20, blank=False)
+	body 		= models.TextField(max_length=200, blank=True)
+	pub_date 	= models.DateTimeField('date published', default=datetime.now, blank=True)
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("upload/brand/%s/feed/" % instance.brand.name, filename)
 		return path
 
-	image = models.ImageField(upload_to=get_upload_path)
+	image 		= models.ImageField(upload_to=get_upload_path)
 
 	class Meta:
 		ordering = ('-pub_date',)
 
 
 class BrandFollowManager(models.Manager):
-
 	def is_follow(self, user_id, brand_id):
 		try:
 			return BrandFollow.objects.get(user=user_id, brand=brand_id) is not None
 		except:
 			return False
 
-class BrandFollow(models.Model):
-	user = models.ForeignKey(User, related_name="brand_follows_of_user")
-	brand = models.ForeignKey(Brand, related_name="brand_follows_of_brand")
 
-	objects = BrandFollowManager()
+class BrandFollow(models.Model):
+	user 		= models.ForeignKey(User, related_name="brand_follows_of_user")
+	brand 		= models.ForeignKey(Brand, related_name="brand_follows_of_brand")
+
+	objects 	= BrandFollowManager()
+
 
 class Product(models.Model):
-	gender = models.ForeignKey(Gender, blank=False, null=True)
-	hash_tags = models.ManyToManyField(HashTag, related_name='products', blank=False)
-	brand = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
-	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
-	name = models.CharField(unique=True, max_length=15)
+	gender 		= models.ForeignKey(Gender, blank=False, null=True)
+	hash_tags 	= models.ManyToManyField(HashTag, related_name='products', blank=False)
+	brand 		= models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
+	pub_date 	= models.DateTimeField('date published', default=datetime.now, blank=True)
+	name 		= models.CharField(unique=True, max_length=15)
 	description = models.TextField(max_length=100, default='')
-	price = models.IntegerField(default=0)
+	price 		= models.IntegerField(default=0)
 
 	def __str__(self):
 		return self.name
 
+
 class ProductImage(models.Model):
-	product = models.ForeignKey(Product, related_name='images')
+	product 	= models.ForeignKey(Product, related_name='images')
 	description = models.TextField(max_length=1000, default='', blank=True)
 
 	def get_upload_path(instance, filename):
 		path = os.path.join("product/%s/" % instance.product.name, filename)
 		return path
 
-	image = models.ImageField(upload_to=get_upload_path)
+	image 		= models.ImageField(upload_to=get_upload_path)
 
 
 class PubDay(models.Model):
@@ -150,39 +142,27 @@ class PubDay(models.Model):
 		('토', '토요일'),
 	)
 
-	day = models.CharField(blank=True, max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='월')
+	day 		= models.CharField(blank=True, max_length=2, choices=DAY_OF_WHICHDAY_CHOICES, default='월')
 
 	def __str__(self):
-
 		return self.day
 
-class ChannelManager(models.Manager):
-	def as_json(self, channel):
-		print("channel.background", dir(channel.background.path))
-		return dict(
-			name=channel.name, which_day=channel.which_day, created=channel.created, profile=channel.profile,
-			background=channel.background, channel_follows_of_channel=channel.channel_follows_of_channel
-		)
-
 class Channel(models.Model):
-
-	name = models.CharField(unique=True, max_length=10)
-	brief = models.CharField(max_length=10, default='', blank=False)
-	pub_days = models.ManyToManyField(PubDay, blank=True)
-	created = models.DateTimeField('date created', default=datetime.now)
-	introduce = models.TextField(max_length=200)
-	profile = models.ImageField(upload_to='channel')
-	background = models.ImageField(upload_to='channel/background', default='')
-	web = models.URLField(blank=True)
-	address = models.CharField(max_length=20, default='', blank=True)
-
-	objects = ChannelManager()
+	name 		= models.CharField(unique=True, max_length=10)
+	brief 		= models.CharField(max_length=10, default='', blank=False)
+	pub_days 	= models.ManyToManyField(PubDay, blank=True)
+	created 	= models.DateTimeField('date created', default=datetime.now, blank=True)
+	introduce 	= models.TextField(max_length=200)
+	profile 	= models.ImageField(upload_to='channel')
+	background 	= models.ImageField(upload_to='channel/background', default='')
+	web 		= models.URLField(blank=True)
+	address 	= models.CharField(max_length=20, default='', blank=True)
 
 	def __str__(self):
 		return self.name
 
-class ChannelFollowManager(models.Manager):
 
+class ChannelFollowManager(models.Manager):
 	def is_follow(self, user_id, channel_id):
 		try:
 			return ChannelFollow.objects.get(user=user_id, channel=channel_id) is not None
@@ -191,10 +171,11 @@ class ChannelFollowManager(models.Manager):
 
 
 class ChannelFollow(models.Model):
-	user = models.ForeignKey(User, related_name="channel_follows_of_user")
-	channel = models.ForeignKey(Channel, related_name="channel_follows_of_channel")
+	user 		= models.ForeignKey(User, related_name="channel_follows_of_user")
+	channel 	= models.ForeignKey(Channel, related_name="channel_follows_of_channel")
 
-	objects = ChannelFollowManager()
+	objects 	= ChannelFollowManager()
+
 
 class IssueManager(models.Manager):
 	def get_without_follow(self, user_id):
@@ -207,23 +188,23 @@ class IssueManager(models.Manager):
 		except:
 			return Issue.objects.all()
 
+
 class Issue(models.Model):
-
-	pub_date = models.DateTimeField('date published', default=timezone.localtime(timezone.now()))
-	hash_tags = models.ManyToManyField(HashTag, related_name='issues')
-	channel = models.ForeignKey(Channel, related_name='issues_of_channel')
-	title = models.CharField(unique=True, max_length=10)
+	pub_date 	= models.DateTimeField('date published', default=datetime.now, blank=True)
+	hash_tags 	= models.ManyToManyField(HashTag, related_name='issues')
+	channel 	= models.ForeignKey(Channel, related_name='issues_of_channel')
+	title 		= models.CharField(unique=True, max_length=10)
 	description = models.TextField(max_length=200, default='')
-	image = models.ImageField(upload_to='channel/channel_issue', default='')
-	view = models.PositiveIntegerField(default=0)
+	image 		= models.ImageField(upload_to='channel/channel_issue', default='')
+	view 		= models.PositiveIntegerField(default=0)
 
-	objects = IssueManager()
+	objects 	= IssueManager()
 
 	def __str__(self):
 		return self.title
 
-class IssueLikeManager(models.Manager):
 
+class IssueLikeManager(models.Manager):
 	def is_like(self, user_id, issue_id):
 		try:
 			return IssueLike.objects.get(user=user_id, issue=issue_id) is not None
@@ -232,18 +213,19 @@ class IssueLikeManager(models.Manager):
 
 
 class IssueLike(models.Model):
-	issue = models.ForeignKey(Issue, related_name='issue_likes_of_issue')
-	user = models.ForeignKey(User, related_name='issue_likes_of_user')
+	issue 		= models.ForeignKey(Issue, related_name='issue_likes_of_issue')
+	user 		= models.ForeignKey(User, related_name='issue_likes_of_user')
 
-	objects = IssueLikeManager()
+	objects 	= IssueLikeManager()
+
 
 class IssueItem(models.Model):
-	issue = models.ForeignKey(Issue, related_name='issue_items_of_issue')
-	product = models.ForeignKey(Product, related_name='issue_items_of_product')
-	tip = models.CharField(max_length=50)
+	issue 		= models.ForeignKey(Issue, related_name='issue_items_of_issue')
+	product 	= models.ForeignKey(Product, related_name='issue_items_of_product')
+	tip 		= models.CharField(max_length=50)
+
 
 class ProductLikeManager(models.Manager):
-
 	def is_like(self, user_id, product_id):
 		try:
 			return ProductLike.objects.get(user=user_id, product=product_id) is not None
@@ -252,8 +234,8 @@ class ProductLikeManager(models.Manager):
 
 
 class ProductLike(models.Model):
-	product = models.ForeignKey(Product, related_name='product_likes_of_product')
-	user = models.ForeignKey(User, related_name='product_likes_of_user')
+	product 	= models.ForeignKey(Product, related_name='product_likes_of_product')
+	user 		= models.ForeignKey(User, related_name='product_likes_of_user')
 
 	objects = ProductLikeManager()
 
@@ -262,16 +244,20 @@ from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
 import shutil
 
+
 @receiver(pre_delete, sender=Product)
 def product_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	from second.settings import BASE_DIR
+
 	shutil.rmtree(os.path.join('%s/media/product/' % BASE_DIR, instance.name))
+
 
 @receiver(pre_delete, sender=ProductImage)
 def product_image_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()
+
 
 @receiver(pre_delete, sender=BrandInterview)
 def brand_interview_delete(sender, instance, **kwargs):
@@ -285,16 +271,19 @@ def brand_delete(sender, instance, **kwargs):
 	instance.image.delete()
 	instance.background.delete()
 
+
 @receiver(pre_delete, sender=Channel)
 def channel_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()
 	instance.background.delete()
 
+
 @receiver(pre_delete, sender=Issue)
 def issue_delete(sender, instance, **kwargs):
 	# Pass false so FileField doesn't save the model.
 	instance.image.delete()
+
 
 @receiver(pre_delete, sender=BrandFeed)
 def brandfeed_delete(sender, instance, **kwargs):

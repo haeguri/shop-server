@@ -21,8 +21,6 @@ SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-TEMPLATE_DEBUG = True
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -104,9 +102,9 @@ WSGI_APPLICATION = 'second.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '82307201', # This must will be securely
+        'NAME':'postgres',
+        'USER':'haegyun',
+        'password':'918647',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -139,20 +137,34 @@ CORS_ALLOW_METHODS = (
     'OPTIONS',
 )
 
-AUTH_USER_MODEL = 'auth.User'
+#AUTH_USER_MODEL = 'auth.User'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ALLOWED_HOSTS = ['*']
+
+
+# django all-auth package settings
+
+ACCOUNT_USERNAME_MIN_LENGTH = 4
 
 ACCOUNT_ADAPTER = 'second.adapters.MessageFreeAdapter'
+
+#
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+ACCOUNT_USERNAME_REQUIRED = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['*']
+TEMPLATE_DEBUG = True
 
 STATIC_ROOT = 'staticfiles'
 

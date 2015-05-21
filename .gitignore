@@ -1,7 +1,5 @@
 myvenv
 __pycache__
-staticfiels
-snippets/migrations/
-cart/migrations/
+staticfiles
 second/local_settings.py
 

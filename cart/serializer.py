@@ -32,11 +32,11 @@ class CartReadSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Cart
-		fields = ('id', 'user', 'cart_items_of_cart', 'total_price', 'shipping', 'address')
+		fields = ('id', 'user', 'cart_items_of_cart',)
 
 class CartWriteSerializer(serializers.ModelSerializer):
 	cart_items_of_cart = ItemWriteSerializer()
 
 	class Meta:
 		model = Cart
-		fields = ('id', 'user', 'cart_items_of_cart', 'total_price', 'shipping', 'address')
+		fields = ('id', 'user', 'cart_items_of_cart',)

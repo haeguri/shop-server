@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from cart.models import Cart, CartItem
 from cart.serializer import ItemWriteSerializer, ItemReadSerializer, CartReadSerializer
+from django.contrib.auth.models import User
 
 @api_view(['GET', 'POST', 'DELETE'])
 def cart_detail(request):
@@ -17,6 +18,7 @@ def cart_detail(request):
 @api_view(['GET', 'POST', 'DELETE'])
 def cart_item_list(request):
 	if request.method == 'POST':
+		print("resquerst.data", request.data)
 		serializer = ItemWriteSerializer(data=request.data)
 
 		if serializer.is_valid():
@@ -42,3 +44,9 @@ def cart_item_detail(request, item_id):
 		#serializer = ItemReadSerializer(items, many=True, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def order(request):
+	user = User.objects.get(request.user.id)
+
+	pass

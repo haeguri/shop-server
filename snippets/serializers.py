@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from snippets.models import Gender, Product, Brand, ProductLike, Channel, Issue, IssueItem, \
-	IssueLike, ChannelFollow, BrandFollow, ProductSort, ProductImage, BrandInterview, \
+	IssueLike, ChannelFollow, BrandFollow,  ProductImage, BrandInterview, \
 	BrandFeed, HashTag, PubDay
 from rest_framework import pagination
 
@@ -173,13 +173,6 @@ class IssueLikeSerializer(DynamicFieldsModelSerializer):
 	class Meta:
 		model = IssueLike
 		fields = ('id', 'issue', 'user',)
-
-class ProductSortSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = ProductSort
-		fields = ('id', 'type',)
-
 
 class PaginationChannelSerializer(pagination.PaginationSerializer):
 
