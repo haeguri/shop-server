@@ -4,3 +4,4 @@ staticfiles
 second/local_settings.py
 *.pyc
 **/*.pyc
+.idea/

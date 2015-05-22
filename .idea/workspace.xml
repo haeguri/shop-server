@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d57ee61-934f-494d-9664-1a918d2a05ec" name="Default" comment="" />
+    <list default="true" id="8d57ee61-934f-494d-9664-1a918d2a05ec" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/settings.py" afterPath="$PROJECT_DIR$/second/settings.py" />
+    </list>
     <ignored path="second.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,65 +27,9 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43945312">
-              <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.5566406">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/local_settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snippets/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="216" column="77" selection-start-line="216" selection-start-column="77" selection-end-line="216" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cart/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cart/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -98,21 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/urls.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cart/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cart/models.py">
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/second/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -405,6 +351,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="snippets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="second" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -423,6 +387,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -434,7 +416,7 @@
     <property name="options.lastSelected" value="configurable.group.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null&#10;LoginSerializer&#9;null&#9;null&#10;serializer..py&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;cartmodels&#9;FILE&#9;uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null&#10;LoginSerializer&#9;null&#9;null" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -824,34 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Python</ID>
-          <OriginalElement>#/Users/haegyun/Proejct-django/project/second/cart/models.py</OriginalElement>
-          <nodes>
-            <node x="" y="">django.db.models.base.Model</node>
-            <node x="" y="">_collections_abc.Hashable</node>
-            <node x="" y="">cart.models.CartInfo</node>
-            <node x="" y="">cart.models.Order</node>
-            <node x="" y="">cart.models.CartManager</node>
-            <node x="" y="">cart.models.CartItem</node>
-            <node x="" y="">cart.models.Cart</node>
-            <node x="" y="">django.db.models.manager.Manager</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.3687838503200394" x="766.0" y="986.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>Project Files</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://Python/#/Users/haegyun/Proejct-django/project/second/snippets/models.py">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1158,50 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cart/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="76" selection-start-line="73" selection-start-column="76" selection-end-line="73" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second/adapters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="216" column="77" selection-start-line="216" selection-start-column="77" selection-end-line="216" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cart/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cart/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1220,6 +1130,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/Users/haegyun/Proejct-django/project/second/cart/models.py</OriginalElement>
+          <nodes>
+            <node x="" y="">django.db.models.base.Model</node>
+            <node x="" y="">_collections_abc.Hashable</node>
+            <node x="" y="">cart.models.CartInfo</node>
+            <node x="" y="">cart.models.CartManager</node>
+            <node x="" y="">cart.models.Order</node>
+            <node x="" y="">django.db.models.manager.Manager</node>
+            <node x="" y="">cart.models.Cart</node>
+            <node x="" y="">cart.models.CartItem</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.3687838503200394" x="766.0" y="986.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2890625">
+          <caret line="216" column="77" selection-start-line="216" selection-start-column="77" selection-end-line="216" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32617188">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/adapters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/second/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1230,8 +1211,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/second/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43945312">
-          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.5566406">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding />
         </state>
       </provider>

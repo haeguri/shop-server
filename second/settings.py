@@ -33,7 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'snippets',
-    'cart',
+    #'cart',
     # 3rd party packages...
     'rest_framework',
     'rest_framework.authtoken',
