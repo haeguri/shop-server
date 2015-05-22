@@ -1,7 +1,7 @@
 from django.contrib import admin
 from snippets.models import Gender, Product, Brand, Channel, Issue, IssueItem, \
     ProductImage, BrandInterview, HashTag, HashTagCategory, BrandFeed, PubDay
-from cart.models import Order
+#from cart.models import Order
 
 from snippets.forms import ProductForm
 
@@ -108,12 +108,14 @@ class ProductAdmin(admin.ModelAdmin):
     def get_hash_tags(self, obj):
         return "\n".join([hash_tag.name for hash_tag in obj.hash_tags.all()])
 
+"""
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'means_pay', 'order_date', 'state_pay', 'state_ship']
 
     list_editable = ['state_pay', 'state_ship']
 
     search_fields = ['user']
+"""
 
 admin.site.register(HashTagCategory, HashTagCategoryAdmin)
 admin.site.register(BrandFeed, BrandFeedAdmin)
@@ -124,4 +126,4 @@ admin.site.register(Brand, BrandAdmin)
 admin.site.register(PubDay, PubDayAdmin)
 admin.site.register(Channel, ChannelAdmin)
 admin.site.register(Issue, IssueAdmin)
-admin.site.register(Order, OrderAdmin)
+#admin.site.register(Order, OrderAdmin)

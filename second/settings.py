@@ -23,6 +23,8 @@ SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 
 # Application definition
 
+
+
 INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
@@ -33,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'snippets',
+    # 현재 cart app은 사용하지 않음.
     #'cart',
     # 3rd party packages...
     'rest_framework',

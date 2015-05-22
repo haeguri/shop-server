@@ -4,7 +4,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     url(r'^api/', include('snippets.urls')),
-    url(r'^api/cart/', include('cart.urls')),
+    #url(r'^api/cart/', include('cart.urls')),
     url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/rest-auth/', include('rest_auth.urls')),
