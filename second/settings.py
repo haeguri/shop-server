@@ -104,12 +104,7 @@ WSGI_APPLICATION = 'second.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '82307201',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+
     }
 }
 
@@ -151,16 +146,16 @@ ALLOWED_HOSTS = ['*']
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
-ACCOUNT_ADAPTER = 'second.adapters.MessageFreeAdapter'
+ACCOUNT_ADAPTER = "second.adapters.MessageFreeAdapter"
 
 #
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_AUTHENTICATION_METHOD = "username"
 
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USERNAME_REQUIRED = True
 
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
