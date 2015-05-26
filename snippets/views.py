@@ -190,7 +190,7 @@ def brand_products(request, brand_id):
 def user_detail(request, user_id):
 
 	user = User.objects.get(id=user_id)
-	Cart.objects.check_and_create(user)
+	#Cart.objects.check_and_create(user)
 
 	if request.method == 'GET':
 		serializer = CustomUserDetailsSerializer(user, many=False, context={'request':request})
