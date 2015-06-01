@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d57ee61-934f-494d-9664-1a918d2a05ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/views.py" afterPath="$PROJECT_DIR$/snippets/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/settings.py" afterPath="$PROJECT_DIR$/second/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="second.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,31 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/local_settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="8" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/registration/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -56,21 +37,75 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_auth.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/custom_auth.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/urls.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/app_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="middleware.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/second/middleware.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="65" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/global_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.222222">
+              <caret line="474" column="14" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/second/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.2727273">
+              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -79,9 +114,21 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snippets/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34793815">
-              <caret line="192" column="6" selection-start-line="192" selection-start-column="6" selection-end-line="192" selection-end-column="6" />
+            <state vertical-scroll-proportion="-0.79252577">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/auth/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="379" column="18" selection-start-line="379" selection-start-column="18" selection-end-line="379" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,11 +180,11 @@
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/authtoken/serializers.py" />
-        <option value="$PROJECT_DIR$/snippets/models.py" />
         <option value="$PROJECT_DIR$/second/urls.py" />
         <option value="$PROJECT_DIR$/snippets/admin.py" />
-        <option value="$PROJECT_DIR$/second/settings.py" />
         <option value="$PROJECT_DIR$/snippets/views.py" />
+        <option value="$PROJECT_DIR$/snippets/models.py" />
+        <option value="$PROJECT_DIR$/second/settings.py" />
       </list>
     </option>
   </component>
@@ -177,6 +224,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -299,7 +347,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="allauth" />
+              <option name="myItemId" value="django" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,11 +369,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="allauth" />
+              <option name="myItemId" value="django" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
+              <option name="myItemId" value="contrib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.4.2 virtualenv at ~/Envs/radio &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contrib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.4.2 virtualenv at ~/Envs/radio &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,7 +487,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,7 +494,7 @@
     <property name="options.lastSelected" value="configurable.group.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;followserializer&#9;null&#9;null&#10;cartmodels&#9;FILE&#9;uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;followserializer&#9;null&#9;null&#10;cartmodels&#9;FILE&#9;uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null&#10;userdetailseriali&#9;null&#9;null&#10;custom_seria&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_serializer.py&#10;Login&#9;null&#9;null&#10;tokenserializer&#9;null&#9;null&#10;Tokenserializer&#9;null&#9;null" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -680,7 +783,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23194444" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23958333" sideWeight="0.50062114" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -721,48 +824,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/migrations/0004_auto_20150512_1540.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38659793">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019329896">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticfiles/rest_framework/js/jquery-1.8.1-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35051546">
-          <caret line="1" column="13633" selection-start-line="1" selection-start-column="13633" selection-end-line="1" selection-end-column="13633" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/generics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8691406">
@@ -777,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.077319585">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/authentication.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04639175">
@@ -795,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,25 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/app_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -846,13 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="44" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -884,25 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cart/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/second/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -934,16 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/snippets/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -955,9 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="117" column="3" selection-start-line="117" selection-start-column="3" selection-end-line="117" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,7 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,9 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22809279">
           <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30927834">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,9 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1059,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,23 +1066,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/second/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.019329896">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second/settings.py">
+    <entry file="file://$PROJECT_DIR$/cart/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.019329896">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/custom_auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42525774">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0154639175">
+          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9523196">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1103,28 +1112,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
+    <entry file="uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/views.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/Users/haegyun/Proejct-django/project/second/cart/views.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="576.0" y="414.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/auth/backends.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20231959">
+          <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="379" column="18" selection-start-line="379" selection-start-column="18" selection-end-line="379" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/registration/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second/custom_auth.py">
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/app_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/global_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.222222">
+          <caret line="474" column="14" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="65" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2727273">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34793815">
-          <caret line="192" column="6" selection-start-line="192" selection-start-column="6" selection-end-line="192" selection-end-column="6" />
+        <state vertical-scroll-proportion="-0.79252577">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

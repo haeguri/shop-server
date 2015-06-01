@@ -96,10 +96,6 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER':'second.custom_auth.CustomUserDetailsSerializer'
 }
 
-ROOT_URLCONF = 'second.urls'
-
-WSGI_APPLICATION = 'second.wsgi.application'
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 DATABASES = {
@@ -114,9 +110,11 @@ DATABASES = {
 }
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
+ROOT_URLCONF = 'second.urls'
 
+WSGI_APPLICATION = 'second.wsgi.application'
+
+# https://docs.djangoproject.com/en/1.7/topics/i18n/
 LANGUAGE_CODE = 'KR'
 
 TIME_ZONE = 'Asia/Seoul'
