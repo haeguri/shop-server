@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^products/(?P<product_id>[0-9]+)', views.product_detail),
 
     url(r'^hashtags',views.hashtag_list),
-    url(r'^pubdays$', views.pubday_list),
     url(r'^channels$', views.channel_list),
     url(r'^channels/(?P<channel_id>[0-9]+)$', views.channel_detail),
 
@@ -17,8 +16,6 @@ urlpatterns = patterns('',
     url(r'^issues/(?P<issue_id>[0-9]+)$', views.issue_detail),
 
     url(r'^brands/(?P<brand_id>[0-9]+)$', views.brand_detail),
-
-    url(r'^feeds$', views.feed_list),
 
     url(r'^users/(?P<user_id>[0-9]+)$', views.user_detail),
 

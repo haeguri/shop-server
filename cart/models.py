@@ -4,7 +4,6 @@ from django.utils import timezone
 from snippets.models import Product
 
 
-
 class CartManager(models.Manager):
 	def check_and_create(self, user):
 		try:

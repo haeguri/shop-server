@@ -24,6 +24,7 @@ SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 # Application definition
 
 
+SITE_ID = 1
 
 INSTALLED_APPS = (
     'grappelli',
@@ -37,7 +38,6 @@ INSTALLED_APPS = (
     'snippets',
     # 현재 cart app은 사용하지 않음.
     #'cart',
-    # 3rd party packages...
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
@@ -61,8 +61,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
-
-SITE_ID = 1
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
@@ -88,12 +86,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     )
-    #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.custom_auth.CustomTokenSerializer',
-    'USER_DETAILS_SERIALIZER':'second.custom_auth.CustomUserDetailsSerializer'
+    'TOKEN_SERIALIZER': 'second.custom_auth.TokenSerializer',
+    'USER_DETAILS_SERIALIZER':'second.custom_auth.UserDetailsSerializer',
+    'LOGIN_SERIALIZER':'second.custom_auth.LoginSerializer',
 }
 
 # Database
@@ -101,11 +99,10 @@ REST_AUTH_SERIALIZERS = {
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '82307201', # This must will be securely
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': 'ladio',
+        'USER': 'admin',
+         # 실제 제품에서는 비밀번호 숨겨야 함.
+        'PASSWORD': '82307201',
     }
 }
 
@@ -119,7 +116,7 @@ LANGUAGE_CODE = 'KR'
 
 TIME_ZONE = 'Asia/Seoul'
 
-#USE_I18N = True
+USE_I18N = True
 
 USE_TZ = True
 
@@ -138,27 +135,27 @@ CORS_ALLOW_METHODS = (
     'OPTIONS',
 )
 
-#AUTH_USER_MODEL = 'auth.User'
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = ['*']
 
 
-# django all-auth package settings
 
-ACCOUNT_USERNAME_MIN_LENGTH = 4
+AUTH_USER_MODEL = 'snippets.User'
+
+# django all-auth package settings
 
 ACCOUNT_ADAPTER = "second.adapters.MessageFreeAdapter"
 
-#
-ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-ACCOUNT_EMAIL_REQUIRED = False
-
-ACCOUNT_USERNAME_REQUIRED = "username"
-
+# 빌트-인 장고 유저 모델에서의 "username" 필드 이름에 대응되는 커스텀 사용자 모델의 필드 이름.
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'nickname'
+ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+# "True" 설정시 실제로 사용자 모델의 필드 이름이 "username"이라는 필드를 required 상태로 요구.
+# 근데 "username"은 커스텀 사용자 모델에는 없는 필드.
+ACCOUNT_USERNAME_REQUIRED = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/

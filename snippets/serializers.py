@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from snippets.models import Gender, Product, Brand, ProductLike, Channel, Issue, IssueItem, \
-	IssueLike, ChannelFollow, BrandFollow,  ProductImage, BrandInterview, \
-	BrandFeed, HashTag, PubDay
 from rest_framework import pagination
+
+from snippets.models import Gender, Product, Brand, ProductLike, Channel, Issue, IssueItem, \
+	IssueLike, ChannelFollow, BrandFollow,  ProductImage, BrandInterview, HashTag
 
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
@@ -58,17 +58,9 @@ class BrandInterviewSerializer(serializers.ModelSerializer):
 		model = BrandInterview
 		fields = ('id', 'image')
 
-class BrandFeedSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = BrandFeed
-		fields = ('id', 'brand', 'title', 'pub_date', 'body', 'image')
-
-
 class BrandSerializer(DynamicFieldsModelSerializer):
 	products_of_brand = ProductSerializer(many=True)
 	interviews = BrandInterviewSerializer(many=True)
-	feeds = BrandFeedSerializer(many=True)
 
 	def to_representation(self, instance):
 		ret = super(BrandSerializer, self).to_representation(instance)
@@ -80,7 +72,7 @@ class BrandSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Brand
-		fields = ('id', 'name', 'description', 'gender', 'products_of_brand', 'feeds', 'profile', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
+		fields = ('id', 'designer', 'description', 'gender', 'products_of_brand', 'profile', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
 
 class IssueItemSerializer(serializers.ModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
@@ -103,7 +95,7 @@ class SubChannelSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'name', 'introduce', 'web', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
+		fields = ('id', 'maker', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
 
 class IssueSerializer(DynamicFieldsModelSerializer):
 	issue_items_of_issue = IssueItemSerializer(many=True)
@@ -122,16 +114,8 @@ class IssueSerializer(DynamicFieldsModelSerializer):
 		model = Issue
 		fields = ('id', 'channel', 'title', 'description', 'image', 'pub_date', 'hash_tags', 'view', 'issue_items_of_issue', 'issue_likes_of_issue')
 
-
-class PubDaySerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = PubDay
-		fields = ('id', 'day')
-
 class ChannelSerializer(DynamicFieldsModelSerializer):
 	issues_of_channel = IssueSerializer(many=True, fields=('id', 'channel', 'hash_tags', 'title', 'image', 'pub_date', 'issue_likes_of_issue'))
-	pub_days = PubDaySerializer(many=True)
 
 	def to_representation(self, instance):
 		ret = super(ChannelSerializer, self).to_representation(instance)
@@ -143,7 +127,7 @@ class ChannelSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'name', 'pub_days','brief', 'introduce', 'web', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
+		fields = ('id', 'maker', 'brief', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
 
 class ProductLikeSerializer(DynamicFieldsModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
@@ -154,14 +138,14 @@ class ProductLikeSerializer(DynamicFieldsModelSerializer):
 
 
 class BrandFollowSerializer(DynamicFieldsModelSerializer):
-	brand = BrandSerializer(many=False, fields = ('id', 'name', 'gender', 'feeds', 'products_of_brand', 'profile', 'brand_follows_of_brand'))
+	brand = BrandSerializer(many=False, fields = ('id', 'designer', 'gender', 'products_of_brand', 'profile', 'brand_follows_of_brand'))
 
 	class Meta:
 		model = BrandFollow
 		fields = ('id', 'brand', 'user')
 
 class ChannelFollowSerializer(DynamicFieldsModelSerializer):
-	channel = ChannelSerializer(many=False, fields = ('id', 'name', 'profile', 'channel_follows_of_channel',))
+	channel = ChannelSerializer(many=False, fields = ('id', 'maker', 'profile', 'channel_follows_of_channel',))
 
 	class Meta:
 		model = ChannelFollow
@@ -188,8 +172,3 @@ class PaginationIssueSerializer(pagination.PaginationSerializer):
 
 	class Meta:
 		object_serializer_class = IssueSerializer
-
-class PaginationBrandFeedSerializer(pagination.PaginationSerializer):
-
-	class Meta:
-		object_serializer_class = BrandFeedSerializer

@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
 from django.views.generic import ListView
@@ -7,18 +6,19 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from second.custom_auth import CustomUserDetailsSerializer
+from second.custom_auth import UserDetailsSerializer
 
 from snippets.models import Product, ProductLike, Channel, HashTag,  \
-	ChannelFollow, Issue, IssueLike, Brand, BrandFollow, BrandFeed, PubDay
+	ChannelFollow, Issue, IssueLike, Brand, BrandFollow
 
 from snippets.serializers import ProductSerializer, BrandSerializer, \
 	ChannelSerializer, IssueSerializer, HashTagSerializer, \
 	PaginationProductSerializer, PaginationIssueSerializer, \
-	PaginationChannelSerializer, BrandFeedSerializer, PaginationBrandFeedSerializer, \
-	PubDaySerializer
+	PaginationChannelSerializer
 
-from cart.models import Cart
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 @api_view(['GET'])
 def search_tag(request):
@@ -47,26 +47,11 @@ def hashtag_list(request):
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-def pubday_list(request):
-
-	pub_days = PubDay.objects.all()
-
-	serializer = PubDaySerializer(pub_days, many=True, context={'request':request})
-
-	return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
 def channel_list(request):
 
-	page, day = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('day')
+	page = request.QUERY_PARAMS.get('page')
 
-	query_test = request.QUERY_PARAMS.get('query')
-
-	if page and day in ['월', '화', '수', '목', '금', '토']:
-		channels = Channel.objects.filter(pub_days__day=day)
-	else:
-		channels = Channel.objects.all()
-
+	channels = Channel.objects.all()
 
 	paginator = Paginator(channels, 6)
 	channels = paginator.page(page)
@@ -151,30 +136,6 @@ def brand_detail(request, brand_id):
 
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-@api_view(['GET'])
-def feed_list(request):
-
-	page, brand = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('brand')
-
-	if page and brand:
-		feeds = BrandFeed.objects.filter(brand=brand)
-
-		paginator = Paginator(feeds, 3)
-		paged_feeds = paginator.page(page)
-		serializer = PaginationBrandFeedSerializer(paged_feeds, context={'request':request})
-
-	elif page:
-
-		user = request.user
-		feeds = BrandFeed.objects.filter(brand__brand_follows_of_brand__user=user)
-
-		paginator = Paginator(feeds, 3)
-		paged_feeds = paginator.page(page)
-		serializer = PaginationBrandFeedSerializer(paged_feeds, context={'request':request})
-
-	return Response(serializer.data, status=status.HTTP_200_OK)
-
 @api_view(['GET'])
 def brand_products(request, brand_id):
 
@@ -193,7 +154,7 @@ def user_detail(request, user_id):
 	#Cart.objects.check_and_create(user)
 
 	if request.method == 'GET':
-		serializer = CustomUserDetailsSerializer(user, many=False, context={'request':request})
+		serializer = UserDetailsSerializer(user, many=False, context={'request':request})
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
 
