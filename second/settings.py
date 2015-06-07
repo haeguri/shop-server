@@ -27,7 +27,7 @@ SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 SITE_ID = 1
 
 INSTALLED_APPS = (
-    'grappelli',
+    # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,6 +138,14 @@ CORS_ALLOW_METHODS = (
 CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = ['*']
+
+# email 관련 세팅
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'haegyun821@gmail.com'
+EMAIL_HOST_PASSWORD = 'dlfvmf26'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 
 

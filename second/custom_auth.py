@@ -39,6 +39,7 @@ class AuthTokenSerializer(serializers.Serializer):
 class LoginSerializer(AuthTokenSerializer):
 
 	def validate(self, attrs):
+		print("Test")
 		attrs = super(LoginSerializer, self).validate(attrs)
 		if 'rest_auth.registration' in settings.INSTALLED_APPS:
 			from allauth.account import app_settings
@@ -67,3 +68,10 @@ class TokenSerializer(TokenSerializer):
     class Meta:
         model =  Token
         fields = ('key','user')
+
+
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLogin
+
+class FacebookLogin(SocialLogin):
+    adapter_class = FacebookOAuth2Adapter
