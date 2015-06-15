@@ -152,7 +152,6 @@ EMAIL_USE_TLS = True
 AUTH_USER_MODEL = 'snippets.User'
 
 # django all-auth package settings
-
 ACCOUNT_ADAPTER = "second.adapters.MessageFreeAdapter"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -164,6 +163,11 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # "True" 설정시 실제로 사용자 모델의 필드 이름이 "username"이라는 필드를 required 상태로 요구.
 # 근데 "username"은 커스텀 사용자 모델에는 없는 필드.
 ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+SOCIALACCOUNT_ADAPTER = "second.custom_auth.SocialAccountAdapter"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/

@@ -15,3 +15,5 @@ class MessageFreeAdapter(DefaultAccountAdapter):
     def add_message(self, request, level, message_template,
                     message_context={}, extra_tags=''):
         pass
+
+#/Users/haegyun/Envs/radio/lib/python3.4/site-packages/allauth/account/adapter.py

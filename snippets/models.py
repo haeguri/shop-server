@@ -266,7 +266,6 @@ class UserManager(BaseUserManager):
         Creates and saves a User with the given email, date of
         birth and password.
         """
-        print("test!")
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -292,10 +291,11 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+from django.core.validators import MinLengthValidator
 
 class User(AbstractBaseUser):
     email       = models.EmailField('이메일 주소', max_length=255, unique=True, blank=False)
-    nickname    = models.CharField('별명',     max_length=20, unique=True, blank=False)
+    nickname    = models.CharField('별명',     max_length=20, unique=True, blank=False, validators=[MinLengthValidator(4)])
 
     date_joined = models.DateTimeField('가입일', auto_now_add=True)
 

@@ -153,6 +153,8 @@ def user_detail(request, user_id):
 	user = User.objects.get(id=user_id)
 	#Cart.objects.check_and_create(user)
 
+	print(request.is_secure())
+
 	if request.method == 'GET':
 		serializer = UserDetailsSerializer(user, many=False, context={'request':request})
 
