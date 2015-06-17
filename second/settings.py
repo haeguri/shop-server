@@ -43,10 +43,10 @@ INSTALLED_APPS = (
     'rest_auth',
     'allauth',
     'allauth.account',
-    'rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'corsheaders',
+    "post_office",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,6 +92,9 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'second.custom_auth.TokenSerializer',
     'USER_DETAILS_SERIALIZER':'second.custom_auth.UserDetailsSerializer',
     'LOGIN_SERIALIZER':'second.custom_auth.LoginSerializer',
+    'PASSWORD_RESET_SERIALIZER':'second.custom_auth.PasswordResetSerializer'
+    # 'PASSWORD_RESET_SERIALIZER':'rest_auth.serializers.PasswordResetSerializer'
+
 }
 
 # Database
@@ -139,6 +142,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = ['*']
 
+EMAIL_BACKEND = 'post_office.EmailBackend'
+
 # email 관련 세팅
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'haegyun821@gmail.com'
@@ -173,6 +178,10 @@ SOCIALACCOUNT_ADAPTER = "second.custom_auth.SocialAccountAdapter"
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
 
 TEMPLATE_DEBUG = True
 
