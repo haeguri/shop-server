@@ -1,12 +1,8 @@
 from django.core.paginator import Paginator
 
-from django.views.generic import ListView
-
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
-from second.custom_auth import UserDetailsSerializer
 
 from snippets.models import Product, ProductLike, Channel, HashTag,  \
 	ChannelFollow, Issue, IssueLike, Brand, BrandFollow
@@ -14,12 +10,9 @@ from snippets.models import Product, ProductLike, Channel, HashTag,  \
 from snippets.serializers import ProductSerializer, BrandSerializer, \
 	ChannelSerializer, IssueSerializer, HashTagSerializer, \
 	PaginationProductSerializer, PaginationIssueSerializer, \
-	PaginationChannelSerializer
+	PaginationChannelSerializer, UserDetailsSerializer
 
 from django.contrib.auth import get_user_model
-
-
-from second.middleware import UserTypeFilterMiddleware
 
 User = get_user_model()
 
@@ -150,35 +143,10 @@ def brand_products(request, brand_id):
 
 	return Response(serializer.data, status.HTTP_200_OK)
 
-
-from django.utils.decorators import decorator_from_middleware
-
-
-@decorator_from_middleware(UserTypeFilterMiddleware)
 @api_view(['GET'])
 def user_detail(request, user_id):
 
 	user = User.objects.get(id=user_id)
-	#Cart.objects.check_and_create(user)
-
-	# from post_office import mail
-    #
-	# mail.send(
-	# 	['maphisto1@naver.com'],
-	# 	'haegyun821@gmail.com',
-	# 	subject='My email',
-	# 	message='Hi there!',
-	# 	html_message='Hi <strong>there</strong>!',
-	# 	priority='now',
-	# )
-
-	# test = mail.send(
-	# 	'maphisto1@naver.com', # List of email addresses also accepted
-	# 	'haegyun821@gmail.com',
-	# 	subject='My email',
-	# 	message='Hi there!',
-	# 	html_message='Hi <strong>there</strong>!',
-	# )
 
 	if request.method == 'GET':
 		serializer = UserDetailsSerializer(user, many=False, context={'request':request})
@@ -257,28 +225,34 @@ def channel_follow(request, user_id, channel_id):
 
 		return Response(status=status.HTTP_204_NO_CONTENT)
 
+
+
 from django.contrib.auth.views import password_reset_confirm
 
 def ladio_password_reset_confirm(request, uidb64=None, token=None):
-	# return password_reset_confirm(request, uidb64=uidb36, token=token,
-	# 							template_name='auth/password_reset_confirm.html')
 	return password_reset_confirm(request, template_name='auth/password_reset_confirm.html',
 		uidb64=uidb64, token=token)
-
-
 
 from rest_auth.views import PasswordReset
 from rest_auth.views import PasswordChange
 
 class LadioPasswordReset(PasswordReset):
 	def post(self, request, *args, **kwargs):
-		email = request.DATA.get("email")
+		email = request.DATA.get('email')
+
+		if User.objects.exist_email(email):
+			pass
+		else:
+			return Response({"error":"This email is not exists.",
+							 "detail":"You should enter a valid email registered to the LADIO"},
+							status=status.HTTP_400_BAD_REQUEST)
+
 		try:
 			# 소셜 계정으로 로그인한 사용자인가?
 			User.objects.get(email=email, socialaccount__isnull=True)
 		except:
 			# 그렇다면 패스워드 찾기 기능은 이용할 수 없다.
-			return Response({"social user"}, status=status.HTTP_400_BAD_REQUEST)
+			return Response({"detail":"social user"}, status=status.HTTP_400_BAD_REQUEST)
 
 		serializer = self.get_serializer(data=request.DATA)
 
@@ -297,7 +271,7 @@ class LadioPasswordChange(PasswordChange):
 			User.objects.get(id=request.user.id, socialaccount__isnull=True)
 		except:
 			# 그렇다면 패스워드 변경 기능은 이용할 수 없다.
-			return Response({"social user"}, status=status.HTTP_400_BAD_REQUEST)
+			return Response({"detail" : "social user"}, status=status.HTTP_400_BAD_REQUEST)
 
 		serializer = self.get_serializer(data=request.DATA)
 		if not serializer.is_valid():
@@ -305,3 +279,10 @@ class LadioPasswordChange(PasswordChange):
 				status=status.HTTP_400_BAD_REQUEST)
 		serializer.save()
 		return Response({"success": "New password has been saved."})
+
+
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLogin
+
+class FacebookLogin(SocialLogin):
+	adapter_class = FacebookOAuth2Adapter

@@ -291,6 +291,16 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def exist_email(self, email):
+        try:
+            User.objects.get(email = email)
+            return True
+        except:
+            return False
+
+
+
+
 from django.core.validators import MinLengthValidator
 
 class User(AbstractBaseUser):

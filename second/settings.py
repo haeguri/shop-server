@@ -35,16 +35,20 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'snippets',
-    # 현재 cart app은 사용하지 않음.
-    #'cart',
     'rest_framework',
     'rest_framework.authtoken',
+
     'rest_auth',
+
     'allauth',
     'allauth.account',
+    'rest_auth.registration',
+
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+
+    'snippets',
+
     'corsheaders',
     "post_office",
 )
@@ -89,12 +93,10 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.custom_auth.TokenSerializer',
-    'USER_DETAILS_SERIALIZER':'second.custom_auth.UserDetailsSerializer',
-    'LOGIN_SERIALIZER':'second.custom_auth.LoginSerializer',
+    'TOKEN_SERIALIZER': 'snippets.serializers.TokenSerializer',
+    'USER_DETAILS_SERIALIZER':'snippets.serializers.UserDetailsSerializer',
+    'LOGIN_SERIALIZER':'snippets.serializers.LoginSerializer',
     'PASSWORD_RESET_SERIALIZER':'second.custom_auth.PasswordResetSerializer'
-    # 'PASSWORD_RESET_SERIALIZER':'rest_auth.serializers.PasswordResetSerializer'
-
 }
 
 # Database
@@ -158,6 +160,7 @@ AUTH_USER_MODEL = 'snippets.User'
 
 # django all-auth package settings
 ACCOUNT_ADAPTER = "second.adapters.MessageFreeAdapter"
+SOCIALACCOUNT_ADAPTER = "second.adapters.SocialAccountAdapter"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
@@ -170,8 +173,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = False
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-
-SOCIALACCOUNT_ADAPTER = "second.custom_auth.SocialAccountAdapter"
 
 
 # Static files (CSS, JavaScript, Images)

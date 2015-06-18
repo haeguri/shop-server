@@ -16,4 +16,22 @@ class MessageFreeAdapter(DefaultAccountAdapter):
                     message_context={}, extra_tags=''):
         pass
 
-#/Users/haegyun/Envs/radio/lib/python3.4/site-packages/allauth/account/adapter.py
+from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
+from allauth.account.utils import user_email, user_username, valid_email_or_none
+
+class SocialAccountAdapter(DefaultSocialAccountAdapter):
+    def populate_user(self,
+                    request,
+                    sociallogin,
+                    data):
+        first_name = data.get('first_name')
+        last_name = data.get('last_name')
+        email = data.get('email')
+        # name = data.get('name')
+        user = sociallogin.user
+        user_username(user, last_name + first_name)
+        user_email(user, valid_email_or_none(email) or '')
+        # name_parts = (name or '').partition(' ')
+        # user_field(user, 'first_name', first_name or name_parts[0])
+        # user_field(user, 'last_name', last_name or name_parts[2])
+        return user
