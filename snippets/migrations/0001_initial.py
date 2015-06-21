@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
             name='BrandInterview',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('image', models.ImageField(upload_to=snippets.models.BrandInterview.get_upload_path)),
+                ('image', models.ImageField()),
                 ('brand', models.ForeignKey(related_name='interviews', to='snippets.Brand')),
             ],
             options={

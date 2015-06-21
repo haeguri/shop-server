@@ -5,16 +5,37 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from snippets.models import Product, ProductLike, Channel, HashTag,  \
-	ChannelFollow, Issue, IssueLike, Brand, BrandFollow
+	ChannelFollow, Issue, IssueLike
 
-from snippets.serializers import ProductSerializer, BrandSerializer, \
-	ChannelSerializer, IssueSerializer, HashTagSerializer, \
-	PaginationProductSerializer, PaginationIssueSerializer, \
-	PaginationChannelSerializer, UserDetailsSerializer
+from snippets.serializers import ProductSerializer, ChannelSerializer, IssueSerializer, HashTagSerializer, \
+	PaginationProductSerializer, PaginationIssueSerializer, PaginationChannelSerializer, UserDetailsSerializer
 
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
+from snippets.models import TestContent
+from snippets.serializers import TestContentSerializer
+
+@api_view(['GET'])
+def content_list(request):
+	tcs = TestContent.objects.all()
+	serializer = TestContentSerializer(tcs, many=True)
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
+@api_view(['GET'])
+def content_detail(request, content_id):
+
+	tc = TestContent.objects.get(id=content_id)
+
+	serializer = TestContentSerializer(tc, many=False)
+
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 @api_view(['GET'])
 def search_tag(request):
@@ -67,14 +88,10 @@ def channel_detail(request, channel_id):
 @api_view(['GET'])
 def product_list(request):
 
-	page, tag, brand = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('tag'), request.QUERY_PARAMS.get('brand')
+	page, tag = request.QUERY_PARAMS.get('page'), request.QUERY_PARAMS.get('tag')
 
-	if tag and page and brand:
-		products = Product.objects.filter(hash_tags__id=tag, brand=brand)
-	elif tag and page:
+	if tag and page:
 		products = Product.objects.filter(hash_tags__id=tag)
-	elif page and brand:
-		products = Product.objects.filter(brand=brand)
 	elif page:
 		products = Product.objects.all()
 
@@ -122,27 +139,6 @@ def issue_detail(request, issue_id):
 
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-@api_view(['GET'])
-def brand_detail(request, brand_id):
-
-	brand = Brand.objects.get(id=brand_id)
-
-	serializer = BrandSerializer(brand, many=False, context={'request':request})
-
-	return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def brand_products(request, brand_id):
-
-	product_id = request.QUERY_PARAMS.get('product_id')
-
-	if request.method == 'GET' and product_id is not None:
-		rel_products = Product.objects.filter(brand=brand_id).exclude(id=product_id)
-		serializer = ProductSerializer(rel_products, many=True)
-
-	return Response(serializer.data, status.HTTP_200_OK)
-
 @api_view(['GET'])
 def user_detail(request, user_id):
 
@@ -186,24 +182,6 @@ def issue_like(request, user_id, issue_id):
 
 	elif request.method == 'DELETE':
 		issue_likes.delete()
-
-		return Response(status=status.HTTP_204_NO_CONTENT)
-
-@api_view(['POST', 'DELETE'])
-def brand_follow(request, user_id, brand_id):
-	user = User.objects.get(id=user_id)
-	brand = Brand.objects.get(id=brand_id)
-	brand_follows = BrandFollow.objects.filter(user=user, brand=brand)
-
-	if request.method == 'POST':
-		if len(brand_follows) != 0:
-			return Response(status=status.HTTP_400_BAD_REQUEST)
-		else:
-			BrandFollow.objects.create(user=user, brand=brand)
-			return Response(status=status.HTTP_201_CREATED)
-
-	elif request.method == 'DELETE':
-		brand_follows.delete()
 
 		return Response(status=status.HTTP_204_NO_CONTENT)
 

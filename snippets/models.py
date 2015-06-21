@@ -5,6 +5,26 @@ import os
 
 from second.settings import AUTH_USER_MODEL
 
+class TestContent(models.Model):
+    title = models.CharField(max_length=20)
+    image = models.ImageField()
+    body = models.TextField(null=True)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = TestContent.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except: pass # when new photo then we do nothing, normal case
+        super(TestContent, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['-id']
+
 class HashTagCategory(models.Model):
     name        = models.CharField(unique=True, max_length=10, blank=False)
     is_required = models.BooleanField(default=False)
@@ -13,15 +33,9 @@ class HashTagCategory(models.Model):
         return self.name
 
 
-class HashTagManager(models.Manager):
-    def get_pop_hashtag(self):
-        HashTag.objects.filter()
-
 class HashTag(models.Model):
     name        = models.CharField(unique=True, max_length=10, blank=False)
     category    = models.ForeignKey(HashTagCategory, blank=False)
-
-    objects     = HashTagManager()
 
     def __str__(self):
         if self.category.is_required == True:
@@ -32,66 +46,17 @@ class HashTag(models.Model):
     class Meta:
         ordering = ('category',)
 
-
 class Gender(models.Model):
     type        = models.CharField(max_length=8)
 
     def __str__(self):
         return self.type
 
-class BrandManager(models.Manager):
-    def get_without_follow(self, user_id, gender_id):
-        if user_id is not None:
-            follow_brands = BrandFollow.objects.filter(user=user_id)
-
-            return Brand.objects.exclude(brand_follows_of_brand__in=follow_brands).filter(gender=gender_id)
-        else:  # anonymous user
-            return Brand.objects.all()
-
-
-class Brand(models.Model):
-    designer    = models.OneToOneField(AUTH_USER_MODEL, verbose_name='디자이너', blank=False)
-    gender      = models.ForeignKey(Gender, verbose_name='디자인 타겟', max_length=5, related_name='brands_of_gender', blank=True, null=True)
-    description = models.TextField(max_length=200, blank=True)
-    profile     = models.ImageField(upload_to='upload/brand', default='')
-    background  = models.ImageField(upload_to='upload/brand/background', default='')
-    web         = models.URLField('웹 페이지', blank=True)
-    address     = models.CharField('오프라인 주소', max_length=200, blank=True)
-
-    objects     = BrandManager()
-
-    def __str__(self):
-        return self.name + '(' + self.gender.type + ')'
-
-
-class BrandInterview(models.Model):
-    brand       = models.ForeignKey(Brand, related_name='interviews')
-
-    def get_upload_path(instance, filename):
-        path = os.path.join("upload/brand/%s/interviews/" % instance.brand.name, filename)
-        return path
-
-    image       = models.ImageField(upload_to=get_upload_path)
-
-class BrandFollowManager(models.Manager):
-    def is_follow(self, user_id, brand_id):
-        try:
-            return BrandFollow.objects.get(user=user_id, brand=brand_id) is not None
-        except:
-            return False
-
-
-class BrandFollow(models.Model):
-    user        = models.ForeignKey(AUTH_USER_MODEL, related_name="brand_follows_of_user")
-    brand       = models.ForeignKey(Brand, related_name="brand_follows_of_brand")
-
-    objects     = BrandFollowManager()
 
 
 class Product(models.Model):
     gender      = models.ForeignKey(Gender, blank=False, null=True)
     hash_tags   = models.ManyToManyField(HashTag, related_name='products', blank=False)
-    brand       = models.ForeignKey(Brand, related_name='products_of_brand', blank=True, null=True)
     pub_date    = models.DateTimeField('date published', default=datetime.now, blank=True)
     name        = models.CharField(unique=True, max_length=15)
     description = models.TextField(max_length=100, default='')
@@ -209,10 +174,14 @@ class ProductLike(models.Model):
 
     objects     = ProductLikeManager()
 
-
+from django_summernote.models import Attachment
 from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
 import shutil
+
+@receiver(pre_delete, sender=Attachment)
+def attachment_delete(sender, instance, **kwargs):
+    pass
 
 
 @receiver(pre_delete, sender=Product)
@@ -228,20 +197,6 @@ def product_image_delete(sender, instance, **kwargs):
     # Pass false so FileField doesn't save the model.
     instance.image.delete()
 
-
-@receiver(pre_delete, sender=BrandInterview)
-def brand_interview_delete(sender, instance, **kwargs):
-    # Pass false so FileField doesn't save the model.
-    instance.image.delete()
-
-
-@receiver(pre_delete, sender=Brand)
-def brand_delete(sender, instance, **kwargs):
-    # Pass false so FileField doesn't save the model.
-    instance.image.delete()
-    instance.background.delete()
-
-
 @receiver(pre_delete, sender=Channel)
 def channel_delete(sender, instance, **kwargs):
     # Pass false so FileField doesn't save the model.
@@ -253,6 +208,13 @@ def channel_delete(sender, instance, **kwargs):
 def issue_delete(sender, instance, **kwargs):
     # Pass false so FileField doesn't save the model.
     instance.image.delete()
+
+@receiver(pre_delete, sender=TestContent)
+def issue_delete(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    instance.image.delete()
+
+
 
 from django.db import models
 from django.contrib.auth.models import (

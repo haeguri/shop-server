@@ -14,7 +14,7 @@ User = get_user_model()
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'gender', 'name', 'brand', 'price', 'pub_date', 'hash_tags')
+        fields = ('name', 'gender', 'name', 'price', 'pub_date', 'hash_tags')
 
 
     def clean(self):
@@ -42,11 +42,6 @@ class PasswordResetForm(forms.Form):
 			 email_template_name='auth/password_reset_email.html',
 			 use_https=False, token_generator=default_token_generator,
 			 from_email=None, request=None, html_email_template_name=None):
-		"""
-        Generates a one-use only link for resetting password and sends to the
-        user.
-        """
-		from django.core.mail import send_mail
 
 		UserModel = get_user_model()
 		email = self.cleaned_data["email"]

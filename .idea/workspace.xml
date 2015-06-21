@@ -2,238 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d57ee61-934f-494d-9664-1a918d2a05ec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/cache/8d/16/8d16a8a1e7f843d63e861b6e4e2cafee.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/Smile-logo-A18DBD791A-seeklogo.com_MYBajba.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/channel_background1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/channel_background2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/channel_background3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/cherryblossom.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/party.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/party_WYun3IK.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/party_g3G281T.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/background/university.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/bool.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/Screen_Shot_2014-11-20_at_1.45.46_AM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/Screen_Shot_2014-11-22_at_10.41.39_PM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_D3dKFDl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_FZ1YmDp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_Qg9pzLM.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_VisWAWd.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_XPeYqwG.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_tWFeemQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/girs_tmeeJun.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/gowork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_FXPitLk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_I1PQJe5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_P6EdT5Z.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_RiPoPbr.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_U1ujlKk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_lwTY7mx.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/men_cody_nuhmhI3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/spring.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/spring_8bXnjPw.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/spring_Rj496YF.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/고수.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_cody/아이유.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/channel_background1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B_BDSJ3r6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B_Fvpfv2S.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B_rgrsojH.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B_z9KDTSr.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_B_zJ9ZrYQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C_EJmFovK.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C_MT1EW2K.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C_qfZgQ3d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C_s785eoW.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_C_vaYGCWC.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D_HuC2USe.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D_UegMgXo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D_g3WCqQt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D_kCtHiWp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_D_pd6C38t.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_E.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_E_0YIEnuk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_E_E3bbFLg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_E_UFEOXaD.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_E_m9T0Hyl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_2VcBp83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_IW0Gjbq.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_J349wij.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_NGbSVC4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_dGXWbGl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/issue_channel_F_x9NT3f0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/meeting.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/office.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/office_bhuJhuq.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/office_byEj0yb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/channel_issue/office_sXPXpqP.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/designer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/girllogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/gowork.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/men1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/men1_U71nv4V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/men1_ZEGEklb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/men2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/men3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/smile_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/spring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/channel/work.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/beauty onepiece/women-onepiece.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/beauty onepiece/women-onepiece_PoAgzxh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/beauty onepiece/women-onepiece_mLvyXXo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool jean/women-jean.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool jean/women-jean_QZzD3t2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool jean/women-jean_VJk91e4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool shirt 2/men-shirt.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool shirt 2/men-shirt_3xsXQNt.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/cool shirt 2/men-shirt_7Eebyj7.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/know cardigan/detail1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/know cardigan/detail2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/know cardigan/fullshot1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/know cardigan/fullshot2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men backpack/men-backpack.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men backpack/men-backpack_Ig8eMBA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men backpack/men-backpack_NNVlfBI.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat good/men-coat2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat good/men-coat2_YQ8AMKL.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat good/men-coat2_e82TGZA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat/men-coat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat/men-coat_jtRNrHG.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men coat/men-coat_smWHeGC.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket!!/men-jacket.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket!!/men-jacket_CoefrC4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket!!/men-jacket_yXClXuh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket2/men-jacket2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket2/men-jacket2_DAEI4Z4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jacket2/men-jacket2_ZgMNEi3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jean/men-jeans.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jean/men-jeans_szqM0ou.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men jean/men-jeans_tzyvhQ1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shirt!!!/men-shirt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shirt!!!/men-shirt_ExnclWh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shirt!!!/men-shirt_SFMlWKj.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shoes/men-shoes.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shoes/men-shoes_KsZ91sn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men shoes/men-shoes_x7RV57X.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men's knit!/men-knit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men's knit!/men-knit_8tiaZOq.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/men's knit!/men-knit_MwrzJJZ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women bag!/women-bag.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women bag!/women-bag_LsusgAt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women bag!/women-bag_Q4n8eKV.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women coat/women-coat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women coat/women-coat_484sRgY.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women coat/women-coat_9BCuB3k.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women knit/women-knit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women knit/women-knit_GXiOuIt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women knit/women-knit_MwGe8qg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shirt/blue-shirt.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shirt/blue-shirt_5iypNtV.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shirt/blue-shirt_ajm1inE.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shoes/women-shoes.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shoes/women-shoes_gwUVI1w.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women shoes/women-shoes_jH0mUxK.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women skirt/women-skirt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women skirt/women-skirt_j0L4VYa.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/product/women skirt/women-skirt_lrWeDo8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed_FyOim2i.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed_Srtmt7F.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed_gE5mLCi.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed_ulx6OFV.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandA/feed/afeed_zwZu9Js.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed_BR3YjCg.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed_MfryyVk.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed_R27WXen.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed_XpnRjiN.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandB/feed/bfeed_YO9JTyD.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed_H65tBsk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed_JJBYmRA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed_SVqJxsY.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed_d8f88NG.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandC/feed/cfeed_gGjg26K.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed_A3JF52v.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed_ZMyfMUo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed_aa4QB5C.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed_bva68sR.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandD/feed/dfeed_cpbFAFV.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed_5ED7EbD.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed_Elhc0jF.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed_VFqEZKU.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed_hpzZt3n.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandE/feed/efeed_vT7ekV2.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed_19OnSy5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed_8VezLv0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed_8wA6R8e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed_OL7cqRg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/BrandF/feed/ffeed_f70qDR5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/men1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/men2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/men3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/women1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/women2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/background/women3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/designer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner1/interviews/interview6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner1/interviews/interview6_2lYkuU5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner1/interviews/interview6_lfheuYu.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner2/interviews/interview5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner2/interviews/interview5_JjZnxcz.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner2/interviews/interview5_eWQrbhP.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner3/interviews/interview4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner3/interviews/interview4_JpOvnw7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/mendesigner3/interviews/interview4_tOdN8NO.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/women1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner1/interviews/interview3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner1/interviews/interview3_R34AzbC.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner1/interviews/interview3_XwRvOjY.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner2/interviews/interview2.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner2/interviews/interview2_6HZ6nOV.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner2/interviews/interview2_yY0fkYb.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner3/interviews/interview.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner3/interviews/interview_LIxupgb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/womendesigner3/interviews/interview_o9N2a0Q.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/brand/work.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/cherryblossom.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/cherryblossom_nel949n.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/date.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/date_88vE5Yr.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/meeting.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/meeting_4CybZuA.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/office.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/office_uVZiKEH.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/party.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/party_T289Fut.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/university.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/university_EtIwuuq.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/wedding.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/upload/cody/category/wedding_mtKBs03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/second/custom_auth.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/adapters.py" afterPath="$PROJECT_DIR$/second/adapters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/forms.py" afterPath="$PROJECT_DIR$/snippets/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/middleware.py" afterPath="$PROJECT_DIR$/second/middleware.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/models.py" afterPath="$PROJECT_DIR$/snippets/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/auth/password_reset_confirm.html" afterPath="$PROJECT_DIR$/templates/auth/password_reset_confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/serializers.py" afterPath="$PROJECT_DIR$/snippets/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/settings.py" afterPath="$PROJECT_DIR$/second/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/urls.py" afterPath="$PROJECT_DIR$/second/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/urls.py" afterPath="$PROJECT_DIR$/snippets/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snippets/views.py" afterPath="$PROJECT_DIR$/snippets/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -249,6 +20,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/second$Unittests_in_second.coverage" NAME="Unittests in second Coverage Results" MODIFIED="1434785349603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/second$base.coverage" NAME="base Coverage Results" MODIFIED="1433909095370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -260,23 +32,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/urls.py">
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/second/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="11" selection-end-column="70" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/second/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.2089137">
+              <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snippets/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#0#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snippets/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.360544">
-              <caret line="246" column="38" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -284,33 +76,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="middleware.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/middleware.py">
+      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/widgets.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#64#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/local_settings.py">
+      <file leaf-file-name="storage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/core/files/storage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="40" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="40" />
+              <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -320,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/snippets/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -328,20 +110,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snippets/forms.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="50" column="48" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="48" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snippets/tests.py">
+      <file leaf-file-name="fields.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/fields.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/test_settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -356,6 +150,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Html5" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -365,10 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/second/mytokenserializer.py" />
-        <option value="$PROJECT_DIR$/second/custom_serializer.py" />
-        <option value="$PROJECT_DIR$/second/.local_settings.py" />
-        <option value="$PROJECT_DIR$/snippets/hangul.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/cart/urls.py" />
         <option value="$PROJECT_DIR$/cart/serializer.py" />
@@ -378,8 +169,6 @@
         <option value="$PROJECT_DIR$/cart/migrations/0003_auto_20150512_1526.py" />
         <option value="$PROJECT_DIR$/cart/migrations/0008_auto_20150521_1550.py" />
         <option value="$PROJECT_DIR$/cart/models.py" />
-        <option value="$PROJECT_DIR$/snippets/urls.py" />
-        <option value="$PROJECT_DIR$/second/local_settings.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/generics.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/authtoken/serializers.py" />
@@ -387,8 +176,6 @@
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/facebook/provider.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/base.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/utils.py" />
-        <option value="$PROJECT_DIR$/snippets/admin.py" />
-        <option value="$PROJECT_DIR$/snippets/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/templates/registration/password_change_form.html" />
         <option value="$PROJECT_DIR$/templates/registration/password_reset_form.html" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html" />
@@ -402,20 +189,28 @@
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/app_settings.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/adapter.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/helpers.py" />
-        <option value="$PROJECT_DIR$/snippets/models.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/signals.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/facebook/views.py" />
-        <option value="$PROJECT_DIR$/second/adapters.py" />
         <option value="$PROJECT_DIR$/second/middleware.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/registration/serializers.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/views.py" />
         <option value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/registration/views.py" />
-        <option value="$PROJECT_DIR$/second/settings.py" />
-        <option value="$PROJECT_DIR$/second/urls.py" />
         <option value="$PROJECT_DIR$/second/custom_auth.py" />
+        <option value="$PROJECT_DIR$/second/adapters.py" />
+        <option value="$PROJECT_DIR$/snippets/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/snippets/forms.py" />
+        <option value="$PROJECT_DIR$/ABCDE/admin/css/base.css" />
+        <option value="$PROJECT_DIR$/staticfiles/admin/css/dashboard.css" />
+        <option value="$PROJECT_DIR$/staticfiles/admin/css/base.css" />
+        <option value="$PROJECT_DIR$/core/storage.py" />
+        <option value="$PROJECT_DIR$/second/urls.py" />
+        <option value="$PROJECT_DIR$/snippets/admin.py" />
         <option value="$PROJECT_DIR$/snippets/serializers.py" />
+        <option value="$PROJECT_DIR$/snippets/urls.py" />
         <option value="$PROJECT_DIR$/snippets/views.py" />
+        <option value="$PROJECT_DIR$/snippets/models.py" />
+        <option value="$PROJECT_DIR$/second/local_settings.py" />
+        <option value="$PROJECT_DIR$/second/settings.py" />
       </list>
     </option>
   </component>
@@ -429,7 +224,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="873" />
+    <option name="height" value="815" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -508,7 +303,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rest_framework" />
+              <option name="myItemId" value="storages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -530,7 +325,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rest_auth" />
+              <option name="myItemId" value="django_summernote" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,59 +347,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rest_auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Python 3.4.2 virtualenv at ~/Envs/radio &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site-packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="allauth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Python 3.4.2 virtualenv at ~/Envs/radio &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site-packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="allauth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socialaccount" />
+              <option name="myItemId" value="django_allauth-0.19.0-py3.4.egg-info" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -615,38 +358,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="second" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staticfiles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -674,11 +385,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="snippets" />
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="second" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -691,7 +412,7 @@
     <property name="options.lastSelected" value="configurable.group.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;models.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;commonmiddleware&#9;null&#9;null&#10;corsmiddle&#9;null&#9;null&#10;settings.y&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/urls.py&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;setting.spy&#9;null&#9;null&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/urls.py&#10;followserializer&#9;null&#9;null&#10;cartmodels&#9;FILE&#9;uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/models.py&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null&#10;defaultaccount&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="models.py&#9;FILE&#9;file:///Users/haegyun/Envs/radio/lib/python3.4/site-packages/django_summernote/models.py&#10;views.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;urls.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/urls.py&#10;settings.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;serializer.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;model&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;admin.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;se&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;commonmiddleware&#9;null&#9;null&#10;corsmiddle&#9;null&#9;null&#10;settings.y&#9;null&#9;null&#10;url.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/urls.py&#10;custom_aut&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/custom_auth.py&#10;setting.spy&#9;null&#9;null&#10;settingspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;followserializer&#9;null&#9;null&#10;cartmodels&#9;FILE&#9;uml://Python/#/Users/haegyun/Proejct-django/project/second/cart/models.py&#10;rest_auth&#9;null&#9;null&#10;view.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;serializer&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/serializers.py&#10;cart.model&#9;null&#9;null&#10;snippets.model&#9;null&#9;null&#10;adminpy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;cart.models&#9;null&#9;null&#10;.gitigno&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/.gitignore&#10;cart.urls&#9;null&#9;null&#10;cart.urls.py&#9;null&#9;null&#10;snippets.view&#9;null&#9;null&#10;cart.serializer&#9;null&#9;null&#10;snippets.serializer&#9;null&#9;null&#10;cart.view&#9;null&#9;null&#10;models&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/models.py&#10;SETTINGS.PY&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/second/settings.py&#10;viewspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/cart/views.py&#10;forms.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;site.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/list/lib/python3.4/site.py&#10;ssettings.py&#9;null&#9;null&#10;user&#9;null&#9;null&#10;customserializer&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuser&#9;null&#9;null&#10;views&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/views.py&#10;customuserserializer&#9;null&#9;null&#10;admi.py&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/admin.py&#10;class brand&#9;null&#9;null&#10;settings.yp&#9;null&#9;null&#10;formspy&#9;FILE&#9;file:///Users/haegyun/Proejct-django/project/second/snippets/forms.py&#10;UserDetailSeri&#9;null&#9;null&#10;setuptools&#9;null&#9;null&#10;setup&#9;null&#9;null" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -705,7 +426,7 @@
       <recent name="$PROJECT_DIR$/middleware" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.base">
+  <component name="RunManager" selected="Python tests.Unittests in second">
     <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -742,6 +463,52 @@
       <option name="SCRIPT_NAME" value="$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/base.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in staticfiles" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/staticfiles" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="second" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$/staticfiles" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in second" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="second" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -991,14 +758,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.views" />
       <item index="1" class="java.lang.String" itemvalue="Python.base" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in staticfiles" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in second" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.base" />
-        <item index="1" class="java.lang.String" itemvalue="Python.views" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in second" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in staticfiles" />
+        <item index="2" class="java.lang.String" itemvalue="Python.base" />
+        <item index="3" class="java.lang.String" itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -1016,22 +787,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="815" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41666666" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44786096" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41666666" sideWeight="0.50277776" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23958333" sideWeight="0.50062114" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22916667" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18055555" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328877" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1047,20 +818,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41666666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44786096" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3994638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41666666" sideWeight="0.50277776" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23958333" sideWeight="0.50062114" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28958333" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5208333" sideWeight="0.4993789" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328877" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1081,312 +852,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/app_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/fields.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/permissions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.029296875">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/auth/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3671875">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/generics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="52" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="41" selection-start-line="185" selection-start-column="37" selection-end-line="185" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/registration/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6122449">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5102041">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/app_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95238096">
-          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="25" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/auth/password_reset_subject.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/auth/password_reset_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5714286">
-          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="408" column="38" selection-start-line="408" selection-start-column="38" selection-end-line="408" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/app_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5442177">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/oauth2/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20408164">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/auth/password_reset_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0215827">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/dispatch/dispatcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20408164">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.034013607">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/context_processors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-205740506/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53741497">
-          <caret line="189" column="34" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67573696">
-          <caret line="183" column="25" selection-start-line="183" selection-start-column="25" selection-end-line="183" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3605442">
-          <caret line="175" column="20" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/providers/facebook/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0544218">
-          <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.27210885">
-          <caret line="61" column="13" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9703608">
-          <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/allauth/socialaccount/adapter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1069589">
-          <caret line="151" column="26" selection-start-line="151" selection-start-column="26" selection-end-line="151" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.371134">
@@ -1421,6 +886,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_auth/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+          <folding>
+            <element signature="e#24#63#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/staticfiles/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/rest_framework/urlpatterns.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/staticfiles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/contrib/staticfiles/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37142858">
+          <caret line="718" column="1" selection-start-line="718" selection-start-column="1" selection-end-line="718" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/dependency_links.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/installed-files.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/requires.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/SOURCES.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/top_level.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_allauth-0.19.0-py3.4.egg-info/PKG-INFO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-205740506/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33246753">
+          <caret line="4616" column="8" selection-start-line="4616" selection-start-column="8" selection-end-line="4616" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.95971566">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7819905">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/snippets/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1429,39 +1030,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/forms.py">
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/storages/compat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54317546">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/storages/backends/s3boto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1281337">
+          <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/dispatch/dispatcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.54317546">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2924791">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40816328">
-          <caret line="200" column="13" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second/adapters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17006803">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,16 +1108,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second/settings.py">
+    <entry file="file://$PROJECT_DIR$/second/adapters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="40" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="40" />
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1486,9 +1131,137 @@
     <entry file="file://$PROJECT_DIR$/second/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="11" selection-end-column="70" />
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14623955">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django/core/files/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2506964">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#111#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/test_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1496,20 +1269,36 @@
     <entry file="file://$PROJECT_DIR$/snippets/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/views.py">
+    <entry file="file://$USER_HOME$/Envs/radio/lib/python3.4/site-packages/django_summernote/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.360544">
-          <caret line="246" column="38" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="48" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="48" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2089137">
+          <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

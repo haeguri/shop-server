@@ -8,16 +8,24 @@ from rest_framework import exceptions, serializers
 
 from rest_auth.serializers import TokenSerializer
 
-from snippets.models import Gender, Product, Brand, ProductLike, Channel, Issue, IssueItem, \
-	IssueLike, ChannelFollow, BrandFollow,  ProductImage, BrandInterview, HashTag
+from snippets.models import Gender, Product, ProductLike, Channel, Issue, IssueItem, \
+	IssueLike, ChannelFollow, ProductImage, HashTag
 from snippets.forms import PasswordResetForm
-
-
 
 User = get_user_model()
 
-class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 
+
+from snippets.models import TestContent
+
+class TestContentSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = TestContent
+		fields = ('title', 'body',)
+
+
+
+class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 	def __init__(self, *args, **kwargs):
 		fields = kwargs.pop('fields', None)
 
@@ -29,24 +37,25 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
 
-class HashTagSerializer(serializers.ModelSerializer):
 
+class HashTagSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = HashTag
 		fields = ('id', 'name')
 
-class GenderSerializer(DynamicFieldsModelSerializer):
 
+class GenderSerializer(DynamicFieldsModelSerializer):
 	class Meta:
 		model = Gender
 		fields = ('id', 'type')
 		depth = 1
 
-class ProductImageSerializer(serializers.ModelSerializer):
 
+class ProductImageSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = ProductImage
 		fields = ('id', 'image', 'description')
+
 
 class ProductSerializer(DynamicFieldsModelSerializer):
 	images = ProductImageSerializer(many=True)
@@ -61,30 +70,11 @@ class ProductSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Product
-		fields = ('id', 'gender', 'brand', 'name', 'pub_date', 'hash_tags', 'description', 'price', 'images', 'product_likes_of_product')
+		fields = (
+			'id', 'gender', 'name', 'pub_date', 'hash_tags', 'description', 'price', 'images',
+			'product_likes_of_product')
 		depth = 1
 
-class BrandInterviewSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = BrandInterview
-		fields = ('id', 'image')
-
-class BrandSerializer(DynamicFieldsModelSerializer):
-	products_of_brand = ProductSerializer(many=True)
-	interviews = BrandInterviewSerializer(many=True)
-
-	def to_representation(self, instance):
-		ret = super(BrandSerializer, self).to_representation(instance)
-		user_id = self.context['request'].user.id
-		is_follow = BrandFollow.objects.is_follow(user_id, instance.id)
-		ret['follow'] = is_follow
-
-		return ret
-
-	class Meta:
-		model = Brand
-		fields = ('id', 'designer', 'description', 'gender', 'products_of_brand', 'profile', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
 
 class IssueItemSerializer(serializers.ModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
@@ -93,10 +83,10 @@ class IssueItemSerializer(serializers.ModelSerializer):
 		model = IssueItem
 		fields = ('id', 'issue', 'product', 'tip')
 
+
 # "IssueSerializer"에서도 "ChannelSerializer" 보여줘야 하는데 "IssueSerializer"의 선언이 먼저 되어 있어 참조가 불가능.
 # "SubChannelSerializer"는 "IssueSerializer"에서 참조하기 위한 "Channel"의 다른 "Serializer".
 class SubChannelSerializer(serializers.ModelSerializer):
-
 	def to_representation(self, instance):
 		ret = super(SubChannelSerializer, self).to_representation(instance)
 		user_id = self.context['request'].user.id
@@ -107,7 +97,9 @@ class SubChannelSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'maker', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
+		fields = ('id', 'maker', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel',
+					'issues_of_channel')
+
 
 class IssueSerializer(DynamicFieldsModelSerializer):
 	issue_items_of_issue = IssueItemSerializer(many=True)
@@ -124,10 +116,14 @@ class IssueSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Issue
-		fields = ('id', 'channel', 'title', 'description', 'image', 'pub_date', 'hash_tags', 'view', 'issue_items_of_issue', 'issue_likes_of_issue')
+		fields = (
+			'id', 'channel', 'title', 'description', 'image', 'pub_date', 'hash_tags', 'view', 'issue_items_of_issue',
+			'issue_likes_of_issue')
+
 
 class ChannelSerializer(DynamicFieldsModelSerializer):
-	issues_of_channel = IssueSerializer(many=True, fields=('id', 'channel', 'hash_tags', 'title', 'image', 'pub_date', 'issue_likes_of_issue'))
+	issues_of_channel = IssueSerializer(many=True, fields=(
+		'id', 'channel', 'hash_tags', 'title', 'image', 'pub_date', 'issue_likes_of_issue'))
 
 	def to_representation(self, instance):
 		ret = super(ChannelSerializer, self).to_representation(instance)
@@ -139,7 +135,9 @@ class ChannelSerializer(DynamicFieldsModelSerializer):
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'maker', 'brief', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
+		fields = ('id', 'maker', 'brief', 'introduce', 'profile', 'background', 'created', 'channel_follows_of_channel',
+					'issues_of_channel')
+
 
 class ProductLikeSerializer(DynamicFieldsModelSerializer):
 	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
@@ -149,19 +147,13 @@ class ProductLikeSerializer(DynamicFieldsModelSerializer):
 		fields = ('id', 'product', 'user')
 
 
-class BrandFollowSerializer(DynamicFieldsModelSerializer):
-	brand = BrandSerializer(many=False, fields = ('id', 'designer', 'gender', 'products_of_brand', 'profile', 'brand_follows_of_brand'))
-
-	class Meta:
-		model = BrandFollow
-		fields = ('id', 'brand', 'user')
-
 class ChannelFollowSerializer(DynamicFieldsModelSerializer):
-	channel = ChannelSerializer(many=False, fields = ('id', 'maker', 'profile', 'channel_follows_of_channel',))
+	channel = ChannelSerializer(many=False, fields=('id', 'maker', 'profile', 'channel_follows_of_channel',))
 
 	class Meta:
 		model = ChannelFollow
 		fields = ('id', 'channel', 'user')
+
 
 class IssueLikeSerializer(DynamicFieldsModelSerializer):
 	issue = IssueSerializer(many=False, fields=('id', 'channel', 'title', 'image', 'pub_date',))
@@ -170,21 +162,20 @@ class IssueLikeSerializer(DynamicFieldsModelSerializer):
 		model = IssueLike
 		fields = ('id', 'issue', 'user',)
 
-class PaginationChannelSerializer(pagination.PaginationSerializer):
 
+class PaginationChannelSerializer(pagination.PaginationSerializer):
 	class Meta:
 		object_serializer_class = ChannelSerializer
 
-class PaginationProductSerializer(pagination.PaginationSerializer):
 
+class PaginationProductSerializer(pagination.PaginationSerializer):
 	class Meta:
 		object_serializer_class = ProductSerializer
 
-class PaginationIssueSerializer(pagination.PaginationSerializer):
 
+class PaginationIssueSerializer(pagination.PaginationSerializer):
 	class Meta:
 		object_serializer_class = IssueSerializer
-
 
 
 # 인증과 관련된 Serializer
@@ -197,6 +188,7 @@ class TokenSerializer(TokenSerializer):
 	class Meta:
 		model = Token
 		fields = ('key', 'user')
+
 
 # email과 pass
 class AuthTokenSerializer(serializers.Serializer):
@@ -224,6 +216,7 @@ class AuthTokenSerializer(serializers.Serializer):
 		attrs['user'] = user
 		return attrs
 
+
 # 커스텀 AuthTokenSerializer를 상속받음.
 class LoginSerializer(AuthTokenSerializer):
 	def validate(self, attrs):
@@ -240,7 +233,6 @@ class LoginSerializer(AuthTokenSerializer):
 
 
 class PasswordResetSerializer(serializers.Serializer):
-
 	email = serializers.EmailField()
 
 	password_reset_form_class = PasswordResetForm
@@ -266,10 +258,8 @@ class PasswordResetSerializer(serializers.Serializer):
 class UserDetailsSerializer(serializers.ModelSerializer):
 	product_likes_of_user = ProductLikeSerializer(many=True, fields=('id', 'product',))
 	channel_follows_of_user = ChannelFollowSerializer(many=True, fields=('id', 'channel',))
-	brand_follows_of_user = BrandFollowSerializer(many=True, fields=('id', 'brand',))
 	issue_likes_of_user = IssueLikeSerializer(many=True, fields=('id', 'issue',))
 
 	class Meta:
 		model = User
-		fields = ('id', 'email', 'nickname', 'product_likes_of_user', 'issue_likes_of_user', 'channel_follows_of_user',
-				  'brand_follows_of_user',)
+		fields = ('id', 'email', 'nickname', 'product_likes_of_user', 'issue_likes_of_user', 'channel_follows_of_user')

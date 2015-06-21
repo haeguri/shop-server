@@ -1,6 +1,6 @@
 from django.contrib import admin
-from snippets.models import Gender, Product, Brand, Channel, Issue, IssueItem, \
-    ProductImage, BrandInterview, HashTag, HashTagCategory
+from snippets.models import Gender, Product, Channel, Issue, IssueItem, \
+    ProductImage, HashTag, HashTagCategory, TestContent
 
 from snippets.forms import ProductForm
 
@@ -23,17 +23,6 @@ class ChannelAdmin(admin.ModelAdmin):
     list_display = ['id', 'maker', 'brief', 'created']
 
     list_editable = ['maker', 'brief']
-
-class BrandInline(admin.StackedInline):
-    model = BrandInterview
-
-    extra = 2
-
-class BrandAdmin(admin.ModelAdmin):
-    list_display = ['id', 'designer', 'gender', 'web', 'address']
-    list_editable = ['gender', 'designer', 'web', 'address']
-    list_filter = ['gender']
-    inlines = [BrandInline]
 
 class IssueInline(admin.StackedInline):
     model = IssueItem
@@ -68,9 +57,9 @@ class ProductImageInline(admin.StackedInline):
 
 class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ['id', 'name', 'brand', 'gender', 'get_hash_tags', 'price', 'pub_date']
+    list_display = ['id', 'name', 'gender', 'get_hash_tags', 'price', 'pub_date']
 
-    list_editable = ['id', 'gender', 'name', 'brand', 'price']
+    list_editable = ['id', 'gender', 'name', 'price']
 
     search_fields = ['name']
 
@@ -79,7 +68,7 @@ class ProductAdmin(admin.ModelAdmin):
     filter_horizontal = ['hash_tags']
 
     fieldsets = [
-        ('기본정보',         {'fields':['name', 'pub_date', 'gender','brand', 'price', 'hash_tags']}),
+        ('기본정보',         {'fields':['name', 'pub_date', 'gender', 'price', 'hash_tags']}),
     ]
 
     form = ProductForm
@@ -87,13 +76,20 @@ class ProductAdmin(admin.ModelAdmin):
     def get_hash_tags(self, obj):
         return "\n".join([hash_tag.name for hash_tag in obj.hash_tags.all()])
 
+
+from django_summernote.admin import SummernoteModelAdmin
+
+class TestContentAdmin(SummernoteModelAdmin):
+    pass
+
+
 admin.site.register(HashTagCategory, HashTagCategoryAdmin)
 admin.site.register(HashTag, HashTagAdmin)
 admin.site.register(Gender, GenderAdmin)
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Brand, BrandAdmin)
 admin.site.register(Channel, ChannelAdmin)
 admin.site.register(Issue, IssueAdmin)
+admin.site.register(TestContent, TestContentAdmin)
 
 
 from django import forms

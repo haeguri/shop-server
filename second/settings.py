@@ -1,13 +1,3 @@
-"""
-Django settings for second project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
 import os
 
 # BASE_DIR absolute path in local: /Users/haegyun/Proeject-django/second
@@ -19,15 +9,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-
-# Application definition
-
-
 SITE_ID = 1
 
 INSTALLED_APPS = (
-    # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,20 +21,17 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'rest_framework',
     'rest_framework.authtoken',
-
     'rest_auth',
-
     'allauth',
     'allauth.account',
     'rest_auth.registration',
-
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-
     'snippets',
-
     'corsheaders',
-    "post_office",
+    'post_office',
+    'storages',
+    'django_summernote',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,7 +77,7 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'snippets.serializers.TokenSerializer',
     'USER_DETAILS_SERIALIZER':'snippets.serializers.UserDetailsSerializer',
     'LOGIN_SERIALIZER':'snippets.serializers.LoginSerializer',
-    'PASSWORD_RESET_SERIALIZER':'second.custom_auth.PasswordResetSerializer'
+    'PASSWORD_RESET_SERIALIZER':'snippets.serializers.PasswordResetSerializer',
 }
 
 # Database
@@ -106,15 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ladio',
         'USER': 'admin',
-         # 실제 제품에서는 비밀번호 숨겨야 함.
         'PASSWORD': '82307201',
     }
 }
-
-
-ROOT_URLCONF = 'second.urls'
-
-WSGI_APPLICATION = 'second.wsgi.application'
 
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 LANGUAGE_CODE = 'KR'
@@ -126,10 +101,6 @@ USE_I18N = True
 USE_TZ = True
 
 USE_L10N = True
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR + '/media/'
 
 CORS_ALLOW_METHODS = (
     'GET',
@@ -148,13 +119,10 @@ EMAIL_BACKEND = 'post_office.EmailBackend'
 
 # email 관련 세팅
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'haegyun821@gmail.com'
-EMAIL_HOST_PASSWORD = 'dlfvmf26'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-
-
 
 AUTH_USER_MODEL = 'snippets.User'
 
@@ -175,24 +143,51 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
+#### test!!
 
-STATIC_URL = '/static/'
+
+STATIC_ROOT = 'staticfiles'
+MEDIA_ROOT = 'media'
+
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_S3_HOST = 's3-ap-northeast-1.amazonaws.com'
+AWS_QUERYSTRING_AUTH = False
+
+S3_URL = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# MEDIA_URL = '/imedia/'
+
+STATICFILES_LOCATION = 'static'
+STATIC_URL = 'https://%s/%s/' % (S3_URL, STATICFILES_LOCATION)
+
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = 'https://%s/%s/' % (S3_URL, MEDIAFILES_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'core.storage.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'core.storage.StaticRootS3BotoStorage'
+
+ROOT_URLCONF = 'second.urls'
+
+WSGI_APPLICATION = 'second.wsgi.application'
+
+#
+# STATIC_ROOT = 'staticfiles'
+# # STATIC_URL = '/static/'
+#
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR + '/media/'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
 TEMPLATE_DEBUG = True
-
-STATIC_ROOT = 'staticfiles'
-
 DEBUG = True
 
 try:
     from second.local_settings import *
 except ImportError:
-    print("local setting file is not exists.")
+    print("The local setting is not exists.")
     pass
 
