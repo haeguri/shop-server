@@ -3,5 +3,6 @@ __pycache__
 staticfiles
 second/local_settings.py
 *.pyc
-**/*.pyc
-.idea/*
+.idea
+db.sqlite3
+media
