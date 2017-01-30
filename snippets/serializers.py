@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from snippets.models import Gender, Product, Category, Brand, Tag, ProductLike, Cart, CartItem, Channel, Cody, CodyItem, \
-	CodyLike, ChannelFollow, BrandFollow, CodyCategory
+from snippets.models import *
 from django.contrib.auth.models import User
 from rest_framework import pagination
 

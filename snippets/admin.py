@@ -1,6 +1,5 @@
 from django.contrib import admin
-from snippets.models import Gender, Category, Tag, Product, Brand \
-    , Channel, CodyCategory, Cody, CodyItem
+from snippets.models import *
 
 class CategoryAdmin(admin.ModelAdmin):
 

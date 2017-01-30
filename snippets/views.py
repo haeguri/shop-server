@@ -1,12 +1,8 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from snippets.models import Gender, Product, ProductLike, Category, Cart, CartItem, Channel, ChannelFollow, \
-	Cody, CodyItem, CodyLike, Tag, Brand, BrandFollow
-from snippets.serializers import ProductSerializer, UserSerializer, CategorySerializer, TagSerializer, \
-	CartReadSerializer, CartWriteSerializer, ProductLikeSerializer,ItemWriteSerializer, ItemReadSerializer, BrandSerializer, \
-	ChannelSerializer, CodySerializer, CodyLikeSerializer, CodyItemSerializer, PaginatedProductSerializer, GenderSerializer, \
-	BrandFollowSerializer, ChannelFollowSerializer
+from snippets.models import *
+from snippets.serializers import *
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
