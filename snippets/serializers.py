@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from snippets.models import Gender, Product, Brand, ProductLike, Channel, Issue, IssueItem, \
-	IssueLike, ChannelFollow, BrandFollow,  ProductImage, BrandInterview, \
-	BrandFeed, HashTag, PubDay
+from snippets.models import Gender, Product, Category, Brand, Tag, ProductLike, Cart, CartItem, Channel, Cody, CodyItem, \
+	CodyLike, ChannelFollow, BrandFollow, CodyCategory
+from django.contrib.auth.models import User
 from rest_framework import pagination
 
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
@@ -17,136 +17,132 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
 			for field_name in existing - allowed:
 				self.fields.pop(field_name)
 
-class HashTagSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = HashTag
-		fields = ('id', 'name')
-
-class GenderSerializer(DynamicFieldsModelSerializer):
+class GenderSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Gender
-		fields = ('id', 'type')
-		depth = 1
+		fields = ('id', 'type', 'cody_categories_of_gender', 'tags_of_gender')
+		depth  = 1
 
-class ProductImageSerializer(serializers.ModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = ProductImage
-		fields = ('id', 'image', 'description')
+		model = Category
+		fields = ('id', 'gender', 'type', 'tags_of_category')
+
+class CodyCategorySerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = CodyCategory
+		fields = ('id', 'name')
+
+class TagSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Tag
+		fields = ('id', 'gender', 'name')
+
+class BrandSerializer(DynamicFieldsModelSerializer):
+
+	def to_representation(self, instance):
+		ret = super(BrandSerializer, self).to_representation(instance)
+		user_id = self.context['request'].user.id
+		is_follow = BrandFollow.objects.is_follow(user_id, instance.id)
+		ret['like'] = is_follow
+		return ret
+
+	class Meta:
+		model = Brand
+		fields = ('id', 'name', 'intro', 'gender', 'products_of_brand', 'image', 'background', 'web', 'address', 'brand_follows_of_brand')
+		depth = 1
 
 class ProductSerializer(DynamicFieldsModelSerializer):
-	images = ProductImageSerializer(many=True)
+	tag = TagSerializer(many=False)
+	brand = BrandSerializer(many=False)
 
 	def to_representation(self, instance):
 		ret = super(ProductSerializer, self).to_representation(instance)
 		user_id = self.context['request'].user.id
 		is_like = ProductLike.objects.is_like(user_id, instance.id)
 		ret['like'] = is_like
-
 		return ret
 
 	class Meta:
 		model = Product
-		fields = ('id', 'gender', 'brand', 'name', 'pub_date', 'hash_tags', 'description', 'price', 'images', 'product_likes_of_product')
-		depth = 1
+		field = ('id', 'tag', 'brand', 'name', 'pub_date', 'description', 'price', 'image', 'product_likes_of_product')
 
-class BrandInterviewSerializer(serializers.ModelSerializer):
-
-	class Meta:
-		model = BrandInterview
-		fields = ('id', 'image')
-
-class BrandFeedSerializer(serializers.ModelSerializer):
+class PaginatedProductSerializer(pagination.PaginationSerializer):
 
 	class Meta:
-		model = BrandFeed
-		fields = ('id', 'brand', 'title', 'pub_date', 'body', 'image')
+		object_serializer_class = ProductSerializer
 
+class CodyItemSerializer(serializers.ModelSerializer):
+	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'tag', 'image'))
 
-class BrandSerializer(DynamicFieldsModelSerializer):
-	products_of_brand = ProductSerializer(many=True)
-	interviews = BrandInterviewSerializer(many=True)
-	feeds = BrandFeedSerializer(many=True)
+	class Meta:
+		model = CodyItem
+		fields = ('id', 'cody', 'product', 'tip')
+
+class CodySerializer(DynamicFieldsModelSerializer):
+	cody_items_of_cody = CodyItemSerializer(many=True)
+	cody_category = CodyCategorySerializer(many=False)
 
 	def to_representation(self, instance):
-		ret = super(BrandSerializer, self).to_representation(instance)
+		ret = super(CodySerializer, self).to_representation(instance)
 		user_id = self.context['request'].user.id
-		is_follow = BrandFollow.objects.is_follow(user_id, instance.id)
-		ret['follow'] = is_follow
-
-		return ret
-
-	class Meta:
-		model = Brand
-		fields = ('id', 'name', 'description', 'gender', 'products_of_brand', 'feeds', 'profile', 'background', 'web', 'interviews', 'address', 'brand_follows_of_brand')
-
-class IssueItemSerializer(serializers.ModelSerializer):
-	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
-
-	class Meta:
-		model = IssueItem
-		fields = ('id', 'issue', 'product', 'tip')
-
-# "IssueSerializer"에서도 "ChannelSerializer" 보여줘야 하는데 "IssueSerializer"의 선언이 먼저 되어 있어 참조가 불가능.
-# "SubChannelSerializer"는 "IssueSerializer"에서 참조하기 위한 "Channel"의 다른 "Serializer".
-class SubChannelSerializer(serializers.ModelSerializer):
-
-	def to_representation(self, instance):
-		ret = super(SubChannelSerializer, self).to_representation(instance)
-		user_id = self.context['request'].user.id
-		is_follow = ChannelFollow.objects.is_follow(user_id, instance.id)
-		ret['follow'] = is_follow
-
-		return ret
-
-	class Meta:
-		model = Channel
-		fields = ('id', 'name', 'introduce', 'web', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
-
-class IssueSerializer(DynamicFieldsModelSerializer):
-	issue_items_of_issue = IssueItemSerializer(many=True)
-	channel = SubChannelSerializer(many=False)
-	hash_tags = HashTagSerializer(many=True)
-
-	def to_representation(self, instance):
-		ret = super(IssueSerializer, self).to_representation(instance)
-		user_id = self.context['request'].user.id
-		is_like = IssueLike.objects.is_like(user_id, instance.id)
+		is_like = CodyLike.objects.is_like(user_id, instance.id)
 		ret['like'] = is_like
-
 		return ret
 
-	class Meta:
-		model = Issue
-		fields = ('id', 'channel', 'title', 'description', 'image', 'pub_date', 'hash_tags', 'view', 'issue_items_of_issue', 'issue_likes_of_issue')
-
-
-class PubDaySerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = PubDay
-		fields = ('id', 'day')
+		model = Cody
+		fields = ('id', 'channel', 'title', 'cody_category', 'desc', 'image', 'pub_date', 'cody_items_of_cody', 'cody_likes_of_cody')
 
 class ChannelSerializer(DynamicFieldsModelSerializer):
-	issues_of_channel = IssueSerializer(many=True, fields=('id', 'channel', 'hash_tags', 'title', 'image', 'pub_date', 'issue_likes_of_issue'))
-	pub_days = PubDaySerializer(many=True)
+	codies_of_channel = CodySerializer(many=True, fields=('id', 'channel', 'title', 'image', 'pub_date', 'cody_likes_of_cody'))
 
 	def to_representation(self, instance):
 		ret = super(ChannelSerializer, self).to_representation(instance)
 		user_id = self.context['request'].user.id
 		is_follow = ChannelFollow.objects.is_follow(user_id, instance.id)
 		ret['follow'] = is_follow
-
 		return ret
 
 	class Meta:
 		model = Channel
-		fields = ('id', 'name', 'pub_days','brief', 'introduce', 'web', 'profile', 'background', 'created', 'channel_follows_of_channel','issues_of_channel')
+		fields = ('id', 'name', 'intro', 'web', 'address', 'image', 'background', 'created', 'channel_follows_of_channel','codies_of_channel')
+
+
+class ItemReadSerializer(serializers.ModelSerializer):
+	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'image'))
+
+	class Meta:
+		model = CartItem
+		fields = ('id', 'product', 'cart', 'size', 'color', 'quantity')
+
+class ItemWriteSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = CartItem
+		fields = ('id', 'product', 'cart', 'size', 'color', 'quantity')
+
+class CartReadSerializer(serializers.ModelSerializer):
+	cart_items_of_cart = ItemReadSerializer(many=True)
+
+	class Meta:
+		model = Cart
+		fields = ('id', 'user', 'cart_items_of_cart', 'total_price', 'shipping', 'address')
+
+class CartWriteSerializer(serializers.ModelSerializer):
+	cart_items_of_cart = ItemWriteSerializer()
+
+	class Meta:
+		model = Cart
+		fields = ('id', 'user', 'cart_items_of_cart', 'total_price', 'shipping', 'address')
 
 class ProductLikeSerializer(DynamicFieldsModelSerializer):
-	product = ProductSerializer(many=False, fields=('id', 'name', 'price', 'images'))
+	product = ProductSerializer(many=False, fields=('id', 'tag', 'name', 'price', 'image'))
 
 	class Meta:
 		model = ProductLike
@@ -154,42 +150,34 @@ class ProductLikeSerializer(DynamicFieldsModelSerializer):
 
 
 class BrandFollowSerializer(DynamicFieldsModelSerializer):
-	brand = BrandSerializer(many=False, fields = ('id', 'name', 'gender', 'feeds', 'products_of_brand', 'profile', 'brand_follows_of_brand'))
+	brand = BrandSerializer(many=False, fields = ('id', 'name', 'gender', 'products_of_brand', 'image', 'brand_follows_of_brand'))
 
 	class Meta:
 		model = BrandFollow
 		fields = ('id', 'brand', 'user')
 
 class ChannelFollowSerializer(DynamicFieldsModelSerializer):
-	channel = ChannelSerializer(many=False, fields = ('id', 'name', 'profile', 'channel_follows_of_channel',))
+	channel = ChannelSerializer(many=False, fields = ('id', 'name', 'image', 'channel_follows_of_channel'))
 
 	class Meta:
 		model = ChannelFollow
 		fields = ('id', 'channel', 'user')
 
-class IssueLikeSerializer(DynamicFieldsModelSerializer):
-	issue = IssueSerializer(many=False, fields=('id', 'channel', 'title', 'image', 'pub_date',))
+class CodyLikeSerializer(DynamicFieldsModelSerializer):
+	cody = CodySerializer(many=False, fields=('id', 'channel', 'title', 'image', 'pub_date'))
 
 	class Meta:
-		model = IssueLike
-		fields = ('id', 'issue', 'user',)
+		model = CodyLike
+		fields = ('id', 'cody', 'user')
 
-class PaginationChannelSerializer(pagination.PaginationSerializer):
+class UserSerializer(serializers.ModelSerializer):
 
-	class Meta:
-		object_serializer_class = ChannelSerializer
-
-class PaginationProductSerializer(pagination.PaginationSerializer):
-
-	class Meta:
-		object_serializer_class = ProductSerializer
-
-class PaginationIssueSerializer(pagination.PaginationSerializer):
+	cart = CartReadSerializer(many=False)
+	product_likes_of_user = ProductLikeSerializer(many=True, fields=('id', 'product',))
+	channel_follows_of_user = ChannelFollowSerializer(many=True, fields=('id', 'channel'))
+	brand_follows_of_user = BrandFollowSerializer(many=True, fields=('id', 'brand'))
+	cody_likes_of_user = CodyLikeSerializer(many=True, fields=('id', 'cody'))
 
 	class Meta:
-		object_serializer_class = IssueSerializer
-
-class PaginationBrandFeedSerializer(pagination.PaginationSerializer):
-
-	class Meta:
-		object_serializer_class = BrandFeedSerializer
+		model = User
+		fields = ('id', 'username','email', 'cart', 'product_likes_of_user', 'cody_likes_of_user', 'channel_follows_of_user', 'brand_follows_of_user')

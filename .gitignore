@@ -1,7 +1,7 @@
 myvenv
 __pycache__
 staticfiles
-second/local_settings.py
+local_settings.py
 *.pyc
 .idea
 db.sqlite3

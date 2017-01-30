@@ -2,20 +2,20 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import django.utils.timezone
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('snippets', '0014_auto_20150520_1425'),
+        ('snippets', '0005_remove_codycategory_image'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='issue',
-            name='pub_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='date published', blank=True),
+            model_name='codylike',
+            name='user',
+            field=models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='cody_likes_of_user', unique=True),
             preserve_default=True,
         ),
     ]

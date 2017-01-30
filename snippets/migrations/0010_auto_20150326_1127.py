@@ -2,21 +2,20 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-from django.utils.timezone import utc
 import datetime
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cart', '0005_auto_20150512_1527'),
+        ('snippets', '0009_auto_20150325_1729'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='order',
-            name='order_date',
-            field=models.DateTimeField(default=datetime.datetime(2015, 5, 12, 6, 27, 33, 477605, tzinfo=utc), verbose_name='주문일'),
+            model_name='cody',
+            name='pub_date',
+            field=models.DateTimeField(default=datetime.datetime(2015, 3, 26, 11, 27, 50, 758644), verbose_name='date published'),
             preserve_default=True,
         ),
     ]

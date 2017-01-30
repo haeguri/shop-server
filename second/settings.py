@@ -1,32 +1,12 @@
-"""
-Django settings for second project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
 import os
 
-# BASE_DIR absolute path in local: /Users/haegyun/Proeject-django/second
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 't1^bbq7w*8oqs90&_bmn$hd#%^i#u47lmc=d4f1knl+8o1c-^$'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-
-# Application definition
-
-
+TEMPLATE_DEBUG = True
 
 INSTALLED_APPS = (
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,9 +15,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'snippets',
-    # 현재 cart app은 사용하지 않음.
-    #'cart',
-    # 3rd party packages...
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
@@ -88,33 +65,29 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     )
-    #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
 }
 
 REST_AUTH_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'second.custom_auth.CustomTokenSerializer',
-    'USER_DETAILS_SERIALIZER':'second.custom_auth.CustomUserDetailsSerializer'
+    'TOKEN_SERIALIZER': 'second.mytokenserializer.MyTokenSerializer',
 }
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '82307201', # This must will be securely
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
-
 
 ROOT_URLCONF = 'second.urls'
 
 WSGI_APPLICATION = 'second.wsgi.application'
 
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+# Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
+
 LANGUAGE_CODE = 'KR'
 
 TIME_ZONE = 'Asia/Seoul'
@@ -138,42 +111,25 @@ CORS_ALLOW_METHODS = (
     'OPTIONS',
 )
 
-#AUTH_USER_MODEL = 'auth.User'
-
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['*']
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
-
-# django all-auth package settings
-
-ACCOUNT_USERNAME_MIN_LENGTH = 4
-
-ACCOUNT_ADAPTER = "second.adapters.MessageFreeAdapter"
-
-#
-ACCOUNT_AUTHENTICATION_METHOD = "username"
-
-ACCOUNT_EMAIL_REQUIRED = False
-
-ACCOUNT_USERNAME_REQUIRED = "username"
-
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_ADAPTER = 'second.adapters.MessageFreeAdapter'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles'
 
 DEBUG = True
 
 try:
-    from second.local_settings import *
+    from local_settings import *
+    print("import localsetting")
 except ImportError:
-    print("local setting file is not exists.")
     pass
-

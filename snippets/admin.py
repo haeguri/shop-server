@@ -1,129 +1,75 @@
 from django.contrib import admin
-from snippets.models import Gender, Product, Brand, Channel, Issue, IssueItem, \
-    ProductImage, BrandInterview, HashTag, HashTagCategory, BrandFeed, PubDay
-#from cart.models import Order
+from snippets.models import Gender, Category, Tag, Product, Brand \
+    , Channel, CodyCategory, Cody, CodyItem
 
-from snippets.forms import ProductForm
+class CategoryAdmin(admin.ModelAdmin):
 
-class GenderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'type']
-    list_editable = ['type']
+    list_display = ('type', 'gender')
 
-class HashTagCategoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'is_required']
-    list_editable = ['name', 'is_required']
-
-
-class HashTagAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'category']
-    list_editable = ['name', 'category']
-    list_filter = ['name', 'category']
-
-class PubDayAdmin(admin.ModelAdmin):
-
-    list_display = ['id', 'day']
-
-    list_editable = ['day']
-
-
-class ChannelAdmin(admin.ModelAdmin):
-
-    list_display = ['id', 'name', 'brief', 'get_pub_days', 'created']
-
-    list_editable = ['name', 'brief']
-
-    filter_horizontal = ['pub_days']
-
-    def get_pub_days(self, obj):
-
-        return "\n".join([pub_day.day for pub_day in obj.pub_days.all()])
-
-class BrandInline(admin.StackedInline):
-    model = BrandInterview
-
-    extra = 2
-
-class BrandAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'gender', 'name', 'web', 'address']
-    list_editable = ['gender', 'name', 'web', 'address']
     list_filter = ['gender']
-    inlines = [BrandInline]
 
-class IssueInline(admin.StackedInline):
-    model = IssueItem
+    search_fields = ['type']
 
-    extra = 2
+class TagAdmin(admin.ModelAdmin):
 
-class IssueAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'channel', 'get_hash_tags', 'pub_date']
+    list_display = ('name', 'gender', 'category')
 
-    list_editable = ['title', 'channel']
-
-    list_filter = ['channel']
-
-    filter_horizontal = ['hash_tags']
-
-    fieldsets = [
-        ('기본정보',         {'fields':['title', 'channel', 'pub_date', 'hash_tags', 'description','image' ]})
-    ]
-
-    inlines = [IssueInline]
-
-    def get_hash_tags(self, obj):
-
-        return "\n".join([hash_tag.name for hash_tag in obj.hash_tags.all()])
-
-class BrandFeedAdmin(admin.ModelAdmin):
-    list_display = ['id', 'brand', 'title', 'pub_date']
-
-    list_editable = ['title', 'pub_date']
-
-    list_filter = ['brand']
-
-class ProductImageInline(admin.StackedInline):
-
-    model = ProductImage
-
-    extra = 2
-
-
-class ProductAdmin(admin.ModelAdmin):
-
-    list_display = ['id', 'name', 'brand', 'gender', 'get_hash_tags', 'price', 'pub_date']
-
-    list_editable = ['id', 'gender', 'name', 'brand', 'price']
+    list_filter = ['gender']
 
     search_fields = ['name']
 
-    inlines = [ProductImageInline]
+class ProductAdmin(admin.ModelAdmin):
 
-    filter_horizontal = ['hash_tags']
+    list_display = ['name','tag', 'brand', 'price', 'pub_date']
+
+    list_editable = ['name', 'tag', 'brand', 'price']
+
+    list_filter = ['tag']
+
+    search_fields = ['name']
+
+class CodyCategoryAdmin(admin.ModelAdmin):
+
+    list_display = ['name', 'gender']
+
+    list_filter = ['gender']
+
+    search_fields = ['name']
+
+
+class CodyInline(admin.StackedInline):
+    model = CodyItem
+    extra = 3
+
+class CodyAdmin(admin.ModelAdmin):
+    list_display = ['title', 'cody_category', 'channel', 'desc', 'pub_date']
+
+    list_editable = ['cody_category', 'channel']
+
+    list_filter = ['cody_category']
 
     fieldsets = [
-        ('기본정보',         {'fields':['name', 'pub_date', 'gender','brand', 'price', 'hash_tags']}),
+        (None,         {'fields':['title']}),
+        (None,         {'fields':['cody_category']}),
+        (None,         {'fields':['channel']}),
+        (None,        {'fields':['desc']}),
+        (None,         {'fields':['image']}),
+        (None,         {'fields':['pub_date']}),
     ]
+    inlines = [CodyInline]
 
-    form = ProductForm
+class CodyCategoryAdmin(admin.ModelAdmin):
+    list_display = ['gender', 'name']
 
-    def get_hash_tags(self, obj):
-        return "\n".join([hash_tag.name for hash_tag in obj.hash_tags.all()])
+    list_filter = ['gender']
 
-"""
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'means_pay', 'order_date', 'state_pay', 'state_ship']
+    list_editable = ['name']
 
-    list_editable = ['state_pay', 'state_ship']
-
-    search_fields = ['user']
-"""
-
-admin.site.register(HashTagCategory, HashTagCategoryAdmin)
-admin.site.register(BrandFeed, BrandFeedAdmin)
-admin.site.register(HashTag, HashTagAdmin)
-admin.site.register(Gender, GenderAdmin)
+admin.site.register(Gender)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tag, TagAdmin)
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Brand, BrandAdmin)
-admin.site.register(PubDay, PubDayAdmin)
-admin.site.register(Channel, ChannelAdmin)
-admin.site.register(Issue, IssueAdmin)
-#admin.site.register(Order, OrderAdmin)
+admin.site.register(Brand)
+admin.site.register(Channel)
+admin.site.register(CodyCategory, CodyCategoryAdmin)
+admin.site.register(Cody, CodyAdmin)
